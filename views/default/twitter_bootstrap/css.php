@@ -18,6 +18,7 @@ body {
 .elgg-page .elgg-page-header {
 	position: relative;
 	padding-top:15px;
+	margin-top:40px;
 }
 
 .elgg-page-header h1 {
