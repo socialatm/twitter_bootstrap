@@ -17,6 +17,7 @@ $site = elgg_get_site_entity();
 $site_name = $site->name;
 $site_url = $site->url;
 
+if(elgg_is_logged_in()){
 //required for responsive
 echo <<<HTML
 		<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -25,6 +26,8 @@ echo <<<HTML
             <span class="icon-bar"></span>
          </a>
 HTML;
+
+}
 
 
 //output site title
