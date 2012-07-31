@@ -50,7 +50,7 @@ function twitter_bootstrap_init() {
 	elgg_register_event_handler('pagesetup', 'system', 'bootstrap_theme_pagesetup_handler', 1000);
 	
 	//Elgg only includes the search bar in the header by default,
-	//but we usually don't show the header when the user is logged in
+	//but I am not sure where the best location is yet - header, topbar or... ?
 	if (elgg_is_active_plugin('search')) {
 		//elgg_extend_view('page/elements/topbar', 'search/search_box');
 		elgg_unextend_view('page/elements/header', 'search/search_box');
