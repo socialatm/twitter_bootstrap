@@ -1,8 +1,8 @@
 # Twitter bootstrap for Elgg #
-This Elgg plugin implements Twitter bootstrap. It is only meant as a starting point for your bootstrapped theme.
+This Elgg plugin implements Twitter bootstrap. It is only meant as a starting point for your bootstrap theme. Excellent documentation for Twitter Bootstrap is available here http://twitter.github.com/bootstrap/
 
 ## Disclaimers ##
-*	This theme is written for Elgg 1.8.8. It will not work on any other version of Elgg.
+*	This theme is written for Elgg 1.8 It will not work on any other version of Elgg.
 
 *	This theme will not be backported to 1.7. If you need it to be, please fork on Github.
 
