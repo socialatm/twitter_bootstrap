@@ -37,6 +37,8 @@ function twitter_bootstrap_init() {
 	elgg_load_js('google_jquery');
 		
 	$get_context = elgg_get_context();
+	//we don't want bootstrap loading when in the admin area, not sure this is the best way to do this
+	//@todo find out the best approach - perhaps this should be in the pagesetup_handler?
 	if($get_context != 'admin'){
 		elgg_load_js('bootstrap');
 		elgg_load_js('custom_js');
