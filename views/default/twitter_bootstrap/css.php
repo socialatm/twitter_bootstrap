@@ -497,6 +497,7 @@ li {
 	.bootstrap-messages {
 		z-index:100;
 	 	right:0;
+	 	top:0;
 	}
 }
 	
