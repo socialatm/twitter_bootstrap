@@ -305,7 +305,8 @@ li {
 }
 
 
-/** Subnav as see on Twitter bootstrap - you will want to change this. It is here as an example. **/
+/** Subnav as seen on Twitter bootstrap - you will want to change this. It is here as an example. **/
+/** This code was originally found here: http://jsfiddle.net/baptme/ydY6W/ **/
 .subnav-fixed {
    	position: fixed;
 	top: 40px;
