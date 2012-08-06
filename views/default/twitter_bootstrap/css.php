@@ -8,7 +8,6 @@
 
 body {
 	position: relative;
-	padding-top: 40px;
 }
 
 .hidden {
