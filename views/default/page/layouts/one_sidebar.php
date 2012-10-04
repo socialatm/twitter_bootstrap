@@ -22,7 +22,7 @@ $nav = elgg_extract('nav', $vars, elgg_view('navigation/breadcrumbs'));
 
 ?>
 <div class="<?php echo $class; ?>">
-	<div class="span8"><!-- required for bootstrap -->
+	<div class="span9"><!-- required for bootstrap -->
 		<div class="elgg-main elgg-body">
 			<?php
 				echo $nav;
@@ -40,7 +40,7 @@ $nav = elgg_extract('nav', $vars, elgg_view('navigation/breadcrumbs'));
 			?>
 		</div>
 	</div><!-- /span -->
-	<div class="span4 hidden-phone"><!-- required for bootstrap -->
+	<div class="span3"><!-- required for bootstrap -->
 		<div class="elgg-sidebar">
 			<?php
 				echo elgg_view('page/elements/sidebar', $vars);
