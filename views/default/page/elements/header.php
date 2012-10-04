@@ -8,7 +8,10 @@
 //echo elgg_view('core/account/login_dropdown');
 
 // link back to main site.
- echo elgg_view('page/elements/header_logo', $vars);
+
+if (elgg_get_plugin_setting('display_header_logo', 'twitter_bootstrap') == 'yes') {
+	echo elgg_view('page/elements/header_logo', $vars);
+	}
 
 // insert site-wide navigation
 echo elgg_view_menu('site');
