@@ -16,8 +16,8 @@ function twitter_bootstrap_init() {
 	elgg_register_js('custom_js', $custom_js);
 	
 	//we use google jquery instead of Elgg's as it is more up-to-date and required for bootstrap
-	$google_jquery = 'http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js';
-	elgg_register_js('google_jquery', $google_jquery, 'head', 10);
+	$google_jquery = 'http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js';
+	elgg_register_js('jquery', $google_jquery);
 	
 	//register bootstrap css and js
 	$bootstrap_js = 'mod/twitter_bootstrap/vendors/bootstrap/js/bootstrap.min.js';
@@ -29,13 +29,6 @@ function twitter_bootstrap_init() {
 	$bootstrap_css_resp = 'mod/twitter_bootstrap/vendors/bootstrap/css/bootstrap-responsive.min.css';
 	elgg_register_css('bootstrap_css_resp', $bootstrap_css_resp, 10);
 
-	//unregister internal jquery as we will link to Google to get the latest library, required for bootstrap
-	elgg_unregister_js('jquery');
-	//elgg_unregister_js('jquery-ui');
-	
-	//load ibraries @todo not sure if this is the best place to do this?
-	elgg_load_js('google_jquery');
-		
 	$get_context = elgg_get_context();
 	//we don't want bootstrap loading when in the admin area, not sure this is the best way to do this
 	//@todo find out the best approach - perhaps this should be in the pagesetup_handler?
