@@ -23,7 +23,7 @@ if ($post) {
 
 echo elgg_view('input/plaintext', array(
 	'name' => 'body',
-	'class' => 'mtm span8',
+	'class' => 'mtm span9',
 	'id' => 'thewire-textarea',
 ));
 ?>

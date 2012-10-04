@@ -4,7 +4,7 @@
  */
 
 ?>
-<div class="profile span8">
+<div class="profile span9">
 	<?php echo elgg_view('profile/owner_block'); ?>
 	<?php echo elgg_view('profile/details'); ?>
 </div>
