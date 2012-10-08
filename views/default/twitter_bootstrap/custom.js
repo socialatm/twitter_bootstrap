@@ -29,3 +29,8 @@ $(function() {
     e.stopPropagation();
   });
 });
+
+// popup for likes
+$(function () { 
+	$('[rel="clickover"]').clickover();
+});  

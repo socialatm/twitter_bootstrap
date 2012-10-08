@@ -13,7 +13,11 @@ function twitter_bootstrap_init() {
 
 	//custom js 
 	$custom_js = 'mod/twitter_bootstrap/views/default/twitter_bootstrap/custom.js';
-	elgg_register_js('custom_js', $custom_js);
+	elgg_register_js('custom_js', $custom_js, 'footer', 602);
+	
+	//bootstrapx-clickover	please see > https://github.com/lecar-red/bootstrapx-clickover
+	$bootstrapx_clickover = 'mod/twitter_bootstrap/vendors/bootstrapx-clickover/js/bootstrapx-clickover.js';
+	elgg_register_js('bootstrapx_clickover', $bootstrapx_clickover, 'footer', 601);
 	
 	//we use google jquery instead of Elgg's as it is more up-to-date and required for bootstrap
 	$google_jquery = 'http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js';
@@ -21,7 +25,7 @@ function twitter_bootstrap_init() {
 	
 	//register bootstrap css and js
 	$bootstrap_js = 'mod/twitter_bootstrap/vendors/bootstrap/js/bootstrap.min.js';
-	elgg_register_js('bootstrap', $bootstrap_js, 'footer');
+	elgg_register_js('bootstrap', $bootstrap_js, 'footer', 600);
 	
 	$bootstrap_css = 'mod/twitter_bootstrap/vendors/bootstrap/css/bootstrap.min.css';
 	elgg_register_css('bootstrap_css', $bootstrap_css, 10);
@@ -34,6 +38,7 @@ function twitter_bootstrap_init() {
 	//@todo find out the best approach - perhaps this should be in the pagesetup_handler?
 	if($get_context != 'admin'){
 		elgg_load_js('bootstrap');
+		elgg_load_js('bootstrapx_clickover');
 		elgg_load_js('custom_js');
 		elgg_load_css('bootstrap_css');
 		elgg_load_css('bootstrap_css_resp');
@@ -45,7 +50,7 @@ function twitter_bootstrap_init() {
 	elgg_register_event_handler('pagesetup', 'system', 'bootstrap_theme_pagesetup_handler', 1000);
 	
 	//Elgg only includes the search bar in the header by default,
-	//but I am not sure where the best location is yet - header, topbar or... ?
+	//but I am not sure where the best location is yet - header, topbar or... ? I'm thinking navbar
 	if (elgg_is_active_plugin('search')) {
 		//elgg_extend_view('page/elements/topbar', 'search/search_box');
 		elgg_unextend_view('page/elements/header', 'search/search_box');
