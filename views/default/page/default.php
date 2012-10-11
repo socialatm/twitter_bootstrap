@@ -41,7 +41,7 @@ header("Content-type: text/html; charset=UTF-8");
 </head>
 <body>
 <div class="elgg-page elgg-page-default">
-	<div class="elgg-page-topbar navbar navbar-fixed-top"><!-- navbar -->
+	<div class=" navbar navbar-fixed-top navbar-inverse"><!-- navbar -->
 		<div class="elgg-inner navbar-inner"><!-- navbar-inner -->
 			<div class="container-fluid"><!-- container -->
 				<?php echo $topbar; ?>
