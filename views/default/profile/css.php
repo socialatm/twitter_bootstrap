@@ -19,10 +19,8 @@
 /*** ownerblock ***/
 #profile-owner-block {
 	background-color: #eee;
-	padding: 15px;
+	padding: 10px;
 	margin:0;
-	width:200px;
-	border-radius:4px;
 }
 #profile-owner-block .large {
 	margin-bottom: 10px;
