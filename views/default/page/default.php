@@ -64,7 +64,7 @@ header("Content-type: text/html; charset=UTF-8");
 			</div>
 		</div>
 		<div class="row-fluid">
-			<div class="elgg-page-body">
+			<div class="elgg-page-body span12">
 				<?php echo $body; ?>
 			</div>
 		</div>
