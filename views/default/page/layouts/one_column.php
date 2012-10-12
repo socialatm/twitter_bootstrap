@@ -18,9 +18,7 @@ if (isset($vars['class'])) {
 $nav = elgg_extract('nav', $vars, elgg_view('navigation/breadcrumbs'));
 
 ?>
-<div class="span12">
-	<div class="<?php echo $class; ?>">
-		<div class="elgg-body elgg-main">
+	<div class="elgg-body elgg-main row-fluid">
 		<?php
 			echo $nav;
 
@@ -35,6 +33,4 @@ $nav = elgg_extract('nav', $vars, elgg_view('navigation/breadcrumbs'));
 				echo $vars['area1'];
 			}
 		?>
-		</div>
 	</div>
-</div>
