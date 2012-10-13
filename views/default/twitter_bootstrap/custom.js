@@ -45,6 +45,7 @@ $(document).ready(function () {
 	}
 
 	bootstrapMapCss('li', 'elgg-state-selected', 'active');
+	bootstrapMapCss('select', 'elgg-input-dropdown', 'pull-right');
 
 /* end replace Elgg css classes with Twitter bootstrap css classes	*/
 });
