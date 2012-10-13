@@ -48,6 +48,8 @@ function twitter_bootstrap_init() {
 	 * Custom menus
 	 **/
 	elgg_register_event_handler('pagesetup', 'system', 'bootstrap_theme_pagesetup_handler', 1000);
+	elgg_register_plugin_hook_handler('forward', 'system', 'example_plugin_hook_handler');
+	elgg_register_page_handler('activity', 'tb_elgg_river_page_handler');
 	
 }
 
@@ -139,4 +141,25 @@ function bootstrap_theme_pagesetup_handler() {
 		}
 
 	}//end if statement
+}
+
+function tb_elgg_river_page_handler($page) {
+global $CONFIG;
+
+	elgg_set_page_owner_guid(elgg_get_logged_in_user_guid());
+
+	// make a URL segment available in page handler script
+	$page_type = elgg_extract(0, $page, 'all');
+	$page_type = preg_replace('[\W]', '', $page_type);
+	if ($page_type == 'owner') {
+		$page_type = 'mine';
+	}
+	set_input('page_type', $page_type);
+
+	// content filter code here
+	$entity_type = '';
+	$entity_subtype = '';
+
+	require_once("{$CONFIG->pluginspath}twitter_bootstrap/pages/river.php");
+	return true;
 }
