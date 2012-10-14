@@ -85,6 +85,10 @@ li {
 
 /** Footer **/
 
+.elgg-page-footer {
+	border-top:1px solid #DDDDDD;
+}
+
 .elgg-page-footer li  {
 	padding:0 0 0 10px;
 }
@@ -383,6 +387,12 @@ li {
   -webkit-border-radius: 0 0 4px 4px;
      -moz-border-radius: 0 0 4px 4px;
           border-radius: 0 0 4px 4px;
+}
+
+/** set minimum height of content to force the footer to the bottom of the page	**/
+
+#tb-content {
+	height: 50em; 
 }
 
 /** SPECIFIC @media conditions **/

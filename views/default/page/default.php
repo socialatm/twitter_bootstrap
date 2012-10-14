@@ -63,16 +63,14 @@ header("Content-type: text/html; charset=UTF-8");
 				</div>
 			</div>
 		</div>
-		<div class="row-fluid">
+		<div class="row-fluid" id="tb-content">
 			<div class="elgg-page-body span12">
 				<?php echo $body; ?>
 			</div>
 		</div>
-		<div class="row-fluid">
-			<div class="elgg-page-footer">
-				<div class="elgg-inner">
-					<?php echo $footer; ?>
-				</div>
+		<div class="elgg-page-footer row-fluid">
+			<div class="elgg-inner span12">
+				<?php echo $footer; ?>
 			</div>
 		</div>
 	</div><!-- /container -->

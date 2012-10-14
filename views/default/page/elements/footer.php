@@ -8,28 +8,18 @@
  *
  */
 
-//bootstrap
-echo '<hr>';
+//bootstrapped
 
-$powered_url = elgg_get_site_url() . "_graphics/powered_by_elgg_badge_drk_bckgnd.gif";
+$footer_menu = elgg_view_menu('footer', array('sort_by' => 'priority', 'class' => 'elgg-menu-hz pull-right'));
 
-echo '<div class="span6">';
 echo <<<HTML
-Powered by the <a href="http://elgg.org">Elgg engine</a> and <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.
+	<div class="row-fluid">
+		<div class="span6">
+			Powered by the <a href="http://elgg.org">Elgg engine</a> and <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.
+		</div>
+		<div class="span6">
+			{$footer_menu}
+		</div>
+	</div>
 HTML;
-
-echo '</div><!-- /span6 -->';
-
-echo '<div class="mts clearfloat float-alt span4 offset2">';
-echo elgg_view_menu('footer', array('sort_by' => 'priority', 'class' => 'elgg-menu-hz pull-right'));
-
-/*
-echo elgg_view('output/url', array(
-	'href' => 'http://elgg.org',
-	'text' => "<img src=\"$powered_url\" alt=\"Powered by Elgg\" width=\"106\" height=\"15\" />",
-	'class' => 'pull-right',
-	'is_trusted' => true,
-));
-*/
-
-echo '</div>';
+?>
