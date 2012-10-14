@@ -50,6 +50,7 @@ function twitter_bootstrap_init() {
 	elgg_register_event_handler('pagesetup', 'system', 'bootstrap_theme_pagesetup_handler', 1000);
 	elgg_register_plugin_hook_handler('forward', 'system', 'example_plugin_hook_handler');
 	elgg_register_page_handler('activity', 'tb_elgg_river_page_handler');
+	elgg_register_page_handler('members', 'tb_members_page_handler');
 	
 }
 
@@ -161,5 +162,26 @@ global $CONFIG;
 	$entity_subtype = '';
 
 	require_once("{$CONFIG->pluginspath}twitter_bootstrap/pages/river.php");
+	return true;
+}
+
+/**
+ * Members page handler
+ *
+ * @param array $page url segments
+ * @return bool
+ */
+function tb_members_page_handler($page) {
+	$base = elgg_get_plugins_path() . 'members/pages/members';
+	$tb_base = elgg_get_plugins_path() . 'twitter_bootstrap/pages/members';
+
+	if (!isset($page[0])) { $page[0] = 'newest'; }
+
+	if ($page[0] == 'search') {
+		$vars['search_type'] = $_POST['search_type'] ;
+		require_once "$tb_base/search.php";
+	} else {
+		require_once "$base/index.php";
+	}
 	return true;
 }
