@@ -389,12 +389,6 @@ li {
           border-radius: 0 0 4px 4px;
 }
 
-/** set minimum height of content to force the footer to the bottom of the page	**/
-
-#tb-content {
-	height: 50em; 
-}
-
 /** SPECIFIC @media conditions **/
 
 @media (max-width: 768px) {
