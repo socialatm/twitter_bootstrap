@@ -27,12 +27,18 @@ if ($more_items) {
 	));
 	echo '</li>';
 	}
-echo '</ul><form class="navbar-search pull-right" action="'.elgg_get_site_url().'search" method="get">';
+	
+	$search = elgg_echo('search');
+	
+echo '</ul><form class="form-search navbar-search pull-right" action="'.elgg_get_site_url().'search" method="get">';
 echo <<<HTML
-    <input type="text" class="search-query" placeholder="Search" name="q">
+	<div class="input-append">
+    <input type="text" class="search-query" placeholder="" name="q">
+	<button type="submit" class="btn">{$search}</button>
+	</div>
 	<input type="hidden" name="search_type" value="all" />
     </form>
-    </div>
+	</div>
     </div>
 HTML;
 
