@@ -51,7 +51,7 @@ if (elgg_is_admin_logged_in() && elgg_get_logged_in_user_guid() != elgg_get_page
 // content links
 $content_menu = elgg_view_menu('owner_block', array(
 	'entity' => elgg_get_page_owner_entity(),
-	'class' => 'profile-content-menu',
+	'class' => 'nav nav-list',
 ));
 
 echo <<<HTML

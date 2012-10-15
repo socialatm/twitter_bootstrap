@@ -18,9 +18,10 @@
 }
 /*** ownerblock ***/
 #profile-owner-block {
-	background-color: #eee;
-	padding: 10px;
-	margin:0;
+	background-color: #FAFAFA;
+	background-repeat: repeat-x;
+	border: 1px solid #D4D4D4;
+	overflow: hidden;
 }
 #profile-owner-block .large {
 	margin-bottom: 10px;
@@ -93,7 +94,9 @@ ul.profile-admin-menu-wrapper {
 }
 /*** profile details ***/
 #profile-details .odd {
-	background-color: #f4f4f4;
+	background-color: #FAFAFA;
+	background-repeat: repeat-x;
+	border: 1px solid #D4D4D4;
 	
 	-webkit-border-radius: 4px; 
 	-moz-border-radius: 4px;

@@ -11,7 +11,7 @@
 
 $headers = elgg_extract('show_section_headers', $vars, false);
 
-$class = 'nav nav-pills nav-stacked elgg-menu elgg-menu-page';
+$class = 'nav nav-list elgg-menu elgg-menu-page';
 if (isset($vars['class'])) {
 	$class = "$class {$vars['class']}";
 }

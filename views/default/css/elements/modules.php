@@ -15,8 +15,10 @@
 }
 
 /* Info */
-.elgg-module-info > .elgg-head {
-	background: #e4e4e4;
+.elgg-module-info  .elgg-head {
+	background-color: #FAFAFA;
+	background-repeat: repeat-x;
+	border: 1px solid #D4D4D4;
 	padding: 5px;
 	margin-bottom: 10px;
 	
