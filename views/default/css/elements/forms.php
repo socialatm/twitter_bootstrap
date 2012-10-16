@@ -9,6 +9,12 @@
  */
 ?>
 
+/*	forms general	*/
+
+.form-horizontal .controls {
+  margin-left: 20px;
+}
+
 /* ***************************************
 	FRIENDS PICKER
 *************************************** */

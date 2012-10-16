@@ -7,23 +7,23 @@
  */
 ?>
 
-<div>
-	<label><?php echo elgg_echo('loginusername'); ?></label>
+<div class="control-group">
+	<label class="control-label"><?php echo elgg_echo('loginusername'); ?></label>
 	<?php echo elgg_view('input/text', array(
 		'name' => 'username',
 		'class' => 'elgg-autofocus',
 		));
 	?>
 </div>
-<div>
-	<label><?php echo elgg_echo('password'); ?></label>
+<div class="control-group">
+	<label class="control-label"><?php echo elgg_echo('password'); ?></label>
 	<?php echo elgg_view('input/password', array('name' => 'password')); ?>
 </div>
 
 <?php echo elgg_view('login/extend', $vars); ?>
 
-<div class="elgg-foot">
-	<label class="mtm float-alt">
+<div class="control-group">
+	<label class="checkbox">
 		<input type="checkbox" name="persistent" value="true" />
 		<?php echo elgg_echo('user:persistent'); ?>
 	</label>
@@ -35,15 +35,15 @@
 		echo elgg_view('input/hidden', array('name' => 'returntoreferer', 'value' => 'true'));
 	}
 	?>
-
-	<ul class="elgg-menu elgg-menu-general mtm">
+</div><div>
+	<ul class="nav">
 	<?php
 		if (elgg_get_config('allow_registration')) {
-			echo '<li><a class="registration_link pull-right" href="' . elgg_get_site_url() . 'register">' . elgg_echo('register') . '</a></li>';
+			echo '<li><a class="offset2" href="' . elgg_get_site_url() . 'register">' . elgg_echo('register') . '</a></li>';
 		}
 	?>
-		<li><a class="forgot_link pull-right" href="<?php echo elgg_get_site_url(); ?>forgotpassword">
-			<?php echo elgg_echo('user:password:lost'); ?>
-		</a></li>
+		<li>
+			<a class="offset2" href="<?php echo elgg_get_site_url(); ?>forgotpassword"><?php echo elgg_echo('user:password:lost'); ?></a>
+		</li>
 	</ul>
 </div>
