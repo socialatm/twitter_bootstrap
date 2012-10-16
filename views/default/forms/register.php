@@ -17,27 +17,28 @@ if (elgg_is_sticky_form('register')) {
 }
 
 ?>
-<div class="mtm">
-	<label><?php echo elgg_echo('name'); ?></label><br />
+<div class="control-group">
+	<label class="control-label"><?php echo elgg_echo('name'); ?></label>
 	<?php
 	echo elgg_view('input/text', array(
 		'name' => 'name',
 		'value' => $name,
-		'class' => 'elgg-autofocus',
+		'class' => 'elgg-autofocus controls',
 	));
 	?>
 </div>
-<div>
-	<label><?php echo elgg_echo('email'); ?></label><br />
+<div class="control-group">
+	<label class="control-label"><?php echo elgg_echo('email'); ?></label>
 	<?php
 	echo elgg_view('input/text', array(
 		'name' => 'email',
 		'value' => $email,
+		'class' => 'controls',
 	));
 	?>
 </div>
-<div>
-	<label><?php echo elgg_echo('username'); ?></label><br />
+<div class="control-group">
+	<label class="control-label"><?php echo elgg_echo('username'); ?></label>
 	<?php
 	echo elgg_view('input/text', array(
 		'name' => 'username',
@@ -45,8 +46,8 @@ if (elgg_is_sticky_form('register')) {
 	));
 	?>
 </div>
-<div>
-	<label><?php echo elgg_echo('password'); ?></label><br />
+<div class="control-group">
+	<label class="control-label"><?php echo elgg_echo('password'); ?></label>
 	<?php
 	echo elgg_view('input/password', array(
 		'name' => 'password',
@@ -54,8 +55,8 @@ if (elgg_is_sticky_form('register')) {
 	));
 	?>
 </div>
-<div>
-	<label><?php echo elgg_echo('passwordagain'); ?></label><br />
+<div class="control-group">
+	<label class="control-label"><?php echo elgg_echo('passwordagain'); ?></label>
 	<?php
 	echo elgg_view('input/password', array(
 		'name' => 'password2',
