@@ -16,16 +16,12 @@
 
 $defaults = array(
 	'method' => "post",
-	'disable_security' => FALSE,
+	'disable_security' => FALSE
 );
 
 $vars = array_merge($defaults, $vars);
 
-if (isset($vars['class'])) {
-	$vars['class'] = "elgg-form {$vars['class']}";
-} else {
-	$vars['class'] = 'elgg-form';
-}
+$vars['class'] = 'form-horizontal';
 
 $vars['action'] = elgg_normalize_url($vars['action']);
 $vars['method'] = strtolower($vars['method']);
@@ -34,11 +30,9 @@ $body = $vars['body'];
 unset($vars['body']);
 
 // Generate a security header
-if (!$vars['disable_security']) {
-	$body = elgg_view('input/securitytoken') . $body;
-}
+if (!$vars['disable_security']) { $body = elgg_view('input/securitytoken') . $body; }
 unset($vars['disable_security']);
 
 $attributes = elgg_format_attributes($vars);
 
-echo "<form $attributes><fieldset>$body</fieldset></form>";
+echo "<form $attributes>$body</form>";

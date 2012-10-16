@@ -9,11 +9,7 @@
  * @uses $vars['class'] Additional CSS class
  */
 
-if (isset($vars['class'])) {
-	$vars['class'] = "btn {$vars['class']}";
-} else {
-	$vars['class'] = "btn";
-}
+$vars['class'] = "btn";
 
 $defaults = array(
 	'type' => 'button',
@@ -36,5 +32,9 @@ switch ($vars['type']) {
 if (isset($vars['src']) && strpos($vars['src'], elgg_get_site_url()) === false) {
 	$vars['src'] = "";
 }
+
+$label = $vars['value'];
+unset($vars['value']);
+
 ?>
-<input <?php echo elgg_format_attributes($vars); ?> />
+<button <?php echo elgg_format_attributes($vars); ?> ><?php echo $label; ?></button>
