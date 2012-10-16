@@ -50,4 +50,11 @@ $(document).ready(function () {
 /* set minimum height of content to force the footer to the bottom of the page	*/
 	var tb_content = $('#tb-content').height();
 	if (tb_content < 700) {$('#tb-content').height(700); }
+	
+/*	don't show the river comment form unless the user is logged in	*/
+	if(!elgg.is_logged_in()) {
+		$('div.elgg-river-responses form.form-horizontal').hide();
+		$('.elgg-river-comments li:last-child').css('border-bottom', '1px solid #D4D4D4');
+	};
+	
 });

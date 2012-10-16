@@ -196,19 +196,15 @@
 	border-top: none;
 }
 .elgg-river-comments li:first-child {
-	-webkit-border-radius: 5px 0 0;
-	-moz-border-radius: 5px 0 0;
 	border-radius: 5px 0 0;
 }
 .elgg-river-comments li:last-child {
-	-webkit-border-radius: 0 0 5px 5px;
-	-moz-border-radius-bottomleft: 0 0 5px 5px;
 	border-radius-bottomleft: 0 0 5px 5px;
 }
 .elgg-river-comments li {
 	background-color: #FAFAFA;
-  background-repeat: repeat-x;
-  border: 1px solid #D4D4D4;
+	background-repeat: repeat-x;
+	border: 1px solid #D4D4D4;
 	border-bottom: none;
 	padding: 4px;
 	margin-bottom: 2px;
@@ -219,8 +215,6 @@
 .elgg-river-more {
 	background-color: #EEE;
 	
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
 	border-radius: 5px;
 	
 	padding: 2px 4px;
