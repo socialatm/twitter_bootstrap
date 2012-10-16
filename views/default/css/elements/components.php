@@ -206,7 +206,9 @@
 	border-radius-bottomleft: 0 0 5px 5px;
 }
 .elgg-river-comments li {
-	background-color: #EEE;
+	background-color: #FAFAFA;
+  background-repeat: repeat-x;
+  border: 1px solid #D4D4D4;
 	border-bottom: none;
 	padding: 4px;
 	margin-bottom: 2px;
@@ -228,14 +230,15 @@
 
 <?php //@todo location-dependent styles ?>
 .elgg-river-item form {
-	background-color: #EEE;
+	background-color: #FAFAFA;
+	background-repeat: repeat-x;
+	border: 1px solid #D4D4D4;
 	padding: 4px;
 	
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
+	border-bottom-right-radius:5px;
+	border-bottom-left-radius:5px; 
 	
-	height: 30px;
+//	height: 30px;
 }
 .elgg-river-item input[type=text] {
 	width: 80%;
