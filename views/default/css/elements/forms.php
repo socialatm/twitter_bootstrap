@@ -47,11 +47,10 @@
 	padding:0;
 	width: 730px;
 	height: auto;
-	background-color: #dedede;
-	
-	-webkit-border-radius: 8px;
-	-moz-border-radius: 8px;
-	border-radius: 8px;
+	background-color: #FAFAFA;
+	background-repeat: repeat-x;
+	border: 1px solid #D4D4D4;
+	border-radius: 3px 3px 3px 3px;
 }
 .friendspicker-savebuttons {
 	background: white;

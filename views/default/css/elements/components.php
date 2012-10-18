@@ -184,20 +184,17 @@
 	float: right;
 	font-size: 85%;
 	padding: 1px 7px;
-	
-	-webkit-border-radius: 5px 5px 0 0;
-	-moz-border-radius: 5px 5px 0 0;
+		
 	border-radius: 5px 5px 0 0;
 }
 
 <?php //@todo components.php ?>
+
 .elgg-river-comments {
 	margin: 0;
 	border-top: none;
 }
-.elgg-river-comments li:first-child {
-	border-radius: 5px 0 0;
-}
+
 .elgg-river-comments li:last-child {
 	border-radius-bottomleft: 0 0 5px 5px;
 }
@@ -207,7 +204,10 @@
 	border: 1px solid #D4D4D4;
 	border-bottom: none;
 	padding: 4px;
-	margin-bottom: 2px;
+}
+
+.elgg-river-comments li li {
+	border: none;
 }
 .elgg-river-comments .elgg-media {
 	padding: 0;
@@ -215,11 +215,13 @@
 .elgg-river-more {
 	background-color: #EEE;
 	
-	border-radius: 5px;
+	background-color: #FAFAFA;
+	background-repeat: repeat-x;
+	border-left: 1px solid #D4D4D4;
+	border-right: 1px solid #D4D4D4;
 	
 	padding: 2px 4px;
 	font-size: 85%;
-	margin-bottom: 2px;
 }
 
 <?php //@todo location-dependent styles ?>
@@ -231,14 +233,14 @@
 	
 	border-bottom-right-radius:5px;
 	border-bottom-left-radius:5px; 
-	
-//	height: 30px;
 }
 .elgg-river-item input[type=text] {
 	width: 80%;
+	margin: 5px;
 }
-.elgg-river-item input[type=submit] {
-	margin: 0 0 0 10px;
+
+.elgg-river-item button.btn {
+	display: none;
 }
 
 

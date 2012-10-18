@@ -62,4 +62,6 @@ if(!elgg.is_logged_in()) {
 		$('.control-label').css('width', '75');
 	};
 	
+	$('#elgg-river-selector').addClass('pull-right');
+	
 });

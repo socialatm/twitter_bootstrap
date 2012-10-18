@@ -38,7 +38,7 @@ if ($comments) {
 	$comments = array_reverse($comments);
 
 ?>
-	<span class="elgg-river-comments-tab"><?php echo elgg_echo('comments'); ?></span>
+<!--	<span class="elgg-river-comments-tab"><?php echo elgg_echo('comments'); ?></span> -->
 
 <?php
 

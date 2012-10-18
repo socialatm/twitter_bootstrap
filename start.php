@@ -48,10 +48,9 @@ function twitter_bootstrap_init() {
 	 * Custom menus
 	 **/
 	elgg_register_event_handler('pagesetup', 'system', 'bootstrap_theme_pagesetup_handler', 1000);
-	elgg_register_plugin_hook_handler('forward', 'system', 'example_plugin_hook_handler');
 	elgg_register_page_handler('activity', 'tb_elgg_river_page_handler');
 	elgg_register_page_handler('members', 'tb_members_page_handler');
-	
+	elgg_register_plugin_hook_handler('register', 'menu:annotation', 'tb_annotation_menu_setup');
 }
 
 function bootstrap_theme_pagesetup_handler() {
@@ -184,4 +183,29 @@ function tb_members_page_handler($page) {
 		require_once "$base/index.php";
 	}
 	return true;
+}
+
+/**
+ * Adds a delete link to "generic_comment" annotations
+ * @access private
+ */
+function tb_annotation_menu_setup($hook, $type, $return, $params) {
+	$annotation = $params['annotation'];
+
+	if ($annotation->name == 'generic_comment' && $annotation->canEdit()) {
+		$url = elgg_http_add_url_query_elements('action/comments/delete', array(
+			'annotation_id' => $annotation->id,
+		));
+
+		$options = array(
+			'name' => 'delete',
+			'href' => $url,
+			'text' => "<span class=\"close\">&times;</span>",
+			'confirm' => elgg_echo('deleteconfirm'),
+			'encode_text' => false
+		);
+		$return[] = ElggMenuItem::factory($options);
+	}
+
+	return $return;
 }
