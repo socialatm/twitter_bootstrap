@@ -64,4 +64,14 @@ if(!elgg.is_logged_in()) {
 	
 	$('#elgg-river-selector').addClass('pull-right');
 	
+/*	removes the placeholder on focus, adds it back on blur	*/
+
+$(".elgg-river-item input.controls").focus(function() {
+  $(this).attr('placeholder', '' );
+});
+$(".elgg-river-item input.controls").blur(function() {
+  $(this).attr('placeholder', elgg.echo("twitter_bootstrap:addcomments") );
+});
+
+	
 });
