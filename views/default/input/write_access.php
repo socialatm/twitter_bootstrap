@@ -1,29 +1,27 @@
 <?php
 /**
- * Elgg access level input
- * Displays a dropdown input field
+ * Write access
  *
- * @uses $vars['value']          The current value, if any
- * @uses $vars['options_values'] Array of value => label pairs (overrides default)
- * @uses $vars['name']           The name of the input field
- * @uses $vars['entity']         Optional. The entity for this access control (uses access_id)
- * @uses $vars['class']          Additional CSS class
+ * Removes the public option found in input/access
+ *
+ * @uses $vars['value'] The current value, if any
+ * @uses $vars['options_values']
+ * @uses $vars['name'] The name of the input field
+ * @uses $vars['entity'] Optional. The entity for this access control (uses write_access_id)
  */
- 
-if (isset($vars['class'])) {
-	$vars['class'] = "elgg-input-access {$vars['class']}";
-} else {
-	$vars['class'] = "elgg-input-access";
-}
+
+$options = get_write_access_array();
+unset($options[ACCESS_PUBLIC]);
 
 $defaults = array(
-	'disabled' => false,
+	'class' => 'elgg-input-access',
+	'disabled' => FALSE,
 	'value' => get_default_access(),
-	'options_values' => get_write_access_array(),
+	'options_values' => $options,
 );
 
 if (isset($vars['entity'])) {
-	$defaults['value'] = $vars['entity']->access_id;
+	$defaults['value'] = $vars['entity']->write_access_id;
 	unset($vars['entity']);
 }
 
@@ -32,10 +30,14 @@ $vars = array_merge($defaults, $vars);
 if ($vars['value'] == ACCESS_DEFAULT) {
 	$vars['value'] = get_default_access();
 }
+$vars['value'] = ($vars['value'] == ACCESS_PUBLIC) ? ACCESS_LOGGED_IN : $vars['value'];
 
 foreach ($vars['options_values'] as $label => $option) {
-	$vars['options'][$option] = $label;
-	unset($vars['options_values']);
+
+$vars['options'][$option] = $label;
+
+unset($vars['options_values']);
+
 }
 
 if (is_array($vars['value'])) {
@@ -51,7 +53,7 @@ $value = $vars['value'];
 unset($vars['value']);
 
 if ($options && count($options) > 0) {
-	echo "<ul class=\"$class\" id = \"read-access\">";
+	echo "<ul class=\"$class\" id = \"write-access\">";
 	foreach ($options as $label => $option) {
 
 		$vars['checked'] = in_array(elgg_strtolower($option), $value);

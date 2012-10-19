@@ -301,3 +301,9 @@
 	color: #0054A7;
 	background: #E4ECF5;
 }
+
+/***** access radio buttons	*****/
+
+#read-access li:first-child, #write-access li:first-child {
+	margin-left: 1em;
+}

@@ -13,6 +13,7 @@ $english = array(
 	'loginusername' => "Email",
 	'user:password:text' => 'To request a new password, enter your Email address and click the Request button.',
 	'twitter_bootstrap:addcomments' => 'add your comments here',
+	'river:comment:object:default' => 'Default River Object',
 );
 
 add_translation("en", $english);
