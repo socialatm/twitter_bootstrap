@@ -51,6 +51,8 @@ function twitter_bootstrap_init() {
 	elgg_register_page_handler('activity', 'tb_elgg_river_page_handler');
 	elgg_register_page_handler('members', 'tb_members_page_handler');
 	elgg_register_plugin_hook_handler('register', 'menu:annotation', 'tb_annotation_menu_setup');
+	elgg_unregister_plugin_hook_handler('register', 'menu:river', 'elgg_river_menu_setup');
+	elgg_register_plugin_hook_handler('register', 'menu:river', 'twitter_bootstrap_river_menu_setup');
 }
 
 function bootstrap_theme_pagesetup_handler() {
@@ -205,6 +207,33 @@ function tb_annotation_menu_setup($hook, $type, $return, $params) {
 			'encode_text' => false
 		);
 		$return[] = ElggMenuItem::factory($options);
+	}
+
+	return $return;
+}
+
+/**
+ * Add the comment and like links to river actions menu
+ * @access private
+ */
+function twitter_bootstrap_river_menu_setup($hook, $type, $return, $params) {
+	if (elgg_is_logged_in()) {
+		$item = $params['item'];
+		$object = $item->getObjectEntity();
+		// comments and non-objects cannot be commented on or liked
+				
+		if (elgg_is_admin_logged_in()) {
+			$options = array(
+				'name' => 'delete',
+				'href' => "action/river/delete?id=$item->id",
+				'text' => elgg_view_icon('delete'),
+				'title' => elgg_echo('delete'),
+				'confirm' => elgg_echo('deleteconfirm'),
+				'is_action' => true,
+				'priority' => 200,
+			);
+			$return[] = ElggMenuItem::factory($options);
+		}
 	}
 
 	return $return;

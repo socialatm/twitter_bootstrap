@@ -8,14 +8,19 @@
  * @uses bool       $vars['inline'] Show a single line version of the form?
  */
 
+$user = elgg_get_logged_in_user_entity();
+$user_icon = elgg_view_entity_icon($user, 'tiny');
 
 if (isset($vars['entity']) && elgg_is_logged_in()) {
 	
 	$inline = elgg_extract('inline', $vars, false);
+	$placeholder = elgg_echo('twitter_bootstrap:addcomments');
 	
 	if ($inline) {
-		echo elgg_view('input/text', array('name' => 'generic_comment'));
-		echo elgg_view('input/submit', array('value' => elgg_echo('comment'), 'class' => 'btn-primary'));
+	$body =	elgg_view('input/text', array('name' => 'generic_comment', 'placeholder' => $placeholder));
+	$body .= elgg_view('input/submit', array('value' => elgg_echo('comment'), 'class' => 'btn-primary'));
+	echo elgg_view_image_block($user_icon, $body);
+	
 	} else {
 ?>
 	<div>

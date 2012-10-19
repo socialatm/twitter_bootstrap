@@ -58,6 +58,6 @@ if ($comments) {
 }
 
 // inline comment form
-$form_vars = array('id' => "comments-add-{$object->getGUID()}", 'class' => 'hide'); //bootstrap uses hide not hidden
+$form_vars = array('id' => "comments-add-{$object->getGUID()}" );
 $body_vars = array('entity' => $object, 'inline' => true);
 echo elgg_view_form('comments/add', $form_vars, $body_vars);

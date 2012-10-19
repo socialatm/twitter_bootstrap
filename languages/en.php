@@ -12,6 +12,7 @@ $english = array(
 	'twitter_bootstrap:searchname' => 'by name',
 	'loginusername' => "Email",
 	'user:password:text' => 'To request a new password, enter your Email address and click the Request button.',
+	'twitter_bootstrap:addcomments' => 'add your comments here',
 );
 
 add_translation("en", $english);
