@@ -45,9 +45,9 @@ if (!$activity) {
 }
 
 $sidebar = elgg_view('core/river/sidebar');
-
+$form = elgg_view_form('pages/river', array(), $vars); // this is the form at the top of the river...
 $params = array(
-	'content' =>  $content . $activity,
+	'content' => $form. $content . $activity,
 	'sidebar' => $sidebar,
 	'filter_context' => $page_filter,
 	'class' => 'elgg-river-layout',
