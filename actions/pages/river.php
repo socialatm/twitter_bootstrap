@@ -4,9 +4,6 @@
  *
  * @package ElggPages
  */
-
- echo 'MADE IT TO HERE!!';	// die();
- 
  
 $variables = elgg_get_config('pages');
 $input = array();
@@ -19,15 +16,6 @@ foreach ($variables as $name => $type) {
 		$input[$name] = string_to_tag_array($input[$name]);
 	}
 }
-
-//	see if it's passing it ?
-
-require_once('C:/Program Files (x86)/Zend/Apache2/htdocs/krumo/class.krumo.php');
-$arr2 = get_defined_vars();
-
-// krumo($input); // die();
-
-// krumo($arr2); // die();
 
 // Get guids
 $page_guid = (int)get_input('page_guid');

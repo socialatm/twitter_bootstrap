@@ -39,10 +39,6 @@ if ($user && $entity) {
 	$can_change_access = ($user->isAdmin() || $user->getGUID() == $entity->owner_guid);
 }
 
-require_once('C:/Program Files (x86)/Zend/Apache2/htdocs/krumo/class.krumo.php');
-
-// echo krumo($user->name); // die();
-
 foreach ($variables as $name => $type) {
 	// don't show read / write access inputs for non-owners or admin when editing
 	if (($type == 'access' || $type == 'write_access') && !$can_change_access) {
