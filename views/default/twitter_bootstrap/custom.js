@@ -45,6 +45,7 @@ $(document).ready(function () {
 	}
 
 	bootstrapMapCss('li', 'elgg-state-selected', 'active');
+	bootstrapMapCss('form#elgg-form-members-search .elgg-input-radios li', '', 'radio inline');	// inline radio buttons on the members page form... twitter bootstrap css
 
 /* end replace Elgg css classes with Twitter bootstrap css classes	*/
 /* set minimum height of content to force the footer to the bottom of the page	*/
@@ -73,5 +74,12 @@ $(".elgg-river-item input.controls").blur(function() {
   $(this).attr('placeholder', elgg.echo("twitter_bootstrap:addcomments") );
 });
 
+/*	the fix for combining the search forms on the members page	*/
+
+	$('form#elgg-form-members-search input:radio').change(function () {
+		var action = elgg.config.wwwroot + 'members/search/';
+		$('form#elgg-form-members-search').attr('action' , action + $(this).val() );
+		$('.search-query').attr('name' , $(this).val() );
+	});
 	
 });
