@@ -307,6 +307,14 @@ li {
 	padding: 4px;
 }
 
+/** this is for the dropdown selector on the river page	**/
+
+div.elgg-river-layout div.span9 div.elgg-main div.row-fluid {
+	border-bottom: 1px solid #EEEEEE;
+}
+.page-header {
+	border-bottom: none;
+}
 
 /** Subnav as seen on Twitter bootstrap - you will want to change this. It is here as an example. **/
 /** This code was originally found here: http://jsfiddle.net/baptme/ydY6W/ **/

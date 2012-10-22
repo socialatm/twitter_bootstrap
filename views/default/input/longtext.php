@@ -17,7 +17,7 @@ if (isset($vars['class'])) {
 	$vars['class'] = "elgg-input-longtext";
 }
 
-$vars['class'] = "controls";
+$vars['class'] = "controls span12";
 
 $defaults = array(
 	'value' => '',

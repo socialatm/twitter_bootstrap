@@ -36,8 +36,10 @@ if (isset($vars['buttons']) && $vars['buttons']) {
 	));
 }
 
+if(elgg_get_context() == 'activity'){$selector =  '<span id= "river-selector-parent" class= "span3">'.elgg_view('core/river/filter', array('selector' => $selector)).'</span>';}
+
 echo <<<HTML
-<div class="elgg-head clearfix">
-		$buttons$title
+<div class="row-fluid">
+		$buttons$title$selector
 </div>
 HTML;

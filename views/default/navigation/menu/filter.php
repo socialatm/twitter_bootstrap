@@ -7,8 +7,7 @@
  */
 
 $default_items = elgg_extract('default', $vars['menu'], array());
-if(elgg_get_context() == 'activity'){echo '<span>'.elgg_view('core/river/filter', array('selector' => $selector)).'</span>';}
-echo '<ul class="nav nav-tabs">';
+echo '<ul class="nav nav-tabs row-fluid">';
 foreach ($default_items as $menu_item) {
 	echo elgg_view('navigation/menu/elements/item', array('item' => $menu_item));
 }
