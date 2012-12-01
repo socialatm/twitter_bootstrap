@@ -37,7 +37,11 @@ if (elgg_can_edit_widget_layout($context)) {
 
 echo $vars['content'];
 
+echo '</div>';
+echo '<div id="widgets-row" class="row">';
+
 $widget_class = "elgg-col-1of{$num_columns}";
+$span_size = 12 / $num_columns;
 for ($column_index = 1; $column_index <= $num_columns; $column_index++) {
 	if (isset($widgets[$column_index])) {
 		$column_widgets = $widgets[$column_index];
@@ -45,7 +49,7 @@ for ($column_index = 1; $column_index <= $num_columns; $column_index++) {
 		$column_widgets = array();
 	}
 
-	echo "<div class=\"$widget_class elgg-widgets\" id=\"elgg-widget-col-$column_index\">";
+	echo "<div class=\"$widget_class elgg-widgets span$span_size\" id=\"elgg-widget-col-$column_index\">";
 	if (sizeof($column_widgets) > 0) {
 		foreach ($column_widgets as $widget) {
 			if (array_key_exists($widget->handler, $widget_types)) {
@@ -55,6 +59,7 @@ for ($column_index = 1; $column_index <= $num_columns; $column_index++) {
 	}
 	echo '</div>';
 }
+echo '</div>';
 
 elgg_pop_context();
 
