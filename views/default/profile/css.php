@@ -135,3 +135,17 @@ ul.profile-admin-menu-wrapper {
 	-moz-border-radius: 6px;
 	border-radius: 6px;
 }
+
+#widgets-row {
+	margin-top: 20px;
+}
+
+/**
+ * Without this rule widget columns has a min-height
+ * creating a gap on mobile layout
+ */
+@media (max-width: 767px) {
+	.elgg-widgets {
+		min-height: 0 !important;
+	}
+}
