@@ -29,9 +29,10 @@ HTML;
 
 }
 
-
 //output site title
 echo '<a href="'.$site_url.'" class="brand">'.$site_name.'</a>';
+
+if(elgg_is_logged_in()){
 
 //personal dropdown menu
 echo <<<HTML
@@ -40,13 +41,11 @@ echo <<<HTML
             <i class="icon-user icon-white"></i> $username
             <span class="caret"></span>
         </a>
-		
 HTML;
 
 //dropdown contents
 echo '<ul class="dropdown-menu">';
 
-if(elgg_is_logged_in()){
 	foreach ($alt_items as $menu_item) {
 		echo elgg_view('navigation/menu/elements/item', array('item' => $menu_item));
 	}
@@ -58,13 +57,22 @@ if(elgg_is_logged_in()){
 		));
 		echo '<li class="divider"></li>';
 	}
-}else{
-	echo '<li class="dropdown" style="padding:10px">';
-	echo elgg_view_form('login');
-	echo '</li>';
-}
+
 echo '</ul>';
 echo '</div><!-- /button group -->';
+
+}else{
+
+	echo <<<HTML
+		<div class="btn-group pull-right"><!--open button group -->
+		<a class="btn btn-primary" href="login">
+            <i class="icon-asterisk icon-white"></i>
+		$username
+        </a>
+		</div>
+HTML;
+	
+}
 
 //create the logo and tools menu
 echo '<div class="nav-collapse nav-collapse-margin-issue">';
