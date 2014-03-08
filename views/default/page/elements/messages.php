@@ -10,12 +10,15 @@
  */
 
 if (isset($vars['object']) && is_array($vars['object']) && sizeof($vars['object']) > 0) {
-	echo '<div class="alert alert-success bootstrap-messages span12">';
-	echo '<a class="close" data-dismiss="alert" href="#">&times;</a>';
 	foreach ($vars['object'] as $type => $list ) {
-		foreach ($list as $message) {
-			echo autop($message);
+		if(!empty($list)) {
+	
+		echo '<div class="alert alert-'.$type.' bootstrap-messages span12">';
+		echo '<a class="close" data-dismiss="alert" href="#">&times;</a>';
+			foreach ($list as $message) {
+				echo autop($message);
+			}
+		echo '</div>';
 		}
 	}
-	echo '</div>';
 }
