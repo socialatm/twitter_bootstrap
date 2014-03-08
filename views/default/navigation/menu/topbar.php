@@ -5,7 +5,7 @@
  * @uses $vars['menu']['default']
  * @uses $vars['menu']['alt']
  */
-
+ 
 $default_items = elgg_extract('default', $vars['menu'], array());
 $alt_items = elgg_extract('alt', $vars['menu'], array());
 $user = elgg_get_logged_in_user_entity();
@@ -63,15 +63,12 @@ echo '</div><!-- /button group -->';
 
 }else{
 
-	echo <<<HTML
-		<div class="btn-group pull-right"><!--open button group -->
-		<a class="btn btn-primary" href="login">
-            <i class="icon-asterisk icon-white"></i>
-		$username
-        </a>
-		</div>
-HTML;
-	
+	echo '<div class="btn-group pull-right"><!--open button group -->
+			<a class="btn btn-primary" href="'.$CONFIG->url.'login">
+				<i class="icon-asterisk icon-white"></i>'.
+				$username.'
+			</a>
+		</div>';
 }
 
 //create the logo and tools menu
