@@ -9,7 +9,11 @@
  * @uses $vars['class'] Additional CSS class
  */
 
-$vars['class'] = "btn";
+if (isset($vars['class'])) {
+	$vars['class'] = "btn {$vars['class']}";
+} else {
+	$vars['class'] = "btn";
+}
 
 $defaults = array(
 	'type' => 'button',

@@ -7,9 +7,9 @@
 
 ?>
 
-<div class="control-group">
+<div class="control-group row-fluid">
 	<label class="control-label"><?php echo elgg_echo('user:name:label'); ?></label>
-	<?php echo elgg_view('input/text', array('class' => "controls", 'id' => 'name', 'name' => 'name', 'value' => $vars['entity']->name)); ?>
+	<?php echo elgg_view('input/text', array('class' => 'input-xxlarge', 'id' => 'name', 'name' => 'name', 'value' => $vars['entity']->name)); ?>
 </div>
 <?php
 
@@ -39,13 +39,14 @@ if (is_array($profile_fields) && count($profile_fields) > 0) {
 			$access_id = ACCESS_DEFAULT;
 		}
 
+	if ($shortname === 'description') {
 ?>
-<div class="control-group">
-	<label class="control-label"><?php echo elgg_echo("profile:{$shortname}") ?></label>
-	<?php
+	<div class="control-group row-fluid">
+<?php
 		$params = array(
 			'name' => $shortname,
 			'value' => $value,
+			'placeholder' => 'About Me',
 		);
 		echo elgg_view("input/{$valtype}", $params);
 		$params = array(
@@ -53,16 +54,38 @@ if (is_array($profile_fields) && count($profile_fields) > 0) {
 			'value' => $access_id,
 		);
 		echo elgg_view('input/access', $params);
+?>
+	</div>
+
+<?php
+
+	} else {
+?>
+<div class="control-group row-fluid">
+	<label class="control-label"><?php echo elgg_echo("profile:{$shortname}") ?></label>
+	<?php
+		$params = array(
+			'name' => $shortname,
+			'value' => $value,
+			'class' => 'input-xxlarge',
+		);
+		echo elgg_view("input/{$valtype}", $params);
+		$params = array(
+			'name' => "accesslevel[$shortname]",
+			'value' => $access_id,
+		);
+		echo '<div class="span4 pull-right">'.elgg_view('input/access', $params).'</div>';
 	?>
 </div>
 <?php
+	}
 	}
 }
 ?>
 <div class="control-group">
 <?php
 	echo elgg_view('input/hidden', array('name' => 'guid', 'value' => $vars['entity']->guid));
-	echo elgg_view('input/submit', array('value' => elgg_echo('save')));
+	echo elgg_view('input/button', array('type' => 'submit', 'class' => 'btn', 'value' => elgg_echo('save')));
 ?>
 </div>
 <?php 

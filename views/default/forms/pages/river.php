@@ -52,7 +52,7 @@ foreach ($variables as $name => $type) {
 		
 	/*	only print the label for the read access	*/
 	if ($name === 'access_id') {
-		echo '<div class= "span9"><label class="control-label">'.elgg_echo("pages:$name").'</label>';
+		echo '<div class= "span9"><label class="control-label" id="access_id_label">'.elgg_echo("pages:$name").'</label>';
 		}
 	
 	}
@@ -64,7 +64,7 @@ foreach ($variables as $name => $type) {
 	if ($type != 'hidden') { 
 	
 		if ($name === 'access_id') {
-		echo '</div><span class = "pull-right">'.elgg_view('input/submit', array('value' => elgg_echo('save'))).'</span>';
+		echo '</div><div class = "span3">'.elgg_view('input/button', array('value' => elgg_echo('save'), 'class' => 'pull-right btn-primary', 'id' => 'access_id_btn', 'type' => 'submit'  )).'</div>';
 		}
 		echo '</div>';
 	}
@@ -76,6 +76,7 @@ if ($vars['guid']) {
 		'value' => $vars['guid'],
 	));
 }
+
 echo elgg_view('input/hidden', array(
 	'name' => 'container_guid',
 	'value' => $vars['container_guid'],

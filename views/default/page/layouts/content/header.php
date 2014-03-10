@@ -32,14 +32,11 @@ if (isset($vars['buttons']) && $vars['buttons']) {
 } else {
 	$buttons = elgg_view_menu('title', array(
 		'sort_by' => 'priority',
-		'class' => 'elgg-menu-hz pull-right', //pull right is twitter bootstrap
+		'class' => 'elgg-menu-hz pull-right',
 	));
 }
 
-if(elgg_get_context() == 'activity'){$selector =  '<span id= "river-selector-parent" class= "span3">'.elgg_view('core/river/filter', array('selector' => $selector)).'</span>';}
-
-echo <<<HTML
-<div class="row-fluid">
-		$buttons$title$selector
-</div>
-HTML;
+if(elgg_get_context() == 'activity'){
+	$buttons =  '<span id= "river-selector-parent" class= "">'.elgg_view('core/river/filter', array('selector' => $buttons)).'</span>';
+}
+echo '<div class="row-fluid"><div class="span9">'.$title.'</div><div class="span3">'.$buttons.'</div></div>';

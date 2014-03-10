@@ -9,7 +9,11 @@
  * @uses $vars['class'] Additional CSS class
  */
 
-$vars['class'] = "controls";
+if (isset($vars['class'])) {
+	$vars['class'] = "elgg-input-email controls {$vars['class']}";
+} else {
+	$vars['class'] = "elgg-input-email";
+}
 
 $defaults = array(
 	'disabled' => false,

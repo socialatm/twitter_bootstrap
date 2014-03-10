@@ -21,7 +21,7 @@ $vars['class'] = "controls span12";
 
 $defaults = array(
 	'value' => '',
-	'id' => 'elgg-input-' . rand(), //@todo make this more robust
+	'id' => 'elgg-input-'.elgg_get_context(), // . @todo may need to loop thru this on pages with more than one textarea...
 );
 
 $vars = array_merge($defaults, $vars);

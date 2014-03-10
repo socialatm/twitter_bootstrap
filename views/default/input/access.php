@@ -1,7 +1,7 @@
 <?php
 /**
  * Elgg access level input
- * Displays a dropdown input field
+ * Displays the You Decide button
  *
  * @uses $vars['value']          The current value, if any
  * @uses $vars['options_values'] Array of value => label pairs (overrides default)
@@ -11,9 +11,9 @@
  */
  
 if (isset($vars['class'])) {
-	$vars['class'] = "elgg-input-access {$vars['class']}";
+	$vars['class'] = "hide elgg-input-access {$vars['class']}";
 } else {
-	$vars['class'] = "elgg-input-access";
+	$vars['class'] = "hide elgg-input-access";
 }
 
 $defaults = array(
@@ -50,23 +50,40 @@ unset($vars['options']);
 $value = $vars['value'];
 unset($vars['value']);
 
+/*****	here comes the You Decide button	*****/
+	
 if ($options && count($options) > 0) {
-	echo "<ul class=\"$class\" id = \"read-access\">";
+
+	echo '<div class="btn-toolbar">';
+	echo "<div class=\"btn-group\" id = \"read-access\">";
+	
+	$count = 1;
+
 	foreach ($options as $label => $option) {
 
 		$vars['checked'] = in_array(elgg_strtolower($option), $value);
 		$vars['value'] = $option;
-
 		$attributes = elgg_format_attributes($vars);
 
-		// handle indexed array where label is not specified
-		// @deprecated 1.8 Remove in 1.9
-		if (is_integer($label)) {
-			elgg_deprecated_notice('$vars[\'options\'] must be an associative array in input/radio', 1.8);
-			$label = $option;
+		if($option < 3) {
+			echo "<label class=\"btn btn-small\"><input type=\"radio\" $attributes />$label</label>";
+		}
+		
+		if(count($options) > 4 and $count == 4) {
+			echo '<a class="btn btn-small">More</a>';
+			echo '<a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#" id="read-access-caret"><span class="caret"></span></a>';
+			echo '<div class="dropdown-menu pull-right">';
+		}
+		
+		if($count > 4) {
+			echo "<label><input type=\"radio\" $attributes />$label</label>";
+			if($count == count($options)) {
+			echo '</div>';
+			}
 		}
 
-		echo "<li class=\"radio inline\"><label><input type=\"radio\" $attributes />$label</label></li>";
-	}
-	echo '</ul>';
+		$count++;
+	}	/*****	end foreach ($options as $label => $option)	*****/
+	echo '</div>';
+	echo '</div>';
 	}
