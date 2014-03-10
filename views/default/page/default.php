@@ -51,13 +51,6 @@ header("Content-type: text/html; charset=UTF-8");
 	<div class="container-fluid"><!-- container -->
 		<div class="row-fluid">
 			<div class="span12">
-				<div class="elgg-page-messages">
-					<?php echo $messages; ?>
-				</div>
-			</div>
-		</div>
-		<div class="row-fluid">
-			<div class="span12">
 				<div class="elgg-page-header">
 					<?php echo $header; ?>
 				</div>
@@ -73,6 +66,13 @@ header("Content-type: text/html; charset=UTF-8");
 				<?php echo $footer; ?>
 			</div>
 		</div>
+		<div class="row-fluid">	<!-- system messages	-->
+			<div class="span12">
+				<div class="elgg-page-messages">
+					<?php echo $messages; ?>
+				</div>
+			</div>
+		</div>	<!-- end system messages	-->
 	</div><!-- /container -->
 </div>
 <?php echo elgg_view('page/elements/foot'); ?>

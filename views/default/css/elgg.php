@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Elgg primary CSS view
  *

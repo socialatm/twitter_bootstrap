@@ -11,6 +11,4 @@ if (isset($vars['class'])) {
 	$class = " class=\"{$vars['class']}\"";
 }
 
-echo '<div class="page-header span9">';
 echo "<h2{$class}>{$vars['title']}</h2>";
-echo '</div>';

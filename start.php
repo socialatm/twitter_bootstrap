@@ -125,7 +125,7 @@ function bootstrap_theme_pagesetup_handler() {
 			'name' => 'friends',
 			'text' => elgg_echo('friends')
 		));
-		
+	
 		if (elgg_is_active_plugin('messages')) {
 
 		$text = '<span>'.elgg_echo('messages').'</span>';

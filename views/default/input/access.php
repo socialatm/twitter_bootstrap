@@ -81,7 +81,7 @@ if ($options && count($options) > 0) {
 			echo '</div>';
 			}
 		}
-
+	
 		$count++;
 	}	/*****	end foreach ($options as $label => $option)	*****/
 	echo '</div>';

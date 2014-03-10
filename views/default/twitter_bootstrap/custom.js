@@ -48,13 +48,19 @@ $(document).ready(function () {
 	bootstrapMapCss('form#elgg-form-members-search .elgg-input-radios li', '', 'radio inline');	// inline radio buttons on the members page form... twitter bootstrap css
 
 /* end replace Elgg css classes with Twitter bootstrap css classes	*/
-	
+/* set minimum height of content to force the footer to the bottom of the page	*/
+	var tb_content = $('#tb-content').height();
+	if (tb_content < 700) {$('#tb-content').height(700); }
 /*	don't show the river comment form unless the user is logged in	*/
-	if(!elgg.is_logged_in()) {
+	if (!elgg.is_logged_in()) {
 		$('div.elgg-river-responses form.form-horizontal').hide();
 		$('.elgg-river-comments li:last-child').css('border-bottom', '1px solid #D4D4D4');
-	};
-	
+	}
+/*	adjust label width on forms when user is not logged in	*/
+
+	if (!elgg.is_logged_in()) {
+		$('.control-label').css('width', '75');
+	}
 	$('#elgg-river-selector').addClass('pull-right');
 	
 	/*	removes the placeholder on focus, adds it back on blur	*/
@@ -71,7 +77,11 @@ $(document).ready(function () {
 		$('form#elgg-form-members-search').attr('action', action + $(this).val());
 		$('.search-query').attr('name', $(this).val());
 	});
-	
+
+/*	show the system messages in a modal	*/
+	if ($('.elgg-page-messages	p').text() != '') {
+		$('#myModal').modal('show');
+	}
 /*	the you decide button	*/
 	$(".elgg-input-access:checked").parent().addClass('btn-success');
 	$('div.dropdown-menu label input.elgg-input-access:checked').parent().parent().siblings('.dropdown-toggle').addClass('btn-success');

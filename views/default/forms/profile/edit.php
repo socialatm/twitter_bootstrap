@@ -1,6 +1,6 @@
 <?php
 /**
- * Edit profile form
+ * Edit profile form				
  *
  * @uses vars['entity']
  */

@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Filter navigation menu - bootstrap specific
  *

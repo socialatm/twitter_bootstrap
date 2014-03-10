@@ -9,7 +9,7 @@
  */
 
 if (isset($vars['entity']) && elgg_is_logged_in()) {
-	
+
 	$user = elgg_get_logged_in_user_entity();
 	$user_icon = elgg_view_entity_icon($user, 'tiny');
 	$inline = elgg_extract('inline', $vars, false);

@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Custom styles / required Elgg styles where I don't want to include the whole Elgg file
  **/
@@ -73,7 +73,7 @@ li {
 /** system messages **/
 
 .elgg-page-messages {
-	position:relative;
+	height: 0;
 }
 
 .bootstrap-messages {
@@ -333,11 +333,6 @@ div#read-access.btn-group div.dropdown-menu label:hover {
 	padding: 4px;
 }
 
-/** this is for the dropdown selector on the river page	**/
-
-div.elgg-river-layout div.span9 div.elgg-main div.row-fluid {
-	border-bottom: 1px solid #EEEEEE;
-}
 .page-header {
 	border-bottom: none;
 }
