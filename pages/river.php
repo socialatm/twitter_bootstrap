@@ -2,7 +2,7 @@
 /**
  * Main activity stream list page
  */
-
+ 
 $options = array();
 
 $page_type = preg_replace('[\W]', '', get_input('page_type', 'all'));

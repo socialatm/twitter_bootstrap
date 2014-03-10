@@ -83,8 +83,7 @@ if ($page->save()) {
 	if ($new_page) {
 		add_to_river('river/object/page/create', 'create', elgg_get_logged_in_user_guid(), $page->guid);
 	}
-
-	forward($page->getURL());
+	forward(REFERER);	// back to the river when done...
 } else {
 	register_error(elgg_echo('pages:error:notsaved'));
 	forward(REFERER);
