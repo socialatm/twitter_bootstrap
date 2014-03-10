@@ -8,7 +8,11 @@
  * @uses $vars['class'] Additional CSS class
  */
 
-$vars['class'] = "controls";
+if (isset($vars['class'])) {
+	$vars['class'] = "elgg-input-tag controls {$vars['class']}";
+} else {
+	$vars['class'] = "elgg-input-tag";
+}
 
 $defaults = array(
 	'value' => '',

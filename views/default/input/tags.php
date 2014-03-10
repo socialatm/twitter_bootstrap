@@ -9,7 +9,11 @@
  * @uses $vars['entity']   Optional. Entity whose tags are being displayed (metadata ->tags)
  */
 
-$vars['class'] = "controls";
+if (isset($vars['class'])) {
+	$vars['class'] = "elgg-input-tags controls {$vars['class']}";
+} else {
+	$vars['class'] = "elgg-input-tags";
+}
 
 $defaults = array(
 	'value' => '',

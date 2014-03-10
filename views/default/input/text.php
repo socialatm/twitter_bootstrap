@@ -9,7 +9,11 @@
  * @uses $vars['class'] Additional CSS class
  */
 
-$vars['class'] = "controls";
+if (isset($vars['class'])) {
+	$vars['class'] = "controls {$vars['class']}";
+} else {
+	$vars['class'] = "controls-text";
+}
 
 $defaults = array(
 	'value' => '',
