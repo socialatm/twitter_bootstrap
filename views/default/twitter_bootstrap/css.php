@@ -145,6 +145,32 @@ li {
   text-decoration: none;
 }
 
+/*****	you decide button	*****/
+
+div#read-access.btn-group div.dropdown-menu label:hover {
+	cursor:pointer;
+	color: rgb(255, 255, 255);
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.25);
+    background-color: rgb(91, 183, 91);
+    background-image: -moz-linear-gradient(center top , rgb(98, 196, 98), rgb(81, 163, 81));
+    background-repeat: repeat-x;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+}
+
+#access_id_btn, #access_id_label {
+	margin: 10px;
+}
+
+/*****	wysihtml5	*****/
+
+.wysihtml5-sandbox {
+  border-color: rgba(82, 168, 236, 0.8);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.6);
+  outline: 0 none;
+}
+
+
+
 /** Elgg Avatar within elgg-page-body **/
 
 .elgg-page-body .elgg-avatar {

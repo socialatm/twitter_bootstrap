@@ -8,11 +8,22 @@ elgg_register_event_handler('init', 'system', 'twitter_bootstrap_init');
 
 function twitter_bootstrap_init() {
 
+	// ok, let's get bootstrap-wysihtml5 up and running
+	
+	$wysihtml5 = 'mod/twitter_bootstrap/vendors/bootstrap-wysihtml5/js/wysihtml5-0.3.0.min.js';
+	elgg_register_js('wysihtml5', $wysihtml5);
+	
+	$bootstrap_wysihtml5 = 'mod/twitter_bootstrap/vendors/bootstrap-wysihtml5/js/bootstrap-wysihtml5.js';
+	elgg_register_js('bootstrap_wysihtml5', $bootstrap_wysihtml5);
+	
+	$bootstrap_wysihtml5 = 'mod/twitter_bootstrap/vendors/bootstrap-wysihtml5/css/bootstrap-wysihtml5.css';
+	elgg_register_css('bootstrap_wysihtml5', $bootstrap_wysihtml5);
+
 	//include custom css for this theme
 	elgg_extend_view('css/elgg', 'twitter_bootstrap/css');
 
 	//custom js 
-	$custom_js = 'mod/twitter_bootstrap/views/default/twitter_bootstrap/custom.js';
+	$custom_js = 'mod/twitter_bootstrap/views/default/twitter_bootstrap/custom.min.js';
 	elgg_register_js('custom_js', $custom_js, 'footer', 602);
 	
 	//bootstrapx-clickover	please see > https://github.com/lecar-red/bootstrapx-clickover
@@ -37,11 +48,14 @@ function twitter_bootstrap_init() {
 	//we don't want bootstrap loading when in the admin area, not sure this is the best way to do this
 	//@todo find out the best approach - perhaps this should be in the pagesetup_handler?
 	if($get_context != 'admin'){
+		elgg_load_js('wysihtml5');
 		elgg_load_js('bootstrap');
 		elgg_load_js('bootstrapx_clickover');
+		elgg_load_js('bootstrap_wysihtml5');
 		elgg_load_js('custom_js');
 		elgg_load_css('bootstrap_css');
 		elgg_load_css('bootstrap_css_resp');
+		elgg_load_css('bootstrap_wysihtml5');
 	}
 	
 	/**
@@ -53,9 +67,15 @@ function twitter_bootstrap_init() {
 	elgg_unregister_plugin_hook_handler('register', 'menu:river', 'elgg_river_menu_setup');
 	elgg_register_plugin_hook_handler('register', 'menu:river', 'twitter_bootstrap_river_menu_setup');
 	
+	// Register page handlers
+	
+	elgg_register_page_handler('register', 'twitter_bootstrap_user_account_page_handler');
+	elgg_register_page_handler('forgotpassword', 'twitter_bootstrap_user_account_page_handler');
+	
 	// Register some actions
-	$action_base = elgg_get_plugins_path() . 'twitter_bootstrap/actions/pages';
-	elgg_register_action("pages/river", "$action_base/river.php");
+	$action_base = elgg_get_plugins_path() . 'twitter_bootstrap/actions';
+	elgg_register_action("pages/river", "$action_base/pages/river.php");
+	elgg_register_action("comments/add", "$action_base/comments/add.php");
 }
 
 function bootstrap_theme_pagesetup_handler() {
@@ -107,14 +127,24 @@ function bootstrap_theme_pagesetup_handler() {
 		));
 		
 		if (elgg_is_active_plugin('messages')) {
+
+		$text = '<span>'.elgg_echo('messages').'</span>';
+		$tooltip = elgg_echo("messages");
+		
+		// get unread messages
+		$num_messages = (int)messages_count_unread();
+		if ($num_messages != 0) {
+						
+			$text = '<span style="color: #fff">'.elgg_echo('messages').' <i class="icon-envelope icon-white" ></i> ['.$num_messages.'] </span>';
+			$tooltip .= " [" . elgg_echo("messages:unreadcount", array($num_messages)) . "] ";
+		}
 			elgg_unregister_menu_item('topbar', 'messages');
 			elgg_register_menu_item('topbar', array(
 				'name' => 'messages',
 				'priority' => 1000,
-				'text' => elgg_echo('messages'),
-				'href' => "/messages/inbox/$user->username",
-				'link_class' => '',
-				//'contexts' => array('profile'),
+				'text' => $text,
+				'href' => 'messages/inbox/'.elgg_get_logged_in_user_entity()->username,
+				'title' => $tooltip,
 			));
 		}
 
@@ -219,4 +249,30 @@ function twitter_bootstrap_river_menu_setup($hook, $type, $return, $params) {
 	}
 
 	return $return;
+}
+
+/**
+ * Page handler for account related pages
+ *
+ * @param array  $page_elements Page elements
+ * @param string $handler The handler string
+ *
+ * @return bool
+ * @access private
+ */
+function twitter_bootstrap_user_account_page_handler($page_elements, $handler) {
+	global $CONFIG;
+
+	$base_dir = "{$CONFIG->pluginspath}twitter_bootstrap/" . 'pages/account';
+	switch ($handler) {
+		case 'forgotpassword':
+			require_once("$base_dir/forgotten_password.php");
+			break;
+		case 'register':
+			require_once("$base_dir/register.php");
+			break;
+		default:
+			return false;
+	}
+	return true;
 }
