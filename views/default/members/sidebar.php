@@ -8,10 +8,10 @@ $search = elgg_echo('search');
 
 $body = <<<HTML
 
-<form class="form-search" id="elgg-form-members-search" action="{$url}" method="get">
-<div class="input-append">
+<form class="" id="elgg-form-members-search" action="{$url}" method="get">
+<div class="input-group">
 <input class="search-query" type="text" name="name" value="">
-<button class="btn" type="submit" >{$search}</button>
+<button class="btn btn-default" type="submit" >{$search}</button>
 HTML;
 
 $body .= elgg_view("input/radio", array(

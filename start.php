@@ -135,7 +135,7 @@ function bootstrap_theme_pagesetup_handler() {
 		$num_messages = (int)messages_count_unread();
 		if ($num_messages != 0) {
 						
-			$text = '<span style="color: #fff">'.elgg_echo('messages').' <i class="icon-envelope icon-white" ></i> ['.$num_messages.'] </span>';
+			$text = '<span style="color: #fff">'.elgg_echo('messages').' <i class="glyphicon glyphicon-envelope icon-white" ></i> ['.$num_messages.'] </span>';
 			$tooltip .= " [" . elgg_echo("messages:unreadcount", array($num_messages)) . "] ";
 		}
 			elgg_unregister_menu_item('topbar', 'messages');

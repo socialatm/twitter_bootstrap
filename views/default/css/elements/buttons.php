@@ -120,7 +120,7 @@
           border-radius: 5px;
 }
 
-.elgg-button-large [class^="icon-"] {
+.elgg-button-large [class^="glyphicon glyphicon-"] {
   margin-top: 1px;
 }
 
@@ -130,7 +130,7 @@
   line-height: 16px;
 }
 
-.elgg-button-small [class^="icon-"] {
+.elgg-button-small [class^="glyphicon .glyphicon-"] {
   margin-top: -1px;
 }
 
@@ -581,31 +581,31 @@ input[type="submit"].elgg-button.elgg-button-mini {
   filter: alpha(opacity=75);
 }
 
-.input-prepend .elgg-button,
-.input-append .elgg-button {
+.input-group .elgg-button,
+.input-group .elgg-button {
   margin-left: -1px;
   -webkit-border-radius: 0;
      -moz-border-radius: 0;
           border-radius: 0;
 }
 
-.input-prepend .elgg-button {
+.input-group .elgg-button {
   margin-right: -1px;
 }
 
-.input-prepend .elgg-button:first-child {
+.input-group .elgg-button:first-child {
   -webkit-border-radius: 3px 0 0 3px;
      -moz-border-radius: 3px 0 0 3px;
           border-radius: 3px 0 0 3px;
 }
 
-.input-append .elgg-button:last-child {
+.input-group .elgg-button:last-child {
   -webkit-border-radius: 0 3px 3px 0;
      -moz-border-radius: 0 3px 3px 0;
           border-radius: 0 3px 3px 0;
 }
 
-.input-prepend.input-append .elgg-button:last-child {
+.input-group.input-group .elgg-button:last-child {
   margin-left: -1px;
   -webkit-border-radius: 0 3px 3px 0;
      -moz-border-radius: 0 3px 3px 0;

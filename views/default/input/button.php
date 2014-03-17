@@ -10,9 +10,9 @@
  */
 
 if (isset($vars['class'])) {
-	$vars['class'] = "btn {$vars['class']}";
+	$vars['class'] = "btn btn-default {$vars['class']}";
 } else {
-	$vars['class'] = "btn";
+	$vars['class'] = "btn btn-default";
 }
 
 $defaults = array(

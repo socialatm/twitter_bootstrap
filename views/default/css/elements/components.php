@@ -239,7 +239,7 @@
 	margin: 5px;
 }
 
-.elgg-river-item button.btn {
+.elgg-river-item button.btn.btn-default {
 	display: none;
 }
 

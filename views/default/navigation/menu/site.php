@@ -11,11 +11,11 @@ $more_items = elgg_extract('more', $vars['menu'], array());
 
 echo <<<HTML
 	<div class="navbar">
-    <div class="navbar-inner">
+    <div class="">
     <ul class="nav">
 HTML;
 foreach ($default_items as $menu_item) {
-	echo elgg_view('navigation/menu/elements/item', array('item' => $menu_item)).'<li class="divider-vertical"></li>';
+	echo elgg_view('navigation/menu/elements/item', array('item' => $menu_item)).'<li class=""></li>';
 }
 if ($more_items) {
 	echo '<li class="elgg-more dropdown">';
@@ -30,11 +30,11 @@ if ($more_items) {
 	
 	$search = elgg_echo('search');
 	
-echo '</ul><form class="form-search navbar-search pull-right" action="'.elgg_get_site_url().'search" method="get">';
+echo '</ul><form class="navbar-search pull-right" action="'.elgg_get_site_url().'search" method="get">';
 echo <<<HTML
-	<div class="input-append">
+	<div class="input-group">
     <input type="text" class="search-query" placeholder="" name="q">
-	<button type="submit" class="btn">{$search}</button>
+	<button type="submit" class="btn btn-default">{$search}</button>
 	</div>
 	<input type="hidden" name="search_type" value="all" />
     </form>

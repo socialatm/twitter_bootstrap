@@ -11,7 +11,7 @@
 
 /*	forms general	*/
 
-.form-horizontal .controls {
+.form-horizontal {
   margin-left: 20px;
 }
 

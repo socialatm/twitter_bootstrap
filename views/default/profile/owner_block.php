@@ -51,13 +51,13 @@ if (elgg_is_admin_logged_in() && elgg_get_logged_in_user_guid() != elgg_get_page
 // content links
 $content_menu = elgg_view_menu('owner_block', array(
 	'entity' => elgg_get_page_owner_entity(),
-	'class' => 'nav nav-list',
+	'class' => 'nav',
 ));
 
 echo <<<HTML
 
 
-	<div id="profile-owner-block" class="span3">
+	<div id="profile-owner-block" class="col-md-3">
 		$icon
 		<div class="clearfix"></div>
 		$profile_actions

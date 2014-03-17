@@ -19,13 +19,13 @@ foreach ($variables as $name => $type) {
 		continue;
 	}
 ?>
-<div class="control-group">
+<div class="form-group">
 	<label class="control-label"><?php echo elgg_echo("pages:$name") ?></label>
 	<?php
 		echo elgg_view("input/$type", array(
 			'name' => $name,
 			'value' => $vars[$name],
-			'class' => 'controls',
+			'class' => '',
 		));
 	?>
 </div>

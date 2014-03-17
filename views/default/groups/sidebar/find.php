@@ -9,10 +9,10 @@ $url = elgg_get_site_url() . 'groups/search';
 $search = elgg_echo('search');
 
 $body = <<<FORM
-<form class="form-search" action="{$url}" method="get">
-<div class="input-append">
+<form class="" action="{$url}" method="get">
+<div class="input-group">
 <input class="search-query" type="text" name="tag" value="">
-<button class="btn" type="submit" >{$search}</button>
+<button class="btn btn-default" type="submit" >{$search}</button>
 </div>
 </form>
 FORM;

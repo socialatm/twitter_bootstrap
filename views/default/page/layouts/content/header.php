@@ -39,4 +39,4 @@ if (isset($vars['buttons']) && $vars['buttons']) {
 if(elgg_get_context() == 'activity'){
 	$buttons =  '<span id= "river-selector-parent" class= "">'.elgg_view('core/river/filter', array('selector' => $buttons)).'</span>';
 }
-echo '<div class="row-fluid"><div class="span9">'.$title.'</div><div class="span3">'.$buttons.'</div></div>';
+echo '<div class="row"><div class="col-md-9">'.$title.'</div><div class="col-md-3">'.$buttons.'</div></div>';

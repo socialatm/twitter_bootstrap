@@ -112,7 +112,7 @@ li {
 
 /** This should not be required, @todo figure out why it is **/
 /** navigation / menu / topbar line 52 **/
-.nav-collapse-margin-issue {
+.navbar-collapse-margin-issue {
 	margin-top:-16px;
 }
 

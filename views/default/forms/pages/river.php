@@ -48,11 +48,11 @@ foreach ($variables as $name => $type) {
 	/* for now lets only print the label if the field is not hidden	*/
 
 	if ($type != 'hidden') { 
-		echo '<div class="control-group row-fluid">';
+		echo '<div class="form-group row">';
 		
 	/*	only print the label for the read access	*/
 	if ($name === 'access_id') {
-		echo '<div class= "span9"><label class="control-label" id="access_id_label">'.elgg_echo("pages:$name").'</label>';
+		echo '<div class= "col-md-9"><label class="control-label" id="access_id_label">'.elgg_echo("pages:$name").'</label>';
 		}
 	
 	}
@@ -64,7 +64,7 @@ foreach ($variables as $name => $type) {
 	if ($type != 'hidden') { 
 	
 		if ($name === 'access_id') {
-		echo '</div><div class = "span3">'.elgg_view('input/button', array('value' => elgg_echo('save'), 'class' => 'pull-right btn-primary', 'id' => 'access_id_btn', 'type' => 'submit'  )).'</div>';
+		echo '</div><div class = "col-md-3">'.elgg_view('input/button', array('value' => elgg_echo('save'), 'class' => 'pull-right btn btn-primary', 'id' => 'access_id_btn', 'type' => 'submit'  )).'</div>';
 		}
 		echo '</div>';
 	}

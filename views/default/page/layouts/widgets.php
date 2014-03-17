@@ -49,7 +49,7 @@ for ($column_index = 1; $column_index <= $num_columns; $column_index++) {
 		$column_widgets = array();
 	}
 
-	echo "<div class=\"$widget_class elgg-widgets span$span_size\" id=\"elgg-widget-col-$column_index\">";
+	echo "<div class=\"$widget_class elgg-widgets col-md-$span_size\" id=\"elgg-widget-col-$column_index\">";
 	if (sizeof($column_widgets) > 0) {
 		foreach ($column_widgets as $widget) {
 			if (array_key_exists($widget->handler, $widget_types)) {

@@ -18,7 +18,7 @@ if (isset($vars['class'])) {
 ?>
 
 <div class="<?php echo $class; ?>">
-	<div class="elgg-main elgg-body span6">
+	<div class="elgg-main elgg-body col-md-6">
 		<?php
 			// @todo deprecated so remove in Elgg 2.0
 			if (isset($vars['area1'])) {
@@ -29,12 +29,12 @@ if (isset($vars['class'])) {
 			}
 		?>
 	</div>
-	<div class="elgg-sidebar span3">
+	<div class="elgg-sidebar col-md-3">
 		<?php
 			echo elgg_view('page/elements/sidebar', $vars);
 		?>
 	</div>
-	<div class="elgg-sidebar-alt span3">
+	<div class="elgg-sidebar-alt col-md-3">
 		<?php
 			echo elgg_view('page/elements/sidebar_alt', $vars);
 		?>

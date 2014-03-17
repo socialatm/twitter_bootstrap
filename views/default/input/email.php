@@ -10,7 +10,7 @@
  */
 
 if (isset($vars['class'])) {
-	$vars['class'] = "elgg-input-email controls {$vars['class']}";
+	$vars['class'] = "elgg-input-email {$vars['class']}";
 } else {
 	$vars['class'] = "elgg-input-email";
 }

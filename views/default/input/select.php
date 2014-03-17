@@ -19,7 +19,7 @@
  * @uses $vars['class']          Additional CSS class
  */
 
-$vars['class'] = "controls";
+$vars['class'] = "";
 
 $defaults = array(
 	'disabled' => false,

@@ -23,7 +23,7 @@ if ($post) {
 
 echo elgg_view('input/plaintext', array(
 	'name' => 'body',
-	'class' => 'mtm span9',
+	'class' => 'mtm col-md-9',
 	'id' => 'thewire-textarea',
 ));
 ?>
@@ -36,7 +36,7 @@ echo elgg_view('input/plaintext', array(
 echo elgg_view('input/submit', array(
 	'value' => $text,
 	'id' => 'thewire-submit-button',
-	'class' => 'btn-primary'
+	'class' => 'btn btn-primary'
 ));
 ?>
 </div>

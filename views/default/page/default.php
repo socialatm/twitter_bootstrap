@@ -42,32 +42,32 @@ header("Content-type: text/html; charset=UTF-8");
 <body>
 <div class="elgg-page elgg-page-default">
 	<div class=" navbar navbar-fixed-top navbar-inverse"><!-- navbar -->
-		<div class="elgg-inner navbar-inner"><!-- navbar-inner -->
+		<div class="elgg-inner">
 			<div class="container-fluid"><!-- container -->
 				<?php echo $topbar; ?>
 			</div><!-- /container -->
-		</div><!-- /navbar-inner -->
+		</div>
 	</div><!-- /navbar -->
 	<div class="container-fluid"><!-- container -->
-		<div class="row-fluid">
-			<div class="span12">
+		<div class="row">
+			<div class="col-md-12">
 				<div class="elgg-page-header">
 					<?php echo $header; ?>
 				</div>
 			</div>
 		</div>
-		<div class="row-fluid" id="tb-content">
-			<div class="elgg-page-body span12">
+		<div class="row" id="tb-content">
+			<div class="elgg-page-body col-md-12">
 				<?php echo $body; ?>
 			</div>
 		</div>
-		<div class="elgg-page-footer row-fluid">
-			<div class="elgg-inner span12">
+		<div class="elgg-page-footer row">
+			<div class="elgg-inner col-md-12">
 				<?php echo $footer; ?>
 			</div>
 		</div>
-		<div class="row-fluid">	<!-- system messages	-->
-			<div class="span12">
+		<div class="row">	<!-- system messages	-->
+			<div class="col-md-12">
 				<div class="elgg-page-messages">
 					<?php echo $messages; ?>
 				</div>

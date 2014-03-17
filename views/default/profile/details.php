@@ -9,7 +9,7 @@ $user = elgg_get_page_owner_entity();
 $profile_fields = elgg_get_config('profile_fields');
 
 //twitter bootstrap
-echo '<div id="profile-details" class="span9">';
+echo '<div id="profile-details" class="col-md-9">';
 echo "<h2>{$user->name}</h2>";
 
 echo elgg_view("profile/status", array("entity" => $user));

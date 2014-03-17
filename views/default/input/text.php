@@ -10,9 +10,9 @@
  */
 
 if (isset($vars['class'])) {
-	$vars['class'] = "controls {$vars['class']}";
+	$vars['class'] = "{$vars['class']}";
 } else {
-	$vars['class'] = "controls-text";
+	$vars['class'] = "";
 }
 
 $defaults = array(

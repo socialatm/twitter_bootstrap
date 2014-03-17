@@ -15,8 +15,8 @@ if (elgg_get_config('https_login')) {
 $body = elgg_view_form('login', array('action' => "{$login_url}action/login"), array('returntoreferer' => TRUE));
 ?>
 <div class="btn-group pull-right">
-	<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-	<i class="icon-lock"></i> | Login
+	<a class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#">
+	<i class="glyphicon glyphicon-lock"></i> | Login
 	<span class="caret"></span>
 	</a>
 	<ul class="dropdown-menu">

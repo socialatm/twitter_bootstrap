@@ -66,12 +66,12 @@ if ($options && count($options) > 0) {
 		$attributes = elgg_format_attributes($vars);
 
 		if($option < 3) {
-			echo "<label class=\"btn btn-small\"><input type=\"radio\" $attributes />$label</label>";
+			echo "<label class=\"btn btn-sm\"><input type=\"radio\" $attributes />$label</label>";
 		}
 		
 		if(count($options) > 4 and $count == 4) {
-			echo '<a class="btn btn-small">More</a>';
-			echo '<a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#" id="read-access-caret"><span class="caret"></span></a>';
+			echo '<a class="btn btn-sm">More</a>';
+			echo '<a class="btn btn-sm dropdown-toggle" data-toggle="dropdown" href="#" id="read-access-caret"><span class="caret"></span></a>';
 			echo '<div class="dropdown-menu pull-right">';
 		}
 		

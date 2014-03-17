@@ -7,7 +7,7 @@
  */
 ?>
 
-<div class="control-group">
+<div class="form-group">
 	<label class="control-label"><?php echo elgg_echo('loginusername'); ?></label>
 	<?php echo elgg_view('input/text', array(
 		'name' => 'username',
@@ -15,14 +15,14 @@
 		));
 	?>
 </div>
-<div class="control-group">
+<div class="form-group">
 	<label class="control-label"><?php echo elgg_echo('password'); ?></label>
 	<?php echo elgg_view('input/password', array('name' => 'password')); ?>
 </div>
 
 <?php echo elgg_view('login/extend', $vars); ?>
 
-<div class="control-group">
+<div class="form-group">
 	<label class="checkbox">
 		<input type="checkbox" name="persistent" value="true" />
 		<?php echo elgg_echo('user:persistent'); ?>

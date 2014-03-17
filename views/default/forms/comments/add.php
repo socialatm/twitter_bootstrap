@@ -17,7 +17,7 @@ if (isset($vars['entity']) && elgg_is_logged_in()) {
 	
 	if ($inline) {
 	$body =	elgg_view('input/text', array('name' => 'generic_comment', 'placeholder' => $placeholder));
-	$body .= elgg_view('input/submit', array('value' => elgg_echo('comment'), 'class' => 'btn-primary'));
+	$body .= elgg_view('input/submit', array('value' => elgg_echo('comment'), 'class' => 'btn btn-primary'));
 	echo elgg_view_image_block($user_icon, $body);
 	
 	} else {
@@ -28,7 +28,7 @@ if (isset($vars['entity']) && elgg_is_logged_in()) {
 	</div>
 	<div class="elgg-foot">
 <?php
-		echo elgg_view('input/submit', array('value' => elgg_echo("generic_comments:post"), 'class' => 'btn-primary'));
+		echo elgg_view('input/submit', array('value' => elgg_echo("generic_comments:post"), 'class' => 'btn btn-primary'));
 ?>
 	</div>
 <?php
