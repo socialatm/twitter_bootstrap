@@ -51,10 +51,12 @@ $site_navbar = '<!-- Static navbar -->
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<form class="navbar-form navbar-left" role="search" action="'.elgg_get_site_url().'search" method="get">
-						<div class="form-group">
+						<div class="input-group">
 							<input type="text" class="form-control" placeholder="'.$search.'" name="q" />
+							<span class="input-group-btn">
+								<button type="submit" class="btn btn-primary">'.$search.'</button>
+							</span>
 						</div>
-						<button type="submit" class="btn btn-default">'.$search.'</button>
 						<input type="hidden" name="search_type" value="all" />
 					</form>
 				</ul>
