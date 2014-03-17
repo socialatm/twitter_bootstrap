@@ -110,12 +110,6 @@ li {
 	content: " x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x ";
 }
 
-/** This should not be required, @todo figure out why it is **/
-/** navigation / menu / topbar line 52 **/
-.navbar-collapse-margin-issue {
-	margin-top:-16px;
-}
-
 /* Aside */
 .elgg-module-aside .elgg-head {
 	border-bottom: 0px solid #CCC;

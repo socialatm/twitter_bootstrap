@@ -17,65 +17,71 @@ $site = elgg_get_site_entity();
 $site_name = $site->name;
 $site_url = $site->url;
 
-if(elgg_is_logged_in()){
-//required for responsive
-echo <<<HTML
-		<a class="btn navbar-btn" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="glyphicon glyphicon-bar"></span>
-            <span class="glyphicon .glyphicon-bar"></span>
-            <span class="glyphicon .glyphicon-bar"></span>
-         </a>
-HTML;
-
-}
-
-//output site title
-echo '<a href="'.$site_url.'" class="navbar-brand">'.$site_name.'</a>';
+/*****	Right Side Menu	*****/
 
 if(elgg_is_logged_in()){
-
-//personal dropdown menu
-echo <<<HTML
-		<div class="btn-group pull-right"><!--open button group -->
-		<a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
-            <i class="glyphicon glyphicon-user icon-white"></i> $username
-            <span class="caret"></span>
-        </a>
-HTML;
-
-//dropdown contents
-echo '<ul class="dropdown-menu">';
-
-	foreach ($alt_items as $menu_item) {
-		echo elgg_view('navigation/menu/elements/item', array('item' => $menu_item));
-	}
-
-	if ($more_items) {
-		echo elgg_view('navigation/menu/elements/section', array(
-			'class' => 'elgg-menu elgg-menu-site elgg-menu-site-more dropdown-menu', 
-			'items' => $more_items,
-		));
-		echo '<li class="divider"></li>';
-	}
-
-echo '</ul>';
-echo '</div><!-- /button group -->';
-
+	$username = '<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> '.$username.' <b class="caret"></b></a>';
+	$username .= '<ul class="dropdown-menu">';
+		foreach ($alt_items as $menu_item) {
+			$username .= elgg_view('navigation/menu/elements/item', array('item' => $menu_item));
+		}
+	$username .= '</ul>';
 }else{
-
-	echo '<div class="btn-group pull-right"><!--open button group -->
-			<a class="btn btn-primary" href="'.$CONFIG->url.'login">
-				<i class="glyphicon glyphicon-asterisk icon-white"></i>'.
-				$username.'
-			</a>
-		</div>';
+	$username = '<a href="'.$CONFIG->url.'login" class=" "><i class="glyphicon glyphicon-asterisk"></i> '.$username.' </a>';
 }
 
-//create the logo and tools menu
-echo '<div class="navbar-collapse navbar-collapse-margin-issue">';
-echo '<ul class="nav">';
+/*****	end Right Side Menu	*****/
+
+/***** Topbar main menu	*****/
+
+$topbar_main_menu = '';
+
 foreach ($default_items as $menu_item) {
-	echo elgg_view('navigation/menu/elements/item', array('item' => $menu_item));
+	$topbar_main_menu .= elgg_view('navigation/menu/elements/item', array('item' => $menu_item));
 }
-echo '</ul>';
-echo '</div>';
+
+/***** end Topbar main menu	*****/
+
+/***** Bootstrap 3	*****/
+
+$new_topbar = '<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="'.$site_url.'">'.$site_name.'</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+			'.$topbar_main_menu.'
+
+<!-- leave this dropdown until we get the chat menu done	-->			
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+				'.$username.'
+			</li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>';
+
+echo $new_topbar;
+
+/*****	END Bootstrap 3	*****/
