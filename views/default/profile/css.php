@@ -18,10 +18,11 @@
 }
 /*** ownerblock ***/
 #profile-owner-block {
-	background-color: #FAFAFA;
-	background-repeat: repeat-x;
-	border: 1px solid #D4D4D4;
-	overflow: hidden;
+	background-color: #eee;
+	padding: 15px;
+	margin:0;
+	width:200px;
+	border-radius:4px;
 }
 #profile-owner-block .large {
 	margin-bottom: 10px;
@@ -94,9 +95,7 @@ ul.profile-admin-menu-wrapper {
 }
 /*** profile details ***/
 #profile-details .odd {
-	background-color: #FAFAFA;
-	background-repeat: repeat-x;
-	border: 1px solid #D4D4D4;
+	background-color: #f4f4f4;
 	
 	-webkit-border-radius: 4px; 
 	-moz-border-radius: 4px;
@@ -135,4 +134,18 @@ ul.profile-admin-menu-wrapper {
 	-webkit-border-radius: 6px; 
 	-moz-border-radius: 6px;
 	border-radius: 6px;
+}
+
+#widgets-row {
+	margin-top: 20px;
+}
+
+/**
+ * Without this rule widget columns has a min-height
+ * creating a gap on mobile layout
+ */
+@media (max-width: 767px) {
+	.elgg-widgets {
+		min-height: 0 !important;
+	}
 }
