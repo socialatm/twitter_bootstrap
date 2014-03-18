@@ -26,6 +26,14 @@ function twitter_bootstrap_init() {
 	$custom_js = 'mod/twitter_bootstrap/views/default/twitter_bootstrap/custom.js';
 	elgg_register_js('custom_js', $custom_js, 'footer', 602);
 	
+	// register twitter bootstrap JavaScript
+	$tbs_js = elgg_get_simplecache_url('js', 'twitter_bootstrap/tbs');
+	elgg_register_simplecache_view('js/twitter_bootstrap/tbs');
+	elgg_register_js('elgg.tbs', $tbs_js);
+		//	load it on every page for now
+	elgg_extend_view('js/elgg', 'js/twitter_bootstrap/tbs');
+	
+	
 	//we use google jquery instead of Elgg's as it is more up-to-date and required for bootstrap
 	$google_jquery = 'http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js';
 	elgg_register_js('jquery', $google_jquery);
@@ -79,7 +87,7 @@ function bootstrap_theme_pagesetup_handler() {
 	$user = elgg_get_logged_in_user_entity();
 
 	// remove the elgg logo from the topbar	
-		elgg_unregister_menu_item('topbar', 'elgg_logo');
+	elgg_unregister_menu_item('topbar', 'elgg_logo');
 
 	if (elgg_is_active_plugin('reportedcontent')) {
 		elgg_unregister_menu_item('footer', 'report_this');

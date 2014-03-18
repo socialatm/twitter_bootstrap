@@ -11,8 +11,7 @@ $(document).ready(function () {
 			e.stopPropagation();
 		});
 	});
-// popup for likes
-	$('[rel="clickover"]').clickover();
+
 /* replace Elgg css classes with Twitter bootstrap css classes
  * Example: remove the Elgg class 'elgg-state-selected' from all <li> line items and replace it with the Twitter bootstrap class 'active'.
  * bootstrapMapCss('li', 'elgg-state-selected', 'active');
@@ -94,4 +93,4 @@ $(document).ready(function () {
 			$(this).focus();
 		});
 	});	// end observe
-});
+});		//	end document ready
