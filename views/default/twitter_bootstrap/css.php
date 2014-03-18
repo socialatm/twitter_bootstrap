@@ -1,7 +1,5 @@
 <?php
-/**
- * Custom styles / required Elgg styles where I don't want to include the whole Elgg file
- **/
+//	Custom styles / required Elgg styles where I don't want to include the whole Elgg file
 ?>
 
 /** SOME CORE OVERRIDES **/
