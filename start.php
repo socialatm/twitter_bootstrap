@@ -26,10 +26,6 @@ function twitter_bootstrap_init() {
 	$custom_js = 'mod/twitter_bootstrap/views/default/twitter_bootstrap/custom.min.js';
 	elgg_register_js('custom_js', $custom_js, 'footer', 602);
 	
-	//bootstrapx-clickover	please see > https://github.com/lecar-red/bootstrapx-clickover
-	$bootstrapx_clickover = 'mod/twitter_bootstrap/vendors/bootstrapx-clickover/js/bootstrapx-clickover.js';
-	elgg_register_js('bootstrapx_clickover', $bootstrapx_clickover, 'footer', 601);
-	
 	//we use google jquery instead of Elgg's as it is more up-to-date and required for bootstrap
 	$google_jquery = 'http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js';
 	elgg_register_js('jquery', $google_jquery);
@@ -50,7 +46,6 @@ function twitter_bootstrap_init() {
 	if($get_context != 'admin'){
 		elgg_load_js('wysihtml5');
 		elgg_load_js('bootstrap');
-		elgg_load_js('bootstrapx_clickover');
 		elgg_load_js('bootstrap_wysihtml5');
 		elgg_load_js('custom_js');
 		elgg_load_css('bootstrap_css');
