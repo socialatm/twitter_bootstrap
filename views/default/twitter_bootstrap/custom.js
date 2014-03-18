@@ -56,11 +56,8 @@ $(document).ready(function () {
 		$('div.elgg-river-responses form.form-horizontal').hide();
 		$('.elgg-river-comments li:last-child').css('border-bottom', '1px solid #D4D4D4');
 	}
-/*	adjust label width on forms when user is not logged in	*/
 
-	if (!elgg.is_logged_in()) {
-		$('.control-label').css('width', '75');
-	}
+	
 	$('#elgg-river-selector').addClass('pull-right');
 	
 	/*	removes the placeholder on focus, adds it back on blur	*/
