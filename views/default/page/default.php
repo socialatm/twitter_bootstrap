@@ -42,7 +42,7 @@ $lang = get_current_language();
 <?php echo elgg_view('page/elements/head', $vars); ?>
 </head>
 <body>
-<div class="elgg-page elgg-page-default">
+<div class="">
 	<div class=" navbar navbar-fixed-top navbar-inverse"><!-- navbar -->
 		<div class="elgg-inner">
 			<div class="container-fluid"><!-- container -->
