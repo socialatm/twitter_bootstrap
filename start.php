@@ -19,7 +19,7 @@ function twitter_bootstrap_init() {
 	$bootstrap_wysihtml5 = 'mod/twitter_bootstrap/vendors/bootstrap-wysihtml5/css/bootstrap-wysihtml5.css';
 	elgg_register_css('bootstrap_wysihtml5', $bootstrap_wysihtml5);
 
-	//include custom css for this theme
+	//include twitter bootstrap css
 	elgg_extend_view('css/elgg', 'twitter_bootstrap/css');
 
 	//custom js 
@@ -45,8 +45,8 @@ function twitter_bootstrap_init() {
 	$bootstrap_css = 'mod/twitter_bootstrap/vendors/bootstrap/css/bootstrap.min.css';
 	elgg_register_css('bootstrap_css', $bootstrap_css, 10);
 	
-	$bootstrap_css_resp = 'mod/twitter_bootstrap/vendors/bootstrap/css/bootstrap-responsive.min.css';
-	elgg_register_css('bootstrap_css_resp', $bootstrap_css_resp, 10);
+	$bootstrap_css_theme = 'mod/twitter_bootstrap/vendors/bootstrap/css/bootstrap-theme.min.css';
+	elgg_register_css('bootstrap_css_theme', $bootstrap_css_theme, 10);
 
 	$get_context = elgg_get_context();
 	//we don't want bootstrap loading when in the admin area, not sure this is the best way to do this
