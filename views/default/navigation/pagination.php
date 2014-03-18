@@ -48,12 +48,12 @@ $current_page = ceil($offset / $limit) + 1;
 
 $pages = new stdClass();
 $pages->prev = array(
-	'text' => elgg_echo('previous'),
+	'text' => '<span class="glyphicon glyphicon-chevron-left"> ' . elgg_echo('previous'),
 	'href' => '',
 	'is_trusted' => true,
 );
 $pages->next = array(
-	'text' => elgg_echo('next'),
+	'text' => elgg_echo('next') . ' <span class="glyphicon glyphicon-chevron-right">',
 	'href' => '',
 	'is_trusted' => true,
 );
@@ -98,18 +98,18 @@ if ($current_page < $total_pages) {
 }
 
 
-echo '<div class="pagination"><ul>';
+echo '<ul class="pagination">';
 
 if ($pages->prev['href']) {
 	$link = elgg_view('output/url', $pages->prev);
 	echo "<li>$link</li>";
 } else {
-	echo "<li class=\"disabled\"><a href=\"#\">{$pages->prev['text']}</a></li>";
+	echo "<li class=\"disabled\"><span>{$pages->prev['text']}</span></li>";
 }
 
 foreach ($pages->items as $page) {
 	if ($page == $current_page) {
-		echo "<li class=\"active\"><a href=\"#\">$page</a></li>";
+		echo "<li class=\"active\"><span>$page</span></li>";
 	} else {
 		$page_offset = (($page - 1) * $limit);
 		$url = elgg_http_add_url_query_elements($base_url, array($offset_key => $page_offset));
@@ -126,7 +126,7 @@ if ($pages->next['href']) {
 	$link = elgg_view('output/url', $pages->next);
 	echo "<li>$link</li>";
 } else {
-	echo "<li class=\"disabled\"><a href=\"#\">{$pages->next['text']}</a></li>";
+	echo "<li class=\"disabled\"><span>{$pages->next['text']}</span></li>";
 }
 
-echo '</ul></div>';
+echo '</ul>';
