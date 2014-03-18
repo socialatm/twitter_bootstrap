@@ -43,13 +43,7 @@ $lang = get_current_language();
 </head>
 <body>
 <div class="">
-	<div class=" navbar navbar-fixed-top navbar-inverse"><!-- navbar -->
-		<div class="elgg-inner">
-			<div class="container-fluid"><!-- container -->
-				<?php echo $topbar; ?>
-			</div><!-- /container -->
-		</div>
-	</div><!-- /navbar -->
+	<?php echo $topbar; ?>
 	<div class="container-fluid"><!-- container -->
 		<div class="row">
 			<div class="col-md-12">
