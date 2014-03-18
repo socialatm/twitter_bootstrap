@@ -63,18 +63,18 @@ function twitter_bootstrap_init() {
 	
 	// Register event handlers
 	
-	elgg_register_event_handler('pagesetup', 'system', 'bootstrap_theme_pagesetup_handler', 1000);
+	elgg_register_event_handler('pagesetup', 'system', 'tbs_pagesetup_handler', 1000);
 	
 	// Register plugin hook handlers
 	
-	elgg_register_plugin_hook_handler('register', 'menu:annotation', 'tb_annotation_menu_setup');
+	elgg_register_plugin_hook_handler('register', 'menu:annotation', 'tbs_annotation_menu_setup');
 	elgg_unregister_plugin_hook_handler('register', 'menu:river', 'elgg_river_menu_setup');
-	elgg_register_plugin_hook_handler('register', 'menu:river', 'twitter_bootstrap_river_menu_setup');
+	elgg_register_plugin_hook_handler('register', 'menu:river', 'tbs_river_menu_setup');
 	
 	// Register page handlers
 	
-	elgg_register_page_handler('register', 'twitter_bootstrap_user_account_page_handler');
-	elgg_register_page_handler('forgotpassword', 'twitter_bootstrap_user_account_page_handler');
+	elgg_register_page_handler('register', 'tbs_user_account_page_handler');
+	elgg_register_page_handler('forgotpassword', 'tbs_user_account_page_handler');
 	elgg_register_page_handler('activity', 'tbs_river_page_handler');
 	
 	// Register actions
@@ -83,7 +83,7 @@ function twitter_bootstrap_init() {
 	elgg_register_action("comments/add", "$action_base/comments/add.php");
 }
 
-function bootstrap_theme_pagesetup_handler() {
+function tbs_pagesetup_handler() {
 	
 	$owner = elgg_get_page_owner_entity();
 	$user = elgg_get_logged_in_user_entity();
@@ -205,7 +205,7 @@ global $CONFIG;
  * Adds a delete link to "generic_comment" annotations
  * @access private
  */
-function tb_annotation_menu_setup($hook, $type, $return, $params) {
+function tbs_annotation_menu_setup($hook, $type, $return, $params) {
 	$annotation = $params['annotation'];
 
 	if ($annotation->name == 'generic_comment' && $annotation->canEdit()) {
@@ -230,7 +230,7 @@ function tb_annotation_menu_setup($hook, $type, $return, $params) {
  * Add the comment and like links to river actions menu
  * @access private
  */
-function twitter_bootstrap_river_menu_setup($hook, $type, $return, $params) {
+function tbs_river_menu_setup($hook, $type, $return, $params) {
 	if (elgg_is_logged_in()) {
 		$item = $params['item'];
 		$object = $item->getObjectEntity();
@@ -262,7 +262,7 @@ function twitter_bootstrap_river_menu_setup($hook, $type, $return, $params) {
  * @return bool
  * @access private
  */
-function twitter_bootstrap_user_account_page_handler($page_elements, $handler) {
+function tbs_user_account_page_handler($page_elements, $handler) {
 	global $CONFIG;
 
 	$base_dir = "{$CONFIG->pluginspath}twitter_bootstrap/" . 'pages/account';
