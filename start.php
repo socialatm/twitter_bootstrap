@@ -78,10 +78,7 @@ function bootstrap_theme_pagesetup_handler() {
 	$owner = elgg_get_page_owner_entity();
 	$user = elgg_get_logged_in_user_entity();
 
-	/**
-	 * TOPBAR customizations
-	 */
-	 
+	// remove the elgg logo from the topbar	
 	elgg_unregister_menu_item('topbar', 'elgg_logo');
 
 	if (elgg_is_active_plugin('reportedcontent')) {
