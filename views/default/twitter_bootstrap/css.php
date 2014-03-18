@@ -75,11 +75,9 @@ li {
 }
 
 .bootstrap-messages {
-	position:absolute;
-	top:40px;
+	top:35px;
 	z-index:100;
- 	right:0;
-}
+ }
 
 /** Footer **/
 
@@ -152,6 +150,8 @@ div#read-access.btn-group div.dropdown-menu label:hover {
 #access_id_btn, #access_id_label {
 	margin: 10px;
 }
+
+#read-access {border: 1px solid;}
 
 /*****	wysihtml5	*****/
 
