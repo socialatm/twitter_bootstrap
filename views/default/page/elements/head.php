@@ -47,27 +47,16 @@ $release = get_version(true);
 	<link rel="stylesheet" href="<?php echo $link; ?>" type="text/css" />
 <?php } ?>
 
-<?php
-	$ie_url = elgg_get_simplecache_url('css', 'ie');
-	$ie7_url = elgg_get_simplecache_url('css', 'ie7');
-	$ie6_url = elgg_get_simplecache_url('css', 'ie6');
-?>
-	<!--[if gt IE 7]>
-		<link rel="stylesheet" type="text/css" href="<?php echo $ie_url; ?>" />
-	<![endif]-->
-	<!--[if IE 7]>
-		<link rel="stylesheet" type="text/css" href="<?php echo $ie7_url; ?>" />
-	<![endif]-->
-	<!--[if IE 6]>
-		<link rel="stylesheet" type="text/css" href="<?php echo $ie6_url; ?>" />
-	<![endif]-->
+
 
 <?php foreach ($js as $script) { ?>
 	<script type="text/javascript" src="<?php echo $script; ?>"></script>
 <?php } ?>
 
 <script type="text/javascript">
+// <![CDATA[
 	<?php echo elgg_view('js/initialize_elgg'); ?>
+// ]]>
 </script>
 
 <?php
