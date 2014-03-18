@@ -42,8 +42,19 @@ $lang = get_current_language();
 <?php echo elgg_view('page/elements/head', $vars); ?>
 </head>
 <body>
-<div class="">
+ <!-- <div class="">	-->
 	<?php echo $topbar; ?>
+	<div class="row elgg-page-messages">	<!-- system messages	-->
+		<div class="col-md-10 col-md-offset-1">
+			<?php echo $messages; ?>
+		</div>
+	</div>	<!-- end system messages	-->
+	
+	
+	
+	
+	
+	
 	<div class="container-fluid"><!-- container -->
 		<div class="row">
 			<div class="col-md-12">
@@ -62,15 +73,9 @@ $lang = get_current_language();
 				<?php echo $footer; ?>
 			</div>
 		</div>
-		<div class="row">	<!-- system messages	-->
-			<div class="col-md-12">
-				<div class="elgg-page-messages">
-					<?php echo $messages; ?>
-				</div>
-			</div>
-		</div>	<!-- end system messages	-->
+		
 	</div><!-- /container -->
-</div>
+<!-- </div>	-->
 <?php echo elgg_view('page/elements/foot'); ?>
 </body>
 </html>
