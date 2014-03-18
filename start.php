@@ -11,10 +11,10 @@ function twitter_bootstrap_init() {
 	// ok, let's get bootstrap-wysihtml5 up and running
 	
 	$wysihtml5 = 'mod/twitter_bootstrap/vendors/bootstrap-wysihtml5/js/wysihtml5-0.3.0.min.js';
-	elgg_register_js('wysihtml5', $wysihtml5);
+	elgg_register_js('wysihtml5', $wysihtml5, 'footer', 610);
 	
 	$bootstrap_wysihtml5 = 'mod/twitter_bootstrap/vendors/bootstrap-wysihtml5/js/bootstrap-wysihtml5.js';
-	elgg_register_js('bootstrap_wysihtml5', $bootstrap_wysihtml5);
+	elgg_register_js('bootstrap_wysihtml5', $bootstrap_wysihtml5, 'footer', 615);
 	
 	$bootstrap_wysihtml5 = 'mod/twitter_bootstrap/vendors/bootstrap-wysihtml5/css/bootstrap-wysihtml5.css';
 	elgg_register_css('bootstrap_wysihtml5', $bootstrap_wysihtml5, 510);
@@ -40,7 +40,7 @@ function twitter_bootstrap_init() {
 	
 	//register bootstrap css and js
 	$bootstrap_js = 'mod/twitter_bootstrap/vendors/bootstrap/js/bootstrap.min.js';
-	elgg_register_js('bootstrap', $bootstrap_js, 'footer', 600);
+	elgg_register_js('bootstrap', $bootstrap_js, 'footer');
 	
 	$bootstrap_css = 'mod/twitter_bootstrap/vendors/bootstrap/css/bootstrap.min.css';
 	elgg_register_css('bootstrap_css', $bootstrap_css );
@@ -52,8 +52,8 @@ function twitter_bootstrap_init() {
 	//we don't want bootstrap loading when in the admin area, not sure this is the best way to do this
 	//@todo find out the best approach - perhaps this should be in the pagesetup_handler?
 	if($get_context != 'admin'){
-		elgg_load_js('wysihtml5');
 		elgg_load_js('bootstrap');
+		elgg_load_js('wysihtml5');
 		elgg_load_js('bootstrap_wysihtml5');
 		elgg_load_js('custom_js');
 		elgg_load_css('bootstrap_css');
