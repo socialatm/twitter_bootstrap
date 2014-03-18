@@ -17,7 +17,7 @@ function twitter_bootstrap_init() {
 	elgg_register_js('bootstrap_wysihtml5', $bootstrap_wysihtml5);
 	
 	$bootstrap_wysihtml5 = 'mod/twitter_bootstrap/vendors/bootstrap-wysihtml5/css/bootstrap-wysihtml5.css';
-	elgg_register_css('bootstrap_wysihtml5', $bootstrap_wysihtml5);
+	elgg_register_css('bootstrap_wysihtml5', $bootstrap_wysihtml5, 510);
 
 	//include twitter bootstrap css
 	elgg_extend_view('css/elgg', 'twitter_bootstrap/css');
@@ -43,10 +43,10 @@ function twitter_bootstrap_init() {
 	elgg_register_js('bootstrap', $bootstrap_js, 'footer', 600);
 	
 	$bootstrap_css = 'mod/twitter_bootstrap/vendors/bootstrap/css/bootstrap.min.css';
-	elgg_register_css('bootstrap_css', $bootstrap_css, 10);
+	elgg_register_css('bootstrap_css', $bootstrap_css );
 	
 	$bootstrap_css_theme = 'mod/twitter_bootstrap/vendors/bootstrap/css/bootstrap-theme.min.css';
-	elgg_register_css('bootstrap_css_theme', $bootstrap_css_theme, 10);
+	elgg_register_css('bootstrap_css_theme', $bootstrap_css_theme );
 
 	$get_context = elgg_get_context();
 	//we don't want bootstrap loading when in the admin area, not sure this is the best way to do this
@@ -57,7 +57,7 @@ function twitter_bootstrap_init() {
 		elgg_load_js('bootstrap_wysihtml5');
 		elgg_load_js('custom_js');
 		elgg_load_css('bootstrap_css');
-		elgg_load_css('bootstrap_css_resp');
+		elgg_load_css('bootstrap_css_theme');
 		elgg_load_css('bootstrap_wysihtml5');
 	}
 	
@@ -75,7 +75,7 @@ function twitter_bootstrap_init() {
 	elgg_register_page_handler('register', 'twitter_bootstrap_user_account_page_handler');
 	elgg_register_page_handler('forgotpassword', 'twitter_bootstrap_user_account_page_handler');
 	
-	// Register some actions
+	// Register actions
 	$action_base = elgg_get_plugins_path() . 'twitter_bootstrap/actions';
 	elgg_register_action("pages/river", "$action_base/pages/river.php");
 	elgg_register_action("comments/add", "$action_base/comments/add.php");
