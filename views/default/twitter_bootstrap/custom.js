@@ -49,6 +49,7 @@ $(document).ready(function () {
 
 /* end replace Elgg css classes with Twitter bootstrap css classes	*/
 
+
 	
 /*	don't show the river comment form unless the user is logged in	*/
 	if (!elgg.is_logged_in()) {
@@ -77,10 +78,7 @@ $(document).ready(function () {
 		$('.search-query').attr('name', $(this).val());
 	});
 
-/*	show the system messages in a modal	*/
-	if ($('.elgg-page-messages	p').text() != '') {
-		$('#myModal').modal('show');
-	}
+
 /*	the you decide button	*/
 	$(".elgg-input-access:checked").parent().addClass('btn-success');
 	$('div.dropdown-menu label input.elgg-input-access:checked').parent().parent().siblings('.dropdown-toggle').addClass('btn-success');
