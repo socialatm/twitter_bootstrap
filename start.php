@@ -1,7 +1,7 @@
 <?php
 /**
  * Twitter bootstrap theme for Elgg
- * 
+ * start page
  */
 
 elgg_register_event_handler('init', 'system', 'twitter_bootstrap_init');
@@ -61,11 +61,12 @@ function twitter_bootstrap_init() {
 		elgg_load_css('bootstrap_wysihtml5');
 	}
 	
-	/**
-	 * Custom menus
-	 **/
+	// Register event handlers
+	
 	elgg_register_event_handler('pagesetup', 'system', 'bootstrap_theme_pagesetup_handler', 1000);
-	elgg_register_page_handler('activity', 'tb_elgg_river_page_handler');
+	
+	// Register plugin hook handlers
+	
 	elgg_register_plugin_hook_handler('register', 'menu:annotation', 'tb_annotation_menu_setup');
 	elgg_unregister_plugin_hook_handler('register', 'menu:river', 'elgg_river_menu_setup');
 	elgg_register_plugin_hook_handler('register', 'menu:river', 'twitter_bootstrap_river_menu_setup');
@@ -74,6 +75,7 @@ function twitter_bootstrap_init() {
 	
 	elgg_register_page_handler('register', 'twitter_bootstrap_user_account_page_handler');
 	elgg_register_page_handler('forgotpassword', 'twitter_bootstrap_user_account_page_handler');
+	elgg_register_page_handler('activity', 'tbs_river_page_handler');
 	
 	// Register actions
 	$action_base = elgg_get_plugins_path() . 'twitter_bootstrap/actions';
@@ -178,7 +180,7 @@ function bootstrap_theme_pagesetup_handler() {
 	}//end if statement
 }
 
-function tb_elgg_river_page_handler($page) {
+function tbs_river_page_handler($page) {
 global $CONFIG;
 
 	elgg_set_page_owner_guid(elgg_get_logged_in_user_guid());
