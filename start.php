@@ -23,7 +23,7 @@ function twitter_bootstrap_init() {
 	elgg_extend_view('css/elgg', 'twitter_bootstrap/css');
 
 	//custom js 
-	$custom_js = 'mod/twitter_bootstrap/views/default/twitter_bootstrap/custom.min.js';
+	$custom_js = 'mod/twitter_bootstrap/views/default/twitter_bootstrap/custom.js';
 	elgg_register_js('custom_js', $custom_js, 'footer', 602);
 	
 	//we use google jquery instead of Elgg's as it is more up-to-date and required for bootstrap
