@@ -324,3 +324,10 @@ div#read-access.btn-group div.dropdown-menu label:hover {
 .page-header {
 	border-bottom: none;
 }
+
+#tbs_logo {
+	padding-top: 10px;
+
+}
+
+
