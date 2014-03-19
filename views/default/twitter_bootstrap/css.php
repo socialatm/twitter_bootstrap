@@ -147,8 +147,6 @@ div#read-access.btn-group div.dropdown-menu label:hover {
 	margin: 10px;
 }
 
-#read-access {border: 1px solid;}
-
 /*****	wysihtml5	*****/
 
 .wysihtml5-sandbox {
