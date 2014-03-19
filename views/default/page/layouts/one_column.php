@@ -9,7 +9,7 @@
  * @uses $vars['class']   Additional class to apply to layout
  */
 
-$class = 'elgg-layout elgg-layout-one-column clearfix';
+$class = 'container';
 if (isset($vars['class'])) {
 	$class = "$class {$vars['class']}";
 }
@@ -18,19 +18,18 @@ if (isset($vars['class'])) {
 $nav = elgg_extract('nav', $vars, elgg_view('navigation/breadcrumbs'));
 
 ?>
-	<div class="elgg-body elgg-main row">
-		<?php
-			echo $nav;
-
-			if (isset($vars['title'])) {
-				echo elgg_view_title($vars['title']);
-			}
-
-			echo $vars['content'];
+	<div class="container">									<!-- container	-->
+		<div class="row" id="">								<!-- row		-->
+			<div class="col-md-12">							<!-- content	-->
+				<?php
+				echo $nav;
 			
-			// @deprecated 1.8
-			if (isset($vars['area1'])) {
-				echo $vars['area1'];
-			}
-		?>
-	</div>
+				if (isset($vars['title'])) {
+					echo elgg_view_title($vars['title']);
+				}
+
+				echo $vars['content'];
+				?>
+			</div>											<!-- /content	-->									
+		</div>												<!-- /row		-->
+	</div>													<!-- /container	-->
