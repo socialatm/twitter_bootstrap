@@ -16,6 +16,6 @@ if (elgg_get_config('https_login')) {
 }
 
 $title = elgg_echo('login');
-$body = elgg_view_form('login', array('action' => "{$login_url}action/login"));
+$body = elgg_view_form('login', array('action' => "{$login_url}action/login", 'class' => "form-horizontal"));
 
 echo elgg_view_module($module, $title, $body);

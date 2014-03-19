@@ -73,6 +73,7 @@ function twitter_bootstrap_init() {
 	
 	// Register page handlers
 	
+	elgg_register_page_handler('login', 'tbs_user_account_page_handler');
 	elgg_register_page_handler('register', 'tbs_user_account_page_handler');
 	elgg_register_page_handler('forgotpassword', 'tbs_user_account_page_handler');
 	elgg_register_page_handler('activity', 'tbs_river_page_handler');
@@ -267,6 +268,9 @@ function tbs_user_account_page_handler($page_elements, $handler) {
 
 	$base_dir = "{$CONFIG->pluginspath}twitter_bootstrap/" . 'pages/account';
 	switch ($handler) {
+		case 'login':
+			require_once("$base_dir/login.php");
+			break;
 		case 'forgotpassword':
 			require_once("$base_dir/forgotten_password.php");
 			break;
