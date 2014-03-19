@@ -11,32 +11,30 @@
  * @uses $vars['class']       Additional class to apply to layout
  */
 
-$class = 'elgg-layout elgg-layout-two-sidebar clearfix';
+$class = 'container';
 if (isset($vars['class'])) {
 	$class = "$class {$vars['class']}";
 }
 ?>
 
-<div class="<?php echo $class; ?>">
-	<div class="elgg-main elgg-body col-md-6">
-		<?php
-			// @todo deprecated so remove in Elgg 2.0
-			if (isset($vars['area1'])) {
-				echo $vars['area1'];
-			}
-			if (isset($vars['content'])) {
-				echo $vars['content'];
-			}
-		?>
-	</div>
-	<div class="elgg-sidebar col-md-3">
-		<?php
-			echo elgg_view('page/elements/sidebar', $vars);
-		?>
-	</div>
-	<div class="elgg-sidebar-alt col-md-3">
-		<?php
-			echo elgg_view('page/elements/sidebar_alt', $vars);
-		?>
-	</div>
-</div>
+<div class="<?php echo $class; ?>">				<!-- container	-->
+	<div class="row" id="tbs-content">			<!-- row		-->
+		<div class="col-md-3">					<!-- left_sidebar -->
+			<?php
+				echo elgg_view('page/elements/sidebar_alt', $vars);
+			?>
+		</div>
+		<div class="col-md-6">					<!-- middle	-->
+			<?php
+				if (isset($vars['content'])) {
+					echo $vars['content'];
+				}
+			?>
+		</div>
+		<div class="col-md-3">					<!-- right_sidebar -->
+			<?php
+				echo elgg_view('page/elements/sidebar', $vars);
+			?>
+		</div>
+	</div>										<!-- /row		-->				
+</div>											<!-- /container	-->
