@@ -12,6 +12,8 @@
  * @uses $vars['nav']     HTML of the page nav (override) (default: breadcrumbs)
  */
 
+$class = "container";
+
 if (isset($vars['class'])) {
 	$class = "$class {$vars['class']}";
 }
@@ -20,30 +22,26 @@ if (isset($vars['class'])) {
 $nav = elgg_extract('nav', $vars, elgg_view('navigation/breadcrumbs'));
 
 ?>
-<div class="<?php echo $class; ?>">
-	<div class="col-md-9"><!-- required for bootstrap -->
-		<div class="elgg-main elgg-body">
+
+<div class="<?php echo $class; ?>">			<!-- container	-->
+	<div class="row" id="">					<!--	row		-->
+		<div class="col-md-9">				<!-- content	-->
 			<?php
 				echo $nav;
 				
 				if (isset($vars['title'])) {
 					echo elgg_view_title($vars['title']);
 				}
-				// @todo deprecated so remove in Elgg 2.0
-				if (isset($vars['area1'])) {
-					echo $vars['area1'];
-				}
+				
 				if (isset($vars['content'])) {
 					echo $vars['content'];
 				}
 			?>
 		</div>
-	</div><!-- /span -->
-	<div class="col-md-3"><!-- required for bootstrap -->
-		<div class="elgg-sidebar">
+		<div class="col-md-3">
 			<?php
 				echo elgg_view('page/elements/sidebar', $vars);
 			?>
-		</div>
-	</div><!-- /span -->
-</div>
+		</div>	<!-- /content	-->
+	</div>		<!-- /row		-->
+</div>			<!-- /container	-->
