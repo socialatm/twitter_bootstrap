@@ -11,8 +11,6 @@
  * @package Elgg.Core
  * @subpackage Registration
  */
- 
- //echo 'HELLO WORLD'; die();
 
 // check new registration allowed
 if (elgg_get_config('allow_registration') == false) {
@@ -47,8 +45,16 @@ $body_params = array(
 );
 $content .= elgg_view_form('register', $form_params, $body_params);
 
-$content .= elgg_view('help/register');
+$content = '
+	<div class="row">
+		<div class="col-md-3">
+			'.$content.'
+		</div>
+		<div class="col-md-9">
+			<!--	can add more content here	-->
+		</div>
+	</div>
+	';
 
-$body = elgg_view_layout("one_sidebar", array('content' => $content));
-
+$body = elgg_view_layout("one_column", array('content' => $content));
 echo elgg_view_page($title, $body);

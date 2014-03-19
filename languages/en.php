@@ -21,6 +21,9 @@ $english = array(
 	/***** access *****/
 	'pages:access_id' => 'Who can see this: ',
 	'pages:write_access_id' => 'Write access',
+	/***** register *****/
+	'passwordagain' => "again for verification",
+	'register:name' => 'Name',
 );
 
 add_translation("en", $english);
