@@ -48,7 +48,7 @@ Skin CSS
 
 *******************************************************************************/
 	//echo elgg_view('css/elements/typography', $vars);
-	echo elgg_view('css/elements/forms', $vars);
+echo elgg_view('css/elements/forms', $vars);
 echo elgg_view('css/elements/buttons', $vars);
 echo elgg_view('css/elements/icons', $vars);
 	//echo elgg_view('css/elements/navigation', $vars);
