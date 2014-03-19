@@ -71,7 +71,6 @@ $(document).ready(function () {
 		var value = $(this).children().attr('checked', 'checked');
 		$(this).addClass('btn-success');
 	});
-
 /*****	bootstrap-wysihtml5	*****/
 
 	$('textarea').wysihtml5();

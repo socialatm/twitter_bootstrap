@@ -4,10 +4,6 @@
 
 /** SOME CORE OVERRIDES **/
 
-body {
-	position: relative;
-}
-
 .hidden {
 	display:none;
 }

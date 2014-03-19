@@ -42,40 +42,42 @@ $lang = get_current_language();
 <?php echo elgg_view('page/elements/head', $vars); ?>
 </head>
 <body>
- <!-- <div class="">	-->
-	<?php echo $topbar; ?>
-	<div class="row elgg-page-messages">	<!-- system messages	-->
-		<div class="col-md-10 col-md-offset-1">
-			<?php echo $messages; ?>
-		</div>
-	</div>	<!-- end system messages	-->
-	
-	
-	
-	
-	
-	
-	<div class="container-fluid"><!-- container -->
-		<div class="row">
-			<div class="col-md-12">
-				<div class="elgg-page-header">
-					<?php echo $header; ?>
-				</div>
+ 	<?php echo $topbar; ?>
+	<div class="container">
+		<div class="row elgg-page-messages" id="system_messages">	
+			<div class="col-md-10 col-md-offset-1">
+				<?php echo $messages; ?>
 			</div>
 		</div>
-		<div class="row" id="tb-content">
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 elgg-page-header">
+				<?php echo $header; ?>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 site-navbar">
+				<?php echo elgg_view_menu('site'); ?>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row" id="tbs-content">
 			<div class="elgg-page-body col-md-12">
 				<?php echo $body; ?>
 			</div>
 		</div>
+	</div>
+	<div class="container">
 		<div class="elgg-page-footer row">
 			<div class="elgg-inner col-md-12">
 				<?php echo $footer; ?>
 			</div>
 		</div>
-		
-	</div><!-- /container -->
-<!-- </div>	-->
+	</div>
 <?php echo elgg_view('page/elements/foot'); ?>
 </body>
 </html>
