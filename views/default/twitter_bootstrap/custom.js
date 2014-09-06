@@ -37,7 +37,7 @@ $(document).ready(function () {
 	}
 
 /*	adjust placement of the river filter	*/
-	$('#elgg-river-selector').addClass('pull-right');
+//	$('#elgg-river-selector').addClass('pull-right');
 	
 	/*	removes the placeholder on focus, adds it back on blur	*/
 	$("div.elgg-river-responses input.controls-text").focus(function () {
@@ -54,26 +54,4 @@ $(document).ready(function () {
 		$('.search-query').attr('name', $(this).val());
 	});
 
-
-/*****	bootstrap-wysihtml5	*****/
-
-	$('textarea').wysihtml5();
-	editor.composer.iframe.scrolling = "no";
-	editor.composer.iframe.style.maxHeight = "260px";
-	var larger = "260px";
-
-	editor.observe("load", function () {
-		$(editor.composer.element).focus(function () {
-			$(editor.composer.iframe).height(larger);
-			editor.composer.iframe.height = larger;
-		});
-
-		$(editor.composer.element).blur(function () {
-			if (editor.composer.iframe.height === larger) {$(editor.composer.iframe).height(larger); }
-		});	// end blur
-
-		$("#access_id_btn").click(function () {
-			$(this).focus();
-		});
-	});	// end observe
 });		//	end document ready

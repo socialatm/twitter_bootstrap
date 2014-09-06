@@ -131,23 +131,12 @@ li {
   text-decoration: none;
 }
 
-/*****	wysihtml5	*****/
-
-.wysihtml5-sandbox {
-  border-color: rgba(82, 168, 236, 0.8);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.6);
-  outline: 0 none;
-}
-
-
-
 /** Elgg Avatar within elgg-page-body **/
 
 .elgg-page-body .elgg-avatar {
 	float:left;
 	margin:0 10px 10px 0;
 }
-
 
 /* ***************************************
 	ENTITY AND ANNOTATION
