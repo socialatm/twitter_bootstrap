@@ -131,22 +131,6 @@ li {
   text-decoration: none;
 }
 
-/*****	you decide button	*****/
-
-div#read-access.btn-group div.dropdown-menu label:hover {
-	cursor:pointer;
-	color: rgb(255, 255, 255);
-    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.25);
-    background-color: rgb(91, 183, 91);
-    background-image: -moz-linear-gradient(center top , rgb(98, 196, 98), rgb(81, 163, 81));
-    background-repeat: repeat-x;
-    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-}
-
-#access_id_btn, #access_id_label {
-	margin: 10px;
-}
-
 /*****	wysihtml5	*****/
 
 .wysihtml5-sandbox {

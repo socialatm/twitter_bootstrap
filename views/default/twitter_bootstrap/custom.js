@@ -55,22 +55,6 @@ $(document).ready(function () {
 	});
 
 
-/*	the you decide button	*/
-	$(".elgg-input-access:checked").parent().addClass('btn-success');
-	$('div.dropdown-menu label input.elgg-input-access:checked').parent().parent().siblings('.dropdown-toggle').addClass('btn-success');
-
-	$(".elgg-input-access").parent().click(function () {
-		$(this).siblings('#read-access-caret').removeClass('btn-success');
-		$(this).siblings().children(".elgg-input-access:checked").parent().removeClass('btn-success');
-		$(this).siblings().children(".elgg-input-access:checked").removeAttr('checked');
-		$(this).siblings('.dropdown-menu').children('.btn-success').removeClass('btn-success');
-		$(this).siblings('.dropdown-menu').children().children(".elgg-input-access:checked").removeAttr('checked');
-		$(this).parent().siblings('.btn-success').children().removeAttr('checked');
-		$(this).parent().siblings('.btn-success').removeClass('btn-success');
-		$(this).parent().siblings('#read-access-caret').addClass('btn-success');
-		var value = $(this).children().attr('checked', 'checked');
-		$(this).addClass('btn-success');
-	});
 /*****	bootstrap-wysihtml5	*****/
 
 	$('textarea').wysihtml5();
