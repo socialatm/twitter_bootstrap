@@ -43,6 +43,10 @@
 	margin: 10px 5px;
 }
 
+.elgg-list-entity {
+	padding-left: 0;
+}
+
 /* ***************************************
 	Gallery
 *************************************** */
@@ -141,6 +145,7 @@
 *************************************** */
 .elgg-list-river {
 	border-top: 1px solid #CCC;
+	padding-left: 0;
 }
 .elgg-list-river > li {
 	border-bottom: 1px solid #CCC;
@@ -244,6 +249,10 @@
 	display: none;
 }
 
+#elgg-river-selector {
+	margin: 5px 0;
+}
+
 
 /* **************************************
 	Comments (from elgg_view_comments)
@@ -282,4 +291,25 @@
 }
 .elgg-tagcloud {
 	text-align: justify;
+}
+
+/* ***************************************
+	Status Plugin
+*************************************** */
+
+.elgg-latest-comments {
+	padding: 0;
+}
+
+.elgg-foot.elgg-riverbox-access {
+	margin-top: 5px;
+}
+
+.elgg-riverbox > textarea {
+	border: 1px solid #ddd;
+	width:100%;
+}
+
+.elgg-riverbox > ul {
+	margin-bottom: 0;
 }
