@@ -191,6 +191,7 @@
 <?php //@todo components.php ?>
 
 .elgg-river-comments {
+	padding: 0;
 	margin: 0;
 	border-top: none;
 }
