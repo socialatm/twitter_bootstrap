@@ -32,11 +32,12 @@ if (isset($vars['buttons']) && $vars['buttons']) {
 } else {
 	$buttons = elgg_view_menu('title', array(
 		'sort_by' => 'priority',
-		'class' => 'elgg-menu-hz pull-right',
+		'class' => 'elgg-menu-hz',
 	));
 }
 
 if(elgg_get_context() == 'activity'){
-	$buttons =  '<span id= "river-selector-parent" class= "">'.elgg_view('core/river/filter', array('selector' => $buttons)).'</span>';
+	$title = elgg_view_title(elgg_echo('activity'), array('class' => 'elgg-heading-main'));
 }
-echo '<div class="row"><div class="col-md-9">'.$title.'</div><div class="col-md-3">'.$buttons.'</div></div>';
+
+echo '<div class="row"><div class="col-md-9">'.$title.'</div><div class="col-md-3"></div></div>';
