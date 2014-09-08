@@ -1,8 +1,5 @@
 <?php
-/**
- * Twitter bootstrap theme for Elgg
- * start page
- */
+/*****	Twitter bootstrap theme for Elgg	start page	*****/
 
 elgg_register_event_handler('init', 'system', 'twitter_bootstrap_init');
 
@@ -53,21 +50,14 @@ function twitter_bootstrap_init() {
 	
 	// Register plugin hook handlers
 	
-	elgg_register_plugin_hook_handler('register', 'menu:annotation', 'tbs_annotation_menu_setup');
-	elgg_unregister_plugin_hook_handler('register', 'menu:river', 'elgg_river_menu_setup');
-	elgg_register_plugin_hook_handler('register', 'menu:river', 'tbs_river_menu_setup');
-	
 	// Register page handlers
 	
 	elgg_register_page_handler('login', 'tbs_user_account_page_handler');
 	elgg_register_page_handler('register', 'tbs_user_account_page_handler');
 	elgg_register_page_handler('forgotpassword', 'tbs_user_account_page_handler');
-	elgg_register_page_handler('activity', 'tbs_river_page_handler');
 	
 	// Register actions
-	$action_base = elgg_get_plugins_path() . 'twitter_bootstrap/actions';
-	elgg_register_action("pages/river", "$action_base/pages/river.php");
-	elgg_register_action("comments/add", "$action_base/comments/add.php");
+	
 }
 
 function tbs_pagesetup_handler() {
@@ -165,79 +155,6 @@ function tbs_pagesetup_handler() {
 		}
 
 	}//end if statement
-}
-
-function tbs_river_page_handler($page) {
-global $CONFIG;
-
-	elgg_set_page_owner_guid(elgg_get_logged_in_user_guid());
-
-	// make a URL segment available in page handler script
-	$page_type = elgg_extract(0, $page, 'all');
-	$page_type = preg_replace('[\W]', '', $page_type);
-	if ($page_type == 'owner') {
-		$page_type = 'mine';
-	}
-	set_input('page_type', $page_type);
-
-	// content filter code here
-	$entity_type = '';
-	$entity_subtype = '';
-
-	require_once("{$CONFIG->pluginspath}twitter_bootstrap/pages/river.php");
-	return true;
-}
-
-/**
- * Adds a delete link to "generic_comment" annotations
- * @access private
- */
-function tbs_annotation_menu_setup($hook, $type, $return, $params) {
-	$annotation = $params['annotation'];
-
-	if ($annotation->name == 'generic_comment' && $annotation->canEdit()) {
-		$url = elgg_http_add_url_query_elements('action/comments/delete', array(
-			'annotation_id' => $annotation->id,
-		));
-
-		$options = array(
-			'name' => 'delete',
-			'href' => $url,
-			'text' => "<span class=\"close\">&times;</span>",
-			'confirm' => elgg_echo('deleteconfirm'),
-			'encode_text' => false
-		);
-		$return[] = ElggMenuItem::factory($options);
-	}
-
-	return $return;
-}
-
-/**
- * Add the comment and like links to river actions menu
- * @access private
- */
-function tbs_river_menu_setup($hook, $type, $return, $params) {
-	if (elgg_is_logged_in()) {
-		$item = $params['item'];
-		$object = $item->getObjectEntity();
-		// comments and non-objects cannot be commented on or liked
-				
-		if (elgg_is_admin_logged_in()) {
-			$options = array(
-				'name' => 'delete',
-				'href' => "action/river/delete?id=$item->id",
-				'text' => elgg_view_icon('delete'),
-				'title' => elgg_echo('delete'),
-				'confirm' => elgg_echo('deleteconfirm'),
-				'is_action' => true,
-				'priority' => 200,
-			);
-			$return[] = ElggMenuItem::factory($options);
-		}
-	}
-
-	return $return;
 }
 
 /**
