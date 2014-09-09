@@ -300,3 +300,7 @@ li {
 #tbs_logo {
 	padding-top: 10px;
 }
+
+.elgg-heading-main {
+	margin-top: 0;
+}
