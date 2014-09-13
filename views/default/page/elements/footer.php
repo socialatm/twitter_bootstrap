@@ -15,7 +15,7 @@ $footer_menu = elgg_view_menu('footer', array('sort_by' => 'priority', 'class' =
 echo <<<HTML
 	<div class="row">
 		<div class="col-md-6">
-			Powered by the <a href="http://elgg.org">Elgg engine</a> and <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.
+			Powered by the <a href="http://elgg.org">Elgg engine</a> and <a href="http://getbootstrap.com/">Twitter Bootstrap</a>.
 		</div>
 		<div class="col-md-6">
 			{$footer_menu}
