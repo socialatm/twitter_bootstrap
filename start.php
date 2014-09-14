@@ -35,7 +35,6 @@ function twitter_bootstrap_init() {
 	//@todo find out the best approach - perhaps this should be in the pagesetup_handler?
 	if($get_context != 'admin'){
 		elgg_load_js('bootstrap');
-		elgg_load_js('custom_js');
 		elgg_load_css('bootstrap_css');
 		elgg_load_css('bootstrap_css_theme');
 	}
