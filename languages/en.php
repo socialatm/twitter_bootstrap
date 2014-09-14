@@ -12,7 +12,6 @@ $english = array(
 	'twitter_bootstrap:searchname' => 'by name',
 	'loginusername' => "Email",
 	'user:password:text' => 'To request a new password, enter your Email address and click the Request button.',
-	'twitter_bootstrap:addcomments' => 'add your comments here',
 	'river:comment:object:default' => 'Default River Object',
 	/***** sessions	*****/
 	'login:empty' => "Your Email and Password are required to Login.",
@@ -20,7 +19,7 @@ $english = array(
 	'LoginException:PasswordFailure' => 'We could not log you in. Please check your Email and Password.',
 	/***** access *****/
 	'pages:access_id' => 'Who can see this: ',
-	'pages:write_access_id' => 'Write access',
+	'pages:write_access_id' => 'Write access: ',
 	/***** register *****/
 	'passwordagain' => "again for verification",
 	'register:name' => 'Name',
