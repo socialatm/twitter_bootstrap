@@ -47,17 +47,15 @@ $release = get_version(true);
 	<link rel="stylesheet" href="<?php echo $link; ?>" type="text/css" />
 <?php } ?>
 
-
-
-<?php foreach ($js as $script) { ?>
-	<script type="text/javascript" src="<?php echo $script; ?>"></script>
-<?php } ?>
-
 <script type="text/javascript">
 // <![CDATA[
 	<?php echo elgg_view('js/initialize_elgg'); ?>
 // ]]>
 </script>
+
+<?php foreach ($js as $script) { ?>
+	<script type="text/javascript" src="<?php echo $script; ?>"></script>
+<?php } ?>
 
 <?php
 echo $feedref;
