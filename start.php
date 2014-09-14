@@ -29,14 +29,22 @@ function twitter_bootstrap_init() {
 	
 	$bootstrap_css_theme = 'mod/twitter_bootstrap/vendors/bootstrap/css/bootstrap-theme.min.css';
 	elgg_register_css('bootstrap_css_theme', $bootstrap_css_theme );
+	
+	//register bootstrap-select css and js
+	$bootstrap_select_js = 'mod/twitter_bootstrap/vendors/bootstrap-select/js/bootstrap-select.min.js';
+	elgg_register_js('bootstrap_select', $bootstrap_select_js, 'footer');
+	
+	$bootstrap_select_css = 'mod/twitter_bootstrap/vendors/bootstrap-select/css/bootstrap-select.min.css';
+	elgg_register_css('bootstrap_select_css', $bootstrap_select_css );
 
 	$get_context = elgg_get_context();
-	//we don't want bootstrap loading when in the admin area, not sure this is the best way to do this
-	//@todo find out the best approach - perhaps this should be in the pagesetup_handler?
+	//we don't want bootstrap loading when in the admin area.
 	if($get_context != 'admin'){
 		elgg_load_js('bootstrap');
 		elgg_load_css('bootstrap_css');
 		elgg_load_css('bootstrap_css_theme');
+		elgg_load_js('bootstrap_select');
+		elgg_load_css('bootstrap_select_css');
 	}
 	
 	// Register event handlers
