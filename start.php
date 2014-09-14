@@ -12,9 +12,6 @@ function twitter_bootstrap_init() {
 	$tbs_js = elgg_get_simplecache_url('js', 'twitter_bootstrap/tbs');
 	elgg_register_simplecache_view('js/twitter_bootstrap/tbs');
 	elgg_register_js('elgg.tbs', $tbs_js);
-	//	load it on every page for now
-	elgg_extend_view('js/elgg', 'js/twitter_bootstrap/tbs');
-	
 	
 	//we use google jquery instead of Elgg's as it is more up-to-date and required for bootstrap
 	$google_jquery = 'http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js';
@@ -45,6 +42,7 @@ function twitter_bootstrap_init() {
 		elgg_load_css('bootstrap_css_theme');
 		elgg_load_js('bootstrap_select');
 		elgg_load_css('bootstrap_select_css');
+		elgg_load_js('elgg.tbs');
 	}
 	
 	// Register event handlers
