@@ -16,7 +16,7 @@
 
 $defaults = array(
 	'method' => "post",
-	'disable_security' => FALSE
+	'disable_security' => FALSE,
 );
 
 $vars = array_merge($defaults, $vars);
