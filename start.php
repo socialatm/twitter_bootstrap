@@ -8,15 +8,11 @@ function twitter_bootstrap_init() {
 	//include twitter bootstrap css
 	elgg_extend_view('css/elgg', 'twitter_bootstrap/css');
 
-	//custom js 
-	$custom_js = 'mod/twitter_bootstrap/views/default/twitter_bootstrap/custom.js';
-	elgg_register_js('custom_js', $custom_js, 'footer', 602);
-	
 	// register twitter bootstrap JavaScript
 	$tbs_js = elgg_get_simplecache_url('js', 'twitter_bootstrap/tbs');
 	elgg_register_simplecache_view('js/twitter_bootstrap/tbs');
 	elgg_register_js('elgg.tbs', $tbs_js);
-		//	load it on every page for now
+	//	load it on every page for now
 	elgg_extend_view('js/elgg', 'js/twitter_bootstrap/tbs');
 	
 	
