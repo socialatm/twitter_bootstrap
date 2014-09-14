@@ -22,10 +22,15 @@ elgg.tbs.init = function() {
 	
 /*	bootstrap-select	*/	
 	$('.elgg-input-access').selectpicker({					//	read access
-    style: 'btn-success',
-    size: 4
-    });
-	
+    style: 'btn-sm btn-success',
+    size: 'auto',
+	});
+/*	
+	$('#elgg-river-selector').selectpicker({				//	river selector
+    style: 'btn-sm btn-success',
+    size: 'auto',
+	});
+*/	
 	
 };		//	end elgg.tbs.init
 

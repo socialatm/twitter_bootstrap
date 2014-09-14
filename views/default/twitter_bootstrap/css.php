@@ -304,3 +304,7 @@ li {
 .elgg-heading-main {
 	margin-top: 0;
 }
+
+#status_access_label {
+	padding-right: 5px;
+}
