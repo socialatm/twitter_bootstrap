@@ -20,7 +20,11 @@ elgg.tbs.init = function() {
 		$('.search-query').attr('name', $(this).val());
 	});
 	
-	
+/*	bootstrap-select	*/	
+	$('.elgg-input-access').selectpicker({					//	read access
+    style: 'btn-success',
+    size: 4
+    });
 	
 	
 };		//	end elgg.tbs.init
