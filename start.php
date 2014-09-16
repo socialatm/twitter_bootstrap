@@ -8,10 +8,7 @@ function twitter_bootstrap_init() {
 	//include twitter bootstrap css
 	elgg_extend_view('css/elgg', 'twitter_bootstrap/css');
 
-	// register twitter bootstrap JavaScript
-	$tbs_js = elgg_get_simplecache_url('js', 'twitter_bootstrap/tbs');
-	elgg_register_simplecache_view('js/twitter_bootstrap/tbs');
-	elgg_register_js('elgg.tbs', $tbs_js);
+	
 	
 	//we use google jquery instead of Elgg's as it is more up-to-date and required for bootstrap
 	$google_jquery = 'http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js';
@@ -33,6 +30,11 @@ function twitter_bootstrap_init() {
 	
 	$bootstrap_select_css = 'mod/twitter_bootstrap/vendors/bootstrap-select/css/bootstrap-select.min.css';
 	elgg_register_css('bootstrap_select_css', $bootstrap_select_css );
+	
+	// register twitter bootstrap JavaScript
+	$tbs_js = elgg_get_simplecache_url('js', 'twitter_bootstrap/tbs');
+	elgg_register_simplecache_view('js/twitter_bootstrap/tbs');
+	elgg_register_js('elgg.tbs', $tbs_js, 'footer');
 
 	$get_context = elgg_get_context();
 	//we don't want bootstrap loading when in the admin area.
