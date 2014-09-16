@@ -29,9 +29,7 @@ $nav = elgg_extract('nav', $vars, elgg_view('navigation/breadcrumbs'));
 			<?php
 				echo $nav;
 				
-				if (isset($vars['title'])) {
-					echo elgg_view_title($vars['title']);
-				}
+				echo elgg_view('page/layouts/elements/header', $vars);
 				
 				if (isset($vars['content'])) {
 					echo $vars['content'];

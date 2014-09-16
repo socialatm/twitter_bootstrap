@@ -26,9 +26,7 @@ if (isset($vars['class'])) {
 		</div>
 		<div class="col-md-6">					<!-- middle	-->
 			<?php
-				if (isset($vars['content'])) {
-					echo $vars['content'];
-				}
+				echo elgg_view('page/layouts/elements/header', $vars);
 			?>
 		</div>
 		<div class="col-md-3">					<!-- right_sidebar -->
