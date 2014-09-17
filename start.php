@@ -170,9 +170,8 @@ function tbs_pagesetup_handler() {
  * @access private
  */
 function tbs_user_account_page_handler($page_elements, $handler) {
-	global $CONFIG;
-
-	$base_dir = "{$CONFIG->pluginspath}twitter_bootstrap/" . 'pages/account';
+	
+	$base_dir = elgg_get_config('pluginspath')."twitter_bootstrap/" . 'pages/account';
 	switch ($handler) {
 		case 'login':
 			require_once("$base_dir/login.php");
