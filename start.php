@@ -7,12 +7,6 @@ function twitter_bootstrap_init() {
 
 	//include twitter bootstrap css
 	elgg_extend_view('css/elgg', 'twitter_bootstrap/css');
-
-	
-	
-	//we use google jquery instead of Elgg's as it is more up-to-date and required for bootstrap
-	$google_jquery = 'http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js';
-	elgg_register_js('jquery', $google_jquery);
 	
 	//register bootstrap css and js
 	$bootstrap_js = 'mod/twitter_bootstrap/vendors/bootstrap/js/bootstrap.min.js';
