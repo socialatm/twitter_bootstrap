@@ -68,9 +68,6 @@ function tbs_pagesetup_handler() {
 	$owner = elgg_get_page_owner_entity();
 	$user = elgg_get_logged_in_user_entity();
 
-	// remove the elgg logo from the topbar	
-	elgg_unregister_menu_item('topbar', 'elgg_logo');
-
 	if (elgg_is_active_plugin('reportedcontent')) {
 		elgg_unregister_menu_item('footer', 'report_this');
 
