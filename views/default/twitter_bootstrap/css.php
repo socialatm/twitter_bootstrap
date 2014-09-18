@@ -308,3 +308,8 @@ li {
 #status_access_label {
 	padding-right: 5px;
 }
+
+/*	dealing with the title menu	*/
+.elgg-menu-title {
+	float: right;
+}
