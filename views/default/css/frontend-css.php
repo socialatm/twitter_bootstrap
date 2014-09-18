@@ -13,14 +13,6 @@
  *  #e4ecf5 - elgg very light blue
  */
 
-// check if there is a theme overriding the old css view and use it, if it exists
-$old_css_view = elgg_get_view_location('css');
-if ($old_css_view != elgg_get_config('viewpath')) {
-	echo elgg_view('css', $vars);
-	return true;
-}
-
-
 /*******************************************************************************
 
 Base CSS
@@ -30,9 +22,7 @@ Base CSS
  * grid
 
 *******************************************************************************/
-	//echo elgg_view('css/elements/reset', $vars);
 echo elgg_view('css/elements/core', $vars);
-	//echo elgg_view('css/elements/grid', $vars);
 
 /*******************************************************************************
 
