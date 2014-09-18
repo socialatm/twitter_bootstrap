@@ -309,7 +309,7 @@ li {
 	padding-right: 5px;
 }
 
-/*	dealing with the title menu	*/
-.elgg-menu-title, #elgg-river-selector {
+/*	dealing with the river selector	*/	
+#elgg-river-selector {
 	float: right;
 }
