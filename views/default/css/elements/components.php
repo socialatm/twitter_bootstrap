@@ -8,6 +8,7 @@
  * @subpackage UI
  */
 ?>
+/* <style> /**/
 
 /* ***************************************
 	Image Block
@@ -121,13 +122,7 @@
 	padding: 3px 10px;
 	cursor: pointer;
 	opacity: 0.9;
-	
-	-webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.45);
-	-moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.45);
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.45);
-	
-	-webkit-border-radius: 8px;
-	-moz-border-radius: 8px;
 	border-radius: 8px;
 }
 .elgg-state-success {
@@ -178,6 +173,7 @@
 }
 .elgg-river-layout .elgg-input-dropdown {
 	float: right;
+	margin: 10px 0;
 }
 
 .elgg-river-comments-tab {
@@ -189,12 +185,10 @@
 	float: right;
 	font-size: 85%;
 	padding: 1px 7px;
-		
 	border-radius: 5px 5px 0 0;
 }
 
 <?php //@todo components.php ?>
-
 .elgg-river-comments {
 	padding: 0;
 	margin: 0;
@@ -291,25 +285,4 @@
 }
 .elgg-tagcloud {
 	text-align: justify;
-}
-
-/* ***************************************
-	Status Plugin
-*************************************** */
-
-.elgg-latest-comments {
-	padding: 0;
-}
-
-.elgg-foot.elgg-riverbox-access {
-	margin-top: 5px;
-}
-
-.elgg-riverbox > textarea {
-	border: 1px solid #ddd;
-	width:100%;
-}
-
-.elgg-riverbox > ul {
-	margin-bottom: 0;
 }

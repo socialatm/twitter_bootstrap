@@ -20,6 +20,7 @@ if ($old_css_view != elgg_get_config('viewpath')) {
 	return true;
 }
 
+
 /*******************************************************************************
 
 Base CSS
