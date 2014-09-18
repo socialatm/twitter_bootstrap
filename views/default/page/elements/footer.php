@@ -10,14 +10,14 @@
 
 //bootstrapped
 
-$footer_menu = elgg_view_menu('footer', array('sort_by' => 'priority', 'class' => 'elgg-menu-hz pull-right'));
+$footer_menu = elgg_view_menu('footer', array('sort_by' => 'priority', 'class' => 'elgg-menu-hz'));
 
 echo <<<HTML
 	<div class="row">
-		<div class="col-md-6">
+		<div class="col-md-9">
 			Powered by the <a href="http://elgg.org">Elgg engine</a> and <a href="http://getbootstrap.com/">Twitter Bootstrap</a>.
 		</div>
-		<div class="col-md-6">
+		<div class="col-md-3">
 			{$footer_menu}
 		</div>
 	</div>
