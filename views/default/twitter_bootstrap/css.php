@@ -310,6 +310,6 @@ li {
 }
 
 /*	dealing with the title menu	*/
-.elgg-menu-title {
+.elgg-menu-title, #elgg-river-selector {
 	float: right;
 }
