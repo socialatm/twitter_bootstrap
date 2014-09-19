@@ -89,19 +89,6 @@ li {
 	padding-bottom:20px;
 }
 
-.elgg-body:after,
-.elgg-col-last:after {
-	display: block;
-	visibility: hidden;
-	height: 0 !important;
-	line-height: 0;
-	overflow: hidden;
-	
-	/* Stretch to fill up available space */
-	font-size: xx-large;
-	content: " x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x ";
-}
-
 /* Aside */
 .elgg-module-aside .elgg-head {
 	border-bottom: 0px solid #CCC;
