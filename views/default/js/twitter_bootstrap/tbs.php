@@ -7,7 +7,7 @@ elgg.tbs.init = function() {
 
 	$(".alert-success").delay(3000).slideUp("slow", function(){$(this).remove();});		//	delays a success message for 3 seconds then removes it
 	
-/*	bootstrap-select	*/	
+/*****	bootstrap-select	*****/	
 	$('.elgg-input-access').selectpicker({					//	read access
     style: 'btn-sm btn-success',
     size: 'auto',
@@ -17,6 +17,14 @@ elgg.tbs.init = function() {
     style: 'btn-sm',
     });
 */	
+
+/*****	end bootstrap-select	*****/	
+
+/***** likes tooltip	*****/
+
+$(".elgg-menu-item-likes-count a").tooltip({
+	container: 'body',
+});
 	
 };		//	end elgg.tbs.init
 
