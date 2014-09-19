@@ -25,7 +25,7 @@ if ($num_of_likes) {
 		'data-placement' => "bottom",
 	);
 	$list = elgg_view('output/url', $params);
-	$list .= "<div class='elgg-module elgg-module-popup elgg-likes hidden clearfix' id='likes-$guid'>";
+	$list .= "<div class='elgg-likes hidden clearfix' id='likes-$guid'>";	// do not remove class="elgg-likes' or you'll break the popup
 	$list .= elgg_list_annotations(array(
 		'guid' => $guid,
 		'annotation_name' => 'likes',
