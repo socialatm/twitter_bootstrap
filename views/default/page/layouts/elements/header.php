@@ -21,5 +21,5 @@ $buttons = elgg_view_menu('title', array(
 ));
 
 if ($title || $buttons) {
-	echo '<div class="row"><div class="col-md-9">'.elgg_view_title($vars['title'], array('class' => 'elgg-heading-main')).'</div><div class="col-md-3 ">'.$buttons.'</div></div>';
+	echo '<div class="row"><div class="col-md-9">'.elgg_view_title($vars['title'], array('class' => 'elgg-heading-main')).'</div><div class="col-md-3">'.$buttons.'</div></div>';
 }

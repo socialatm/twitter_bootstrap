@@ -291,3 +291,9 @@ li {
 #elgg-river-selector {
 	float: right;
 }
+
+/* dealing with title menu buttons	*/
+
+.elgg-menu-title-default {
+	float: right;
+}
