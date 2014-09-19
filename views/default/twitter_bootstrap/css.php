@@ -31,8 +31,6 @@
   background-color: #f5f5f5;
   border: 1px solid #eee;
   border: 1px solid rgba(0, 0, 0, 0.05);
-  -webkit-border-radius: 4px;
-     -moz-border-radius: 4px;
           border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
      -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
@@ -108,9 +106,7 @@ li {
   vertical-align: baseline;
   background-color: #999999;
 	padding: 1px 9px 2px;
-  -webkit-border-radius: 9px;
-     -moz-border-radius: 9px;
-          border-radius: 9px;
+	border-radius: 9px;
 }
 
 .elgg-access:hover {
