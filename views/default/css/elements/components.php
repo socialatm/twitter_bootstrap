@@ -194,7 +194,7 @@
 }
 
 .elgg-river-comments li:last-child {
-	border-radius-bottomleft: 0 0 5px 5px;
+	border-bottom-left-radius: 5px;
 }
 .elgg-river-comments li {
 	background-color: #FAFAFA;
