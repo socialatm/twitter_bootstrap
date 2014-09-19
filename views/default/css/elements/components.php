@@ -240,10 +240,6 @@
 	margin: 5px;
 }
 
-.elgg-river-item button.btn.btn-default {
-	display: none;
-}
-
 #elgg-river-selector {
 	margin: 5px 0;
 }
