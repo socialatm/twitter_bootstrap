@@ -1,4 +1,3 @@
-<?php
 /**
  * Core CSS
  * 
@@ -13,8 +12,6 @@
  *   * horizontal menus
  *   * fluid gallery without using tables
  */
-?>
-/* <style> /**/
 
 /* Clearfix */
 .clearfix:after,
@@ -42,13 +39,8 @@
 	width: auto;
 	word-wrap: break-word;
 	overflow: hidden;
-	
-	/* IE 6, 7 */
-	zoom:1;
-	*overflow:visible;
 }
 
-<?php
 /**
  * elgg-body fills the space available to it.
  * It uses hidden text to expand itself. The combination of auto width, overflow
@@ -61,8 +53,10 @@
  * @todo Move this to its own file -- it is very complicated and should not have to be overridden.
  */
 
-//@todo isn't this only needed if we use display:table-cell?
-?>
+/*	
+	@todo isn't this only needed if we use display:table-cell?
+*/
+
 .elgg-body:after,
 .elgg-col-last:after {
 	display: block;
@@ -103,7 +97,10 @@
 /* Allow inline image blocks in horizontal menus */
 .elgg-menu-hz .elgg-body:after { content: '.'; }
 
-<?php //@todo This isn't going to work as-is.  Needs testing ?>
+/*
+	@todo This isn't going to work as-is.  Needs testing
+*/
+
 /* Inline block */
 .elgg-gallery > li,
 .elgg-button,

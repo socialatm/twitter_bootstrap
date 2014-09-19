@@ -1,14 +1,8 @@
-<?php
 /**
  * CSS form/input elements
  *
- * @package Elgg.Core
- * @subpackage UI
- *
- * We override this file to remove all form input style as that is handled by bootstrap
  */
-?>
-
+ 
 /* ***************************************
 	FRIENDS PICKER
 *************************************** */
@@ -150,9 +144,9 @@
 }
 
 /* ***************************************
-	AUTOCOMPLETE
+	AUTOCOMPLETE - autocomplete will expand to fullscreen without max-width
 *************************************** */
-<?php //autocomplete will expand to fullscreen without max-width ?>
+
 .ui-autocomplete {
 	position: absolute;
 	cursor: default;

@@ -1,14 +1,9 @@
-<?php
 /**
  * Layout Object CSS
  *
  * Image blocks, lists, tables, gallery, messages
  *
- * @package Elgg.Core
- * @subpackage UI
  */
-?>
-/* <style> /**/
 
 /* ***************************************
 	Image Block
@@ -188,7 +183,10 @@
 	border-radius: 5px 5px 0 0;
 }
 
-<?php //@todo components.php ?>
+/*
+	@todo components.php
+*/
+
 .elgg-river-comments {
 	padding: 0;
 	margin: 0;
@@ -224,7 +222,10 @@
 	font-size: 85%;
 }
 
-<?php //@todo location-dependent styles ?>
+/*
+	@todo location-dependent styles
+*/	
+
 .elgg-river-item form {
 	background-color: #FAFAFA;
 	background-repeat: repeat-x;

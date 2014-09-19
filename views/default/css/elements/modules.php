@@ -54,11 +54,11 @@
 	display:none;
 	width: 210px;
 	padding: 12px;
-	margin-right: 0px;
+	margin-right: 0;
 	z-index:100;
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.45);
 	position:absolute;
-	right: 0px;
+	right: 0;
 	top: 100%;
 }
 

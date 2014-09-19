@@ -1,6 +1,6 @@
-<?php
-//	Custom styles / required Elgg styles where I don't want to include the whole Elgg file
-?>
+/**
+	Custom styles / required Elgg styles where I don't want to include the whole Elgg file
+**/
 
 /** SOME CORE OVERRIDES **/
 
@@ -91,9 +91,9 @@ li {
 
 /* Aside */
 .elgg-module-aside .elgg-head {
-	border-bottom: 0px solid #CCC;
-	margin-bottom: 0px;
-	padding-bottom: 0px;
+	border-bottom: 0;
+	margin-bottom: 0;
+	padding-bottom: 0;
 }
 
 /** Elgg access label **/
