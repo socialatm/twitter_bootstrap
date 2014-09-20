@@ -48,13 +48,15 @@ function twitter_bootstrap_init() {
 	// Register plugin hook handlers
 	
 	// Register page handlers
-	
 	elgg_register_page_handler('login', 'tbs_user_account_page_handler');
 	elgg_register_page_handler('register', 'tbs_user_account_page_handler');
 	elgg_register_page_handler('forgotpassword', 'tbs_user_account_page_handler');
 	
 	// Register actions
-	
+	if(elgg_get_plugin_setting('require_email_login', 'twitter_bootstrap') === 'yes') {
+		$action_path = elgg_get_plugins_path() . 'twitter_bootstrap/actions/twitter_bootstrap';
+		elgg_register_action('login', $action_path.'/login.php', 'public');
+	}	
 }
 
 function tbs_pagesetup_handler() {

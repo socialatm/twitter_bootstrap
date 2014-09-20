@@ -5,6 +5,8 @@
 return array(
 	'access:help' => 'This is the current access level for this item. The access level determines who can see it.',
 	'twitter_bootstrap:displayheaderlogo' => 'Do you want to display the page header logo? ',
+	'tbs:require:email' => 'Do you want require Login by email address? ',
+	'tbs:zend:required' => '<a href"http://framework.zend.com/">Zend framework required</a>',
 	'twitter_bootstrap:members:searchtag' => 'Search for Members',
 	'twitter_bootstrap:searchtag' => 'by tag',
 	'twitter_bootstrap:searchname' => 'by name',
