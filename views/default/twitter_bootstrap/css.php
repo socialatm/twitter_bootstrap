@@ -297,3 +297,9 @@ li {
 .elgg-menu-title-default {
 	float: right;
 }
+
+/*****	dealing with widgets	*****/
+
+.elgg-widgets-add-panel {
+	display: none;
+}
