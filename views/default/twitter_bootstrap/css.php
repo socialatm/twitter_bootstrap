@@ -112,13 +112,6 @@ li {
   text-decoration: none;
 }
 
-/** Elgg Avatar within elgg-page-body **/
-
-.elgg-page-body .elgg-avatar {
-	float:left;
-	margin:0 10px 10px 0;
-}
-
 /* ***************************************
 	ENTITY AND ANNOTATION
 *************************************** */
