@@ -43,7 +43,6 @@ foreach ($default_items as $menu_item) {
 /***** end Topbar main menu	*****/
 
 /***** Bootstrap 3	*****/
-
 $new_topbar = '<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
@@ -67,7 +66,5 @@ $new_topbar = '<div class="navbar navbar-inverse navbar-fixed-top" role="navigat
         </div><!--/.nav-collapse -->
       </div>
     </div>';
-
 echo $new_topbar;
-
 /*****	END Bootstrap 3	*****/

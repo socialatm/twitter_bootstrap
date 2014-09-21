@@ -63,8 +63,6 @@ $lang = get_current_language();
 				<?php echo elgg_view_menu('site'); ?>
 			</div>
 		</div>
-	</div>
-	<div class="container">
 		<div class="row" id="tbs-content">
 			<div class="elgg-page-body col-md-12">
 				<?php echo $body; ?>
