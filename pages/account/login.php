@@ -25,11 +25,8 @@ $title = elgg_echo('login');
 $content = <<<HTML
 
 <!-- Page content starts -->
-
-<div class="content">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6">
+<div class="row">
+	<div class="col-md-6">
                   <!-- Some content -->
                   <h3 class="title">Register Today <span class="color">!!!</span></h3>
                   <h4 >Morbi tincidunt posuere turpis eu laoreet</h4>
@@ -44,21 +41,16 @@ $content = <<<HTML
                   </ul>
 
                   <p>Nullam in est urna. In vitae adipiscing enim. In ut nulla est. Nullam in est urna. In vitae adipiscing enim. Curabitur rhoncus condimentum lorem, non convallis dolor faucibus eget. In ut nulla est. </p>
-
-                </div>
-
+	</div>
                 <!-- Login form -->
-                <div class="col-md-6">
-                  <div class="formy well">
+	<div class="col-md-6">
+		<div class="formy well">
                     <!-- Title -->
                      <h4 class="title">Login to Your Account</h4>
 					 <p>&nbsp;</p>
                                   <div class="form">
-
                                       <!-- Login form (not working)-->
-                                      
-                                      <form class="form-horizontal" role="form" action="{$login_url}action/login" method="post">
-									  
+									<form class="form-horizontal" role="form" action="{$login_url}action/login" method="post">
 										<input type="hidden" name="__elgg_token" value={$token}>
 										<input type="hidden" name="__elgg_ts" value={$ts}>
                                  								  
@@ -100,16 +92,10 @@ $content = <<<HTML
                                       <h5>New Account</h5>
                                       <!-- Register link -->
                                              Don't have an Account? <a href="{$login_url}register">Register</a>
-											 
-									  
-                                    </div> 
-                                  </div>
-
-                </div>
-    </div>
-  </div>
+			</div> 
+		</div>
+	</div>
 </div>
-
 <!-- Page content ends -->
 HTML;
 

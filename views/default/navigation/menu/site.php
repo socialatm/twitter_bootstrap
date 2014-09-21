@@ -32,36 +32,33 @@ if ($more_items){
 
 $site_navbar = '<!-- Static navbar -->
 	<div class="navbar navbar-default" role="navigation">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-			</div>
-			<div class="navbar-collapse collapse">
-				<ul class="nav navbar-nav">
-					'.$featured_menu.'
-					<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown">'.$more.' <b class="caret"></b></a>
-						'.$more_menu.'
-					</li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right col-md-3">
-					<form class="navbar-form navbar-left" role="search" action="'.elgg_get_site_url().'search" method="get">
-						<div class="input-group">
-							<input type="text" class="form-control" placeholder="'.$search.'" name="q" />
-							<span class="input-group-btn">
-								<button type="submit" class="btn btn-default">'.$search.'</button>
-							</span>
-						</div>
-						<input type="hidden" name="search_type" value="all" />
-					</form>
-				</ul>
-			</div><!--/.nav-collapse -->
-		</div><!--/.container-fluid -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+		</div>
+		<div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav">
+				'.$featured_menu.'
+				<li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">'.$more.' <b class="caret"></b></a>
+					'.$more_menu.'
+				</li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right col-md-3">
+				<form class="navbar-form navbar-left" role="search" action="'.elgg_get_site_url().'search" method="get">
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="'.$search.'" name="q" />
+						<span class="input-group-btn">
+							<button type="submit" class="btn btn-default">'.$search.'</button>
+						</span>
+					</div>
+					<input type="hidden" name="search_type" value="all" />
+				</form>
+			</ul>
+		</div><!--/.nav-collapse -->
 	</div>';
-	  
 echo $site_navbar;
