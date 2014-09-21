@@ -12,7 +12,7 @@
  * @uses $vars['nav']     HTML of the page nav (override) (default: breadcrumbs)
  */
 
-$class = "container";
+$class = "";
 
 if (isset($vars['class'])) {
 	$class = "$class {$vars['class']}";
@@ -23,23 +23,19 @@ $nav = elgg_extract('nav', $vars, elgg_view('navigation/breadcrumbs'));
 
 ?>
 
-<div class="<?php echo $class; ?>">			<!-- container	-->
-	<div class="row" id="">					<!--	row		-->
-		<div class="col-md-9">				<!-- content	-->
-			<?php
-				echo $nav;
-				
-				echo elgg_view('page/layouts/elements/header', $vars);
-				
-				if (isset($vars['content'])) {
-					echo $vars['content'];
-				}
+<div class="row" id="">					<!--	row		-->
+	<div class="col-md-9">				<!-- content	-->
+		<?php
+		echo $nav;
+		echo elgg_view('page/layouts/elements/header', $vars);
+			if (isset($vars['content'])) {
+				echo $vars['content'];
+			}
 			?>
-		</div>
-		<div class="col-md-3">
-			<?php
-				echo elgg_view('page/elements/sidebar', $vars);
-			?>
-		</div>	<!-- /content	-->
-	</div>		<!-- /row		-->
-</div>			<!-- /container	-->
+	</div>
+	<div class="col-md-3">
+		<?php
+			echo elgg_view('page/elements/sidebar', $vars);
+		?>
+	</div>	<!-- /content	-->
+</div>		<!-- /row		-->

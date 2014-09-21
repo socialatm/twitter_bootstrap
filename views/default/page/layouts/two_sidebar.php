@@ -11,28 +11,31 @@
  * @uses $vars['class']       Additional class to apply to layout
  */
 
-$class = 'container';
+$class = '';
 if (isset($vars['class'])) {
 	$class = "$class {$vars['class']}";
 }
+
+// navigation defaults to breadcrumbs
+$nav = elgg_extract('nav', $vars, elgg_view('navigation/breadcrumbs'));
 ?>
 
-<div class="<?php echo $class; ?>">				<!-- container	-->
-	<div class="row" id="tbs-content">			<!-- row		-->
-		<div class="col-md-3">					<!-- left_sidebar -->
-			<?php
-				echo elgg_view('page/elements/sidebar_alt', $vars);
-			?>
-		</div>
-		<div class="col-md-6">					<!-- middle	-->
-			<?php
-				echo elgg_view('page/layouts/elements/header', $vars);
-			?>
-		</div>
-		<div class="col-md-3">					<!-- right_sidebar -->
-			<?php
-				echo elgg_view('page/elements/sidebar', $vars);
-			?>
-		</div>
-	</div>										<!-- /row		-->				
-</div>											<!-- /container	-->
+<div class="row">			<!-- row		-->
+	<div class="col-md-3">					<!-- left_sidebar -->
+		<?php
+			echo elgg_view('page/elements/sidebar_alt', $vars);
+		?>
+	</div>
+	<div class="col-md-6">					<!-- middle	-->
+		<?php
+			echo $nav;
+			echo elgg_view('page/layouts/elements/header', $vars);
+			echo $vars['content'];
+		?>
+	</div>
+	<div class="col-md-3">					<!-- right_sidebar -->
+		<?php
+			echo elgg_view('page/elements/sidebar', $vars);
+		?>
+	</div>
+</div>										<!-- /row		-->				

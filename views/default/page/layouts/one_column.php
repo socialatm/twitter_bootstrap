@@ -9,7 +9,7 @@
  * @uses $vars['class']   Additional class to apply to layout
  */
 
-$class = 'container';
+$class = '';
 if (isset($vars['class'])) {
 	$class = "$class {$vars['class']}";
 }
@@ -18,14 +18,13 @@ if (isset($vars['class'])) {
 $nav = elgg_extract('nav', $vars, elgg_view('navigation/breadcrumbs'));
 
 ?>
-	<div class="container">									<!-- container	-->
-		<div class="row" id="">								<!-- row		-->
-			<div class="col-md-12">							<!-- content	-->
-				<?php
-				echo $nav;
-				echo elgg_view('page/layouts/elements/header', $vars);
-				echo $vars['content'];
-				?>
-			</div>											<!-- /content	-->									
-		</div>												<!-- /row		-->
-	</div>													<!-- /container	-->
+	
+<div class="row" id="">								<!-- row		-->
+	<div class="col-md-12">							<!-- content	-->
+		<?php
+		echo $nav;
+		echo elgg_view('page/layouts/elements/header', $vars);
+		echo $vars['content'];
+		?>
+	</div>											<!-- /content	-->									
+</div>												<!-- /row		-->

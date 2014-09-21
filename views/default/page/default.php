@@ -64,7 +64,7 @@ $lang = get_current_language();
 			</div>
 		</div>
 		<div class="row" id="tbs-content">
-			<div class="elgg-page-body col-md-12">
+			<div class="col-md-12">
 				<?php echo $body; ?>
 			</div>
 		</div>
