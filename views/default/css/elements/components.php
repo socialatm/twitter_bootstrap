@@ -39,7 +39,7 @@
 	margin: 10px 5px;
 }
 
-.elgg-list-entity {
+.elgg-list-entity, .elgg-list-likes {
 	padding-left: 0;
 }
 
