@@ -44,27 +44,27 @@ foreach ($default_items as $menu_item) {
 
 /***** Bootstrap 3	*****/
 $new_topbar = '<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="'.$site_url.'">'.$site_name.'</a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-			'.$topbar_main_menu.'
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li class="dropdown">
-				'.$username.'
-			</li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			<a class="navbar-brand" href="'.$site_url.'">'.$site_name.'</a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					'.$topbar_main_menu.'
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown">
+						'.$username.'
+					</li>
+				</ul>
+			</div><!--/.nav-collapse -->
+		</div>
     </div>';
 echo $new_topbar;
 /*****	END Bootstrap 3	*****/
