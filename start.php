@@ -57,6 +57,10 @@ function twitter_bootstrap_init() {
 		$action_path = elgg_get_plugins_path() . 'twitter_bootstrap/actions/twitter_bootstrap';
 		elgg_register_action('login', $action_path.'/login.php', 'public');
 	}	
+	
+	// set site menu default activity to friends
+	$item = new ElggMenuItem('activity', elgg_echo('activity'), 'activity/friends/'.elgg_get_logged_in_user_entity()->username);
+	elgg_register_menu_item('site', $item);
 }
 
 function tbs_pagesetup_handler() {
