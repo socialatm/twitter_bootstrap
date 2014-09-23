@@ -54,8 +54,9 @@ function twitter_bootstrap_init() {
 	
 	// Register actions
 	if(elgg_get_plugin_setting('require_email_login', 'twitter_bootstrap') === 'yes') {
-		$action_path = elgg_get_plugins_path() . 'twitter_bootstrap/actions/twitter_bootstrap';
+		$action_path = elgg_get_plugins_path() . 'twitter_bootstrap/actions';
 		elgg_register_action('login', $action_path.'/login.php', 'public');
+		elgg_register_action('logout', $action_path.'/logout.php', '');
 	}	
 	
 	// set site menu default activity to friends
