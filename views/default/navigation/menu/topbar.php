@@ -27,7 +27,7 @@ if(elgg_is_logged_in()){
 		}
 	$username .= '</ul>';
 }else{
-	$username = '<a href="'.elgg_get_config('url').'login" class=" "><i class="glyphicon glyphicon-asterisk"></i> '.$username.' </a>';
+	$username = '<a href="'.elgg_get_config('url').'login" class=" "><i class="glyphicon glyphicon-lock"></i> '.$username.' </a>';
 }
 
 /*****	end Right Side Menu	*****/
