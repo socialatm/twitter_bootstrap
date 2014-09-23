@@ -17,6 +17,7 @@ $title = elgg_extract('title', $vars, '');
 
 $buttons = elgg_view_menu('title', array(
 	'sort_by' => 'priority',
+	'link_class' => 'btn btn-default',
 ));
 
 if ($title || $buttons) {
