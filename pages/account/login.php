@@ -14,6 +14,8 @@ if (elgg_is_logged_in()) {
 
 $ts = time();
 $token = generate_action_token($ts);
+$site = elgg_get_site_entity();
+$site_name = $site->name;
 
 $login_url = elgg_get_site_url();
 if (elgg_get_config('https_login')) {
@@ -27,8 +29,8 @@ $content = <<<HTML
 <div class="row">
 	<div class="col-md-6">
 	<!-- Some content -->
-		<h3 class="title">Login to our Website<span class="color">!!!</span></h3>
-        <h4 >Morbi tincidunt posuere turpis eu laoreet</h4>
+		<h3 class="title">Login to $site_name</h3>
+        <h4 >We will add some very helpful information here for you.</h4>
         <p>Nullam in est urna. In vitae adipiscing enim. Curabitur rhoncus condimentum lorem, non convallis dolor faucibus eget. In vitae adipiscing enim. Curabitur rhoncus condimentum lorem, non convallis dolor faucibus eget. In ut nulla est. 
 		</p>
         <h5>Maecenas hendrerit neque id</h5>
@@ -43,7 +45,7 @@ $content = <<<HTML
 		</p>
  	</div>
 	<div class="col-md-6">
-		<div class="formy well">
+		<div class="well">
 			<!-- Title -->
             <h4 class="title">Login to Your Account</h4>
 			<p>&nbsp;</p>
@@ -75,20 +77,18 @@ $content = <<<HTML
 					</div>
 					<div class="form-group">
 						<div class="col-lg-offset-2 col-lg-10">
-							<button type="submit" class="btn btn-default">Sign in</button>
+							<button type="submit" class="btn btn-success">Sign in</button>
 							<button type="reset" class="btn btn-default">Reset</button>
 						</div>
 					</div>
 				</form>
-				<hr />
 				<h5></h5>
                 <!-- Forgot Password link -->
                 Don't remember your Password? <a href="{$login_url}forgotpassword">{$lost}</a>
 HTML;
 				if (elgg_get_config('allow_registration')) {
-					$content .= '<h5>New Account</h5>
-					<!-- Register link -->
-					Don\'t have an Account? <a href="'.$login_url.'register">Register</a>';
+					$content .= '<!-- Register link -->
+					<p>Don\'t have an Account? <a href="'.$login_url.'register">Register</a></p>';
 				}
 $content .= <<<HTML
 			</div> 
