@@ -55,8 +55,13 @@ if (elgg_get_config('allow_registration')) {
 			}
 
 			elgg_clear_sticky_form('register');
-
+			
 			if ($new_user->enabled == "yes") {
+				// to prevent spam: if the user does not have an invite code thank them and send them to the login page.
+				if(strlen($invitecode) === 0){
+					system_message(elgg_echo('tbs:register:thanks'));
+					forward('login');
+				}
 				system_message(elgg_echo("registerok", array(elgg_get_site_entity()->name)));
 
 				// if exception thrown, this probably means there is a validation

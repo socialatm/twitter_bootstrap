@@ -23,4 +23,5 @@ return array(
 	/***** register *****/
 	'passwordagain' => "again for verification",
 	'register:name' => 'Name',
+	'tbs:register:thanks' => 'Thank you for Registering. Please Login to continue.',
 );
