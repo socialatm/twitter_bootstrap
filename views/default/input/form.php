@@ -22,7 +22,7 @@ $defaults = array(
 
 $vars = array_merge($defaults, $vars);
 
-$vars['class'] = 'form-horizontal';
+$vars['class'] = 'form-horizontal';	// if you change this be sure to check how it effects the comment form on the river
 
 $vars['action'] = elgg_normalize_url($vars['action']);
 $vars['method'] = strtolower($vars['method']);
