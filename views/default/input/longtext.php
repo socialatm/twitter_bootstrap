@@ -21,7 +21,9 @@ $vars['class'] = "col-md-12";
 
 $defaults = array(
 	'value' => '',
-	'id' => 'elgg-input-'.elgg_get_context(), // . @todo may need to loop thru this on pages with more than one textarea...
+	'rows' => '10',
+	'cols' => '50',
+	'id' => 'elgg-input-' . rand(), //@todo make this more robust
 );
 
 $vars = array_merge($defaults, $vars);
@@ -38,5 +40,5 @@ echo elgg_view_menu('longtext', array(
 ?>
 
 <textarea <?php echo elgg_format_attributes($vars); ?>>
-<?php echo htmlspecialchars($value, ENT_QUOTES, 'UTF-8', false); ?>
+<?php echo htmlspecialchars($value, ENT_QUOTES, 'UTF-8'); ?>
 </textarea>
