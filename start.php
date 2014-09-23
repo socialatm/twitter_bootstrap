@@ -56,6 +56,7 @@ function twitter_bootstrap_init() {
 	if(elgg_get_plugin_setting('require_email_login', 'twitter_bootstrap') === 'yes') {
 		$action_path = elgg_get_plugins_path() . 'twitter_bootstrap/actions';
 		elgg_register_action('login', $action_path.'/login.php', 'public');
+		elgg_register_action('register', $action_path.'/register.php', 'public');
 		elgg_register_action('logout', $action_path.'/logout.php', '');
 	}	
 	
