@@ -58,6 +58,7 @@ function twitter_bootstrap_init() {
 		elgg_register_action('login', $action_path.'/login.php', 'public');
 		elgg_register_action('register', $action_path.'/register.php', 'public');
 		elgg_register_action('logout', $action_path.'/logout.php', '');
+		elgg_register_action('comment/save', $action_path.'/comment/save.php', '');
 	}	
 	
 	// set site menu default activity to friends
