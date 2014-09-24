@@ -50,7 +50,7 @@ $content = '
 <div class="row">
 	<div class="col-md-6">
 		<!-- Some content -->
-		<h3 class="title">Register at '.$site_name.'<span class="color">!!!</span></h3>
+		<h3 class="title">Register at '.$site_name.'</h3>
         <h4 >Fill out this one quick form and you\'re ready to go</h4>
         <h5>Here is what it all means:</h5>
         <ul>
