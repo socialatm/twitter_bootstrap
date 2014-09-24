@@ -22,8 +22,8 @@ $content = '
 <div class="row">
 	<div class="col-md-6">
 		<!-- Some content -->
-		<h3 class="title">You\'ve lost your '.$site_name.' password?</h3>
-        <h4 >No worries, you\'ll be logged back in before you know it.</h4>
+		<h3 class="title">Lost your '.$site_name.' password?</h3>
+		<h4 >No worries, you\'ll be logged back in before you know it.</h4>
         <h5>Put more interesting content here:</h5>
         <ul>
 			<li>Line item 1.</li>
