@@ -24,4 +24,5 @@ return array(
 	'passwordagain' => "again for verification",
 	'register:name' => 'Name',
 	'tbs:register:thanks' => 'Thank you for Registering. Please Login to continue.',
+	'tbs:comment:placeholder' => 'add a comment',
 );

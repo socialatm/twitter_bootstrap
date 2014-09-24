@@ -235,15 +235,10 @@
 	border-bottom-right-radius:5px;
 	border-bottom-left-radius:5px; 
 }
-.elgg-river-item input[type=text] {
-	width: 80%;
-	margin: 5px;
-}
 
 #elgg-river-selector {
 	margin: 5px 0;
 }
-
 
 /* **************************************
 	Comments (from elgg_view_comments)
