@@ -37,6 +37,12 @@ $(".elgg-menu-item-likes-count a").popover({
 	},
 });
 
+/*	don't show the river comment form unless the user is logged in	*/
+	if (!elgg.is_logged_in()) {
+		$('.form-horizontal').hide();
+		$('.elgg-river-comments li:last-child').css('border-bottom', '1px solid #D4D4D4');
+	}
+
 };		//	end elgg.tbs.init
 
 elgg.register_hook_handler('init', 'system', elgg.tbs.init);
