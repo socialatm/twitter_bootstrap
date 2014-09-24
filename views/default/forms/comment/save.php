@@ -54,7 +54,6 @@ if ($comment) {
 	), elgg_echo('cancel'));
 }
 
-
 if ($inline) {
 	$user_icon = elgg_view_entity_icon(elgg_get_logged_in_user_entity(), 'tiny');
 	$comment_form = elgg_view('input/text', array(
