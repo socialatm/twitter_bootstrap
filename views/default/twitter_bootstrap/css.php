@@ -280,11 +280,6 @@ li {
 	padding-right: 5px;
 }
 
-/*	dealing with the river selector	*/	
-#elgg-river-selector {
-	float: right;
-}
-
 /* dealing with title menu buttons	*/
 
 .elgg-menu-title-default {
@@ -292,7 +287,11 @@ li {
 }
 
 /*****	dealing with widgets	*****/
-
 .elgg-widgets-add-panel {
 	display: none;
+}
+
+/***** latest comments sidebar	*****/
+.elgg-latest-comments {
+	padding-left: 0;
 }
