@@ -50,7 +50,7 @@ $lang = get_current_language();
 			</div>
 		</div>
 	</div>
-	<div class="container">
+	<div class="container" id="tbs-header">
 		<div class="row">
 			<div class="col-md-12 elgg-page-header">
 				<?php echo $header; ?>
