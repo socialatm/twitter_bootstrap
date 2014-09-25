@@ -9,9 +9,14 @@ $site_description = $site->description;
 $site_url = elgg_get_site_url();
 $logo = '<img src="'.$site_url.'mod/twitter_bootstrap/responsive.png" alt="'.$site_name.'" class="img-responsive" id="tbs_logo" />';
 ?>
-
-<h1>
+<div class="row">
+  <div class="col-md-3">
 	<a class="" href="<?php echo $site_url; ?>">
 		<?php echo $logo; ?>
 	</a>
-</h1>
+  </div>
+  <div class="col-md-9">
+	<h4>Current News at <?php echo $site_name; ?></h4>
+	<p>We're working hard to make <?php echo $site_name; ?> your favorite website.</p>
+  </div>
+</div>

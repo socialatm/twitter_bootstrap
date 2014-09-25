@@ -295,3 +295,8 @@ li {
 .elgg-latest-comments {
 	padding-left: 0;
 }
+
+/*****	the page header	*****/
+#tbs-header {
+	margin-top: 40px;
+}
