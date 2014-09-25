@@ -5,7 +5,7 @@
  * anything you add here will show on all twitter bootstrap sidebars
  */
 
-/*
+
 	echo elgg_view_menu('extras', array(
 	'sort_by' => 'priority',
 	'class' => 'elgg-menu-hz',
@@ -19,7 +19,7 @@
 		'subtypes' => '',
 		'owner_guid' => elgg_get_page_owner_guid(),
 	));
-*/
+
 
 // optional 'sidebar' parameter
 if (isset($vars['sidebar'])) {
