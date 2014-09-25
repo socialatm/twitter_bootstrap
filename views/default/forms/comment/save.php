@@ -43,7 +43,10 @@ if ($comment && $comment->canEdit()) {
 	$comment_text = $comment->description;
 } else {
 	$comment_label  = elgg_echo("generic_comments:add");
-	$submit_input = elgg_view('input/submit', array('value' => elgg_echo('comment'), 'class' => 'hidden'));
+	
+	//	hide the new comment submit button on the river
+	$class = (elgg_get_context() === 'activity')? 'hidden' : '';
+	$submit_input = elgg_view('input/submit', array('value' => elgg_echo('comment'), 'class' => $class));
 }
 
 $cancel_link = '';
