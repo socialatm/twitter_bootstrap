@@ -210,7 +210,7 @@ function _tbs_river_page_handler($page) {
 		if ($page_username == elgg_get_logged_in_user_entity()->username) {
 			$page_type = 'mine';
 		} else {
-			elgg_admin_gatekeeper();
+			elgg_admin_gatekeeper();	// @TODO if we change this to elgg_atekeeper() will it only anyone with permission to view a users activity page?
 			set_input('subject_username', $page_username);
 		}
 	}
