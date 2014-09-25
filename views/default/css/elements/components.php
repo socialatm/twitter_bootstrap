@@ -236,10 +236,6 @@
 	border-bottom-left-radius:5px; 
 }
 
-#elgg-river-selector {
-	margin: 5px 0;
-}
-
 /* **************************************
 	Comments (from elgg_view_comments)
 ************************************** */
