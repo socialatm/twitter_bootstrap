@@ -12,11 +12,12 @@ elgg.tbs.init = function() {
     style: 'btn-sm btn-success',
     size: 'auto',
 	});
-/*	
+	
 	$('#elgg-river-selector').selectpicker({				//	river selector
     style: 'btn-sm',
+//	style: 'btn-sm btn-success',
     });
-*/	
+	
 
 /*****	end bootstrap-select	*****/	
 
