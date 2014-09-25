@@ -51,7 +51,7 @@ function twitter_bootstrap_init() {
 	elgg_register_page_handler('login', 'tbs_user_account_page_handler');
 	elgg_register_page_handler('register', 'tbs_user_account_page_handler');
 	elgg_register_page_handler('forgotpassword', 'tbs_user_account_page_handler');
-	elgg_register_page_handler('activity', 'tbs_page_handler');
+	elgg_register_page_handler('activity', '_tbs_river_page_handler');
 	
 	// Register actions
 	if(elgg_get_plugin_setting('require_email_login', 'twitter_bootstrap') === 'yes') {
@@ -190,23 +190,32 @@ function tbs_user_account_page_handler($page_elements, $handler) {
 }
 
 /**
- * Page handler
+ * Page handler for activity
  *
- * @param array  $page_elements Page elements
- * @param string $handler The handler string
- *
+ * @param array $page
  * @return bool
  * @access private
  */
-function tbs_page_handler($page_elements, $handler) {
-	
+function _tbs_river_page_handler($page) {
 	$base_dir = elgg_get_config('pluginspath')."twitter_bootstrap/" . 'pages';
-	switch ($handler) {
-		case 'activity':
-			require_once("$base_dir/river.php");
-			break;
-		default:
-			return false;
+
+	elgg_set_page_owner_guid(elgg_get_logged_in_user_guid());
+
+	// make a URL segment available in page handler script
+	$page_type = elgg_extract(0, $page, 'all');
+	$page_type = preg_replace('[\W]', '', $page_type);
+	if ($page_type == 'owner') {
+		elgg_gatekeeper();
+		$page_username = elgg_extract(1, $page, '');
+		if ($page_username == elgg_get_logged_in_user_entity()->username) {
+			$page_type = 'mine';
+		} else {
+			elgg_admin_gatekeeper();
+			set_input('subject_username', $page_username);
+		}
 	}
+	set_input('page_type', $page_type);
+
+	require_once("$base_dir/river.php");
 	return true;
 }
