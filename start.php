@@ -51,6 +51,7 @@ function twitter_bootstrap_init() {
 	elgg_register_page_handler('login', 'tbs_user_account_page_handler');
 	elgg_register_page_handler('register', 'tbs_user_account_page_handler');
 	elgg_register_page_handler('forgotpassword', 'tbs_user_account_page_handler');
+	elgg_register_page_handler('activity', 'tbs_page_handler');
 	
 	// Register actions
 	if(elgg_get_plugin_setting('require_email_login', 'twitter_bootstrap') === 'yes') {
@@ -181,6 +182,28 @@ function tbs_user_account_page_handler($page_elements, $handler) {
 			break;
 		case 'register':
 			require_once("$base_dir/register.php");
+			break;
+		default:
+			return false;
+	}
+	return true;
+}
+
+/**
+ * Page handler
+ *
+ * @param array  $page_elements Page elements
+ * @param string $handler The handler string
+ *
+ * @return bool
+ * @access private
+ */
+function tbs_page_handler($page_elements, $handler) {
+	
+	$base_dir = elgg_get_config('pluginspath')."twitter_bootstrap/" . 'pages';
+	switch ($handler) {
+		case 'activity':
+			require_once("$base_dir/river.php");
 			break;
 		default:
 			return false;
