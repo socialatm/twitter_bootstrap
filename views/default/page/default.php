@@ -69,12 +69,8 @@ $lang = get_current_language();
 			</div>
 		</div>
 	</div>
-	<div class="container">
-		<div class="elgg-page-footer row">
-			<div class="elgg-inner col-md-12">
-				<?php echo $footer; ?>
-			</div>
-		</div>
+	<div class="container" id ="tbs-footer">
+		<?php echo $footer; ?>
 	</div>
 <?php echo elgg_view('page/elements/foot'); ?>
 </body>
