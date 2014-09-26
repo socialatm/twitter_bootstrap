@@ -10,6 +10,7 @@ $default_items = elgg_extract('default', $vars['menu'], array());
 $alt_items = elgg_extract('alt', $vars['menu'], array());
 $user = elgg_get_logged_in_user_entity();
 $username = $user->name;
+$icon = elgg_view('output/img', array('src' => $user->getIconURL('topbar'),));
 if(!$username){
 	$username = elgg_echo('login');
 }
@@ -20,7 +21,7 @@ $site_url = $site->url;
 /*****	Right Side Menu	*****/
 
 if(elgg_is_logged_in()){
-	$username = '<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> '.$username.' <b class="caret"></b></a>';
+	$username = '<a href="#" class="dropdown-toggle" data-toggle="dropdown">'.$icon.'  '.$username.' <b class="caret"></b></a>';
 	$username .= '<ul class="dropdown-menu">';
 		foreach ($alt_items as $menu_item) {
 			$username .= elgg_view('navigation/menu/elements/item', array('item' => $menu_item));
