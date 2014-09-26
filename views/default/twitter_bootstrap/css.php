@@ -300,3 +300,13 @@ li {
 #tbs-header {
 	margin-top: 40px;
 }
+
+/***** styling the footer	*****/
+
+#tbs-footer .row {
+	margin: 10px 0;
+}
+
+#tbs-footer .panel {
+	margin-right: 15px;
+}
