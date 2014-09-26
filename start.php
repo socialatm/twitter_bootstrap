@@ -5,6 +5,9 @@ elgg_register_event_handler('init', 'system', 'twitter_bootstrap_init');
 
 function twitter_bootstrap_init() {
 
+	// don't need it twice
+	elgg_unregister_menu_item('footer', 'powered');
+
 	//include twitter bootstrap css
 	elgg_extend_view('css/elgg', 'twitter_bootstrap/css');
 	
