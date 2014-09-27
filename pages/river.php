@@ -62,15 +62,14 @@ $content = '<div class="row">
   <div class="col-md-4">'.$content.'</div>
 </div>';
 
-$sidebar = elgg_view('page/elements/comments_block', array(
-		'subtypes' => '',
-		'owner_guid' => elgg_get_page_owner_guid(),
-	));
+if (elgg_get_context() == 'activity'){
+    elgg_extend_view('page/elements/sidebar', 'page/elements/comments_block', '501');  
+    elgg_extend_view('page/elements/sidebar', 'page/elements/tagcloud_block', '502');
+}
 
 $params = array(
 	'title' => $title,
 	'content' =>  $content . $activity,
-	'sidebar' => $sidebar,
 	'filter_context' => $page_filter,
 	'class' => 'elgg-river-layout',
 );

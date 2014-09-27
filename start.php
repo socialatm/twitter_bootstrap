@@ -66,8 +66,10 @@ function twitter_bootstrap_init() {
 	}	
 	
 	// set site menu default activity to friends
-	$item = new ElggMenuItem('activity', elgg_echo('activity'), 'activity/friends/'.elgg_get_logged_in_user_entity()->username);
-	elgg_register_menu_item('site', $item);
+	if(elgg_is_logged_in()){
+		$item = new ElggMenuItem('activity', elgg_echo('activity'), 'activity/friends/'.elgg_get_logged_in_user_entity()->username);
+		elgg_register_menu_item('site', $item);
+	}
 }
 
 function tbs_pagesetup_handler() {
