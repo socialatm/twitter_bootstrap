@@ -141,8 +141,8 @@
 }
 
 // this is a must keep
-.elgg-module-widget.elgg-state-draggable .elgg-widget-handle {			
-	cursor: move;
+.elgg-module-widget.elgg-state-draggable .elgg-widget-handle {	
+	cursor:move;
 }
 
 .elgg-module-widget > .elgg-body {
@@ -153,13 +153,11 @@
 }
 .elgg-widget-edit {
 	display: none;
-	width: 96%;
-	padding: 2%;
-	border-bottom: 2px solid #dedede;
 	background-color: #f9f9f9;
 }
 
-.elgg-widget-placeholder {							//	this is a must keep
+//	this is a must keep
+.elgg-widget-placeholder {							
 	border: 2px dashed #dedede;
 	margin-bottom: 15px;
 }
