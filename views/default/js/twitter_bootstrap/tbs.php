@@ -44,13 +44,13 @@ $(".elgg-menu-item-likes-count a").popover({
 		$('.elgg-river-comments li:last-child').css('border-bottom', '1px solid #D4D4D4');
 	}
 	
-/*****	Toggle the collapse state of the widget	*****/
+/*****	delegate and Toggle the collapse state of the widget	*****/
 
-$(".elgg-widget-collapse-button").click(function() {
+$(".elgg-layout-widgets").on( "click", "a.elgg-widget-collapse-button", function( event ) {
 	$(this).parent().find('span').first().toggleClass("glyphicon-chevron-down glyphicon-chevron-right");
 	$(this).parent().parent().parent().find('.elgg-body').slideToggle('medium');
 });
- 
+
 };		//	end elgg.tbs.init
 
 elgg.register_hook_handler('init', 'system', elgg.tbs.init);
