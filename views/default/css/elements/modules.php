@@ -150,12 +150,7 @@ a.elgg-widget-collapsed:hover {
 	color: #9d9d9d;
 	text-decoration: none;
 }
-a.elgg-widget-collapse-button:before {
-	content: "\25BC";
-}
-a.elgg-widget-collapsed:before {
-	content: "\25BA";
-}
+
 .elgg-module-widget > .elgg-body {
 	background-color: white;
 	width: 100%;
