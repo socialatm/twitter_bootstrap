@@ -139,16 +139,8 @@
 	padding: 4px 45px 0 20px;
 	color: #666;
 }
-.elgg-module-widget.elgg-state-draggable .elgg-widget-handle {
+.elgg-module-widget.elgg-state-draggable .elgg-widget-handle {			// this is a must keep
 	cursor: move;
-}
-a.elgg-widget-collapse-button {
-	color: #c5c5c5;
-}
-a.elgg-widget-collapse-button:hover,
-a.elgg-widget-collapsed:hover {
-	color: #9d9d9d;
-	text-decoration: none;
 }
 
 .elgg-module-widget > .elgg-body {
@@ -164,10 +156,8 @@ a.elgg-widget-collapsed:hover {
 	border-bottom: 2px solid #dedede;
 	background-color: #f9f9f9;
 }
-.elgg-widget-content {
-	padding: 10px;
-}
-.elgg-widget-placeholder {
+
+.elgg-widget-placeholder {							//	this is a must keep
 	border: 2px dashed #dedede;
 	margin-bottom: 15px;
 }
