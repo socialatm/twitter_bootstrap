@@ -139,7 +139,9 @@
 	padding: 4px 45px 0 20px;
 	color: #666;
 }
-.elgg-module-widget.elgg-state-draggable .elgg-widget-handle {			// this is a must keep
+
+// this is a must keep
+.elgg-module-widget.elgg-state-draggable .elgg-widget-handle {			
 	cursor: move;
 }
 
