@@ -34,18 +34,9 @@ $controls = elgg_view('object/widget/elements/controls', array(
 	'show_edit' => $edit_area != '',
 ));
 
-require_once('C:/Program Files (x86)/Zend/Apache2/htdocs/krumo/class.krumo.php');
-// krumo($widget->guid);
 $url = elgg_get_config('url');
 $ts = time();
 $token = generate_action_token($ts);
-
-
-
-
-//var_dump($vars['entity'] );
-
-// krumo($handler);
 
 $edit_button = '<a class="elgg-menu-content elgg-widget-edit-button" rel="toggle" title="Customize this widget" href="#widget-edit-'.$widget->guid.'">
 					<span class="glyphicon glyphicon-cog pull-right"></span>
@@ -55,13 +46,8 @@ $delete_button = '<a class="elgg-menu-content elgg-widget-delete-button" data-el
 <span class="glyphicon glyphicon-remove pull-right"></span>
 </a>';
 
-
 $collapse_button = '<a class="elgg-menu-content elgg-widget-collapse-button elgg-state-active elgg-widget-collapsed" rel="toggle" href="#elgg-widget-content-'.$widget->guid.'">
 <span class="glyphicon glyphicon-chevron-down"></span></a>';
-
-
-
-
 
 // don't show content for default widgets
 if (elgg_in_context('default_widgets')) {
@@ -88,20 +74,6 @@ if ($additional_class) {
 	$widget_class = "$widget_class $additional_class";
 }
 
-$widget_header = <<<HEADER
-	<div class="elgg-widget-handle clearfix">
-	<h3 class="elgg-widget-title">$title</h3>
-	$controls
-	</div>
-HEADER;
-
-$widget_body = <<<BODY
-	$edit_area
-	<div class="elgg-widget-content" id="elgg-widget-content-$widget->guid panel-heading">
-		$content
-	</div>
-BODY;
-
 $new = <<<HTML
 <div id="elgg-widget-{$widget->guid}" class="panel panel-default elgg-module-widget {$widget_class}">
 	<div class="panel-heading elgg-widget-handle">
@@ -119,30 +91,6 @@ $new = <<<HTML
 		{$content}
 	</div>
 </div>
-
 HTML;
-/*****
-$mod = elgg_view_module('widget', '', $widget_body, array(
-	'class' => $widget_class,
-	'id' => $widget_id,
-	'header' => $widget_header,
-));
 
-echo $mod.$new;
-*****/
-/**
-echo elgg_view_module('widget', '', $widget_body, array(
-	'class' => $widget_class,
-	'id' => $widget_id,
-	'header' => $widget_header,
-));
-**/
 echo $new;
-
-
-
-
-
-
-
-
