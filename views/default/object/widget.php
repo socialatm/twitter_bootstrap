@@ -84,7 +84,7 @@ $new = <<<HTML
 			{$edit_button}
 		</h3>
 	</div>
-	<div class="panel-body">
+	<div id="widget-edit-{$widget->guid}" class="panel-body elgg-widget-edit">
 		{$edit_area}
 	</div>
 	<div class="panel-body elgg-body">
