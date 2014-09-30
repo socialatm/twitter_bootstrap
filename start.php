@@ -55,6 +55,7 @@ function twitter_bootstrap_init() {
 	elgg_register_page_handler('register', 'tbs_user_account_page_handler');
 	elgg_register_page_handler('forgotpassword', 'tbs_user_account_page_handler');
 	elgg_register_page_handler('activity', '_tbs_river_page_handler');
+	elgg_register_page_handler('profile', 'tbs_profile_page_handler');
 	
 	// Register actions
 	if(elgg_get_plugin_setting('require_email_login', 'twitter_bootstrap') === 'yes') {
@@ -222,5 +223,38 @@ function _tbs_river_page_handler($page) {
 	set_input('page_type', $page_type);
 
 	require_once("$base_dir/river.php");
+	return true;
+}
+
+function tbs_profile_page_handler($page) {
+
+	$base_dir = elgg_get_config('pluginspath')."/profile/";
+
+	if (isset($page[0])) {
+		$username = $page[0];
+		$user = get_user_by_username($username);
+		elgg_set_page_owner_guid($user->guid);
+	} elseif (elgg_is_logged_in()) {
+		forward(elgg_get_logged_in_user_entity()->getURL());
+	}
+
+	// short circuit if invalid or banned username
+	if (!$user || ($user->isBanned() && !elgg_is_admin_logged_in())) {
+		register_error(elgg_echo('profile:notfound'));
+		forward();
+	}
+
+	$action = NULL;
+	if (isset($page[1])) {
+		$action = $page[1];
+	}
+
+	if ($action == 'edit') {
+		// use the core profile edit page
+		require elgg_get_config('pluginspath')."twitter_bootstrap/pages/profile/edit.php";
+		return true;
+	}
+
+	include $base_dir.'pages/profile/index.php'; 
 	return true;
 }
