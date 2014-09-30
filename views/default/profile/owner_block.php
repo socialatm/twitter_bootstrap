@@ -37,15 +37,24 @@ $admin_links = '';
 if (elgg_is_admin_logged_in() && elgg_get_logged_in_user_guid() != elgg_get_page_owner_guid()) {
 	$text = elgg_echo('admin:options');
 
-	$admin_links = '<ul class="profile-admin-menu-wrapper">';
-	$admin_links .= "<li><a rel=\"toggle\" href=\"#profile-menu-admin\">$text&hellip;</a>";
-	$admin_links .= '<ul class="profile-admin-menu" id="profile-menu-admin">';
-	foreach ($admin as $menu_item) {
-		$admin_links .= elgg_view('navigation/menu/elements/item', array('item' => $menu_item));
-	}
-	$admin_links .= '</ul>';
-	$admin_links .= '</li>';
-	$admin_links .= '</ul>';	
+$admin_links .= '
+<div class="panel panel-default">
+	<div class="panel-body">
+		<ul class="nav">
+			<li class="dropdown">
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+					'.$text.'<span class="caret"></span>
+				</a>
+				<ul class="dropdown-menu" role="menu">';
+					foreach ($admin as $menu_item) {
+						$admin_links .= elgg_view('navigation/menu/elements/item', array('item' => $menu_item));
+						}
+$admin_links .= '
+				</ul>
+			</li>
+		</ul>
+	</div>
+</div>';
 }
 
 // content links
