@@ -5,12 +5,23 @@ elgg.provide('elgg.tbs');
 
 elgg.tbs.init = function() {
 
+
+//	only allow one navbar to be open at a time on small viewports
+$(".navbar-toggle").click(function (event) {
+
+$(this).parent().siblings(".navbar-collapse").toggleClass("in");
+    if ($(this).parent().siblings(".navbar-collapse").hasClass("in")) {
+        $(".navbar-toggle").not($(this)).parent().siblings(".navbar-collapse").removeClass("in");
+    }
+    event.stopPropagation();
+});
+
 	$(".alert-success").delay(3000).slideUp("slow", function(){$(this).remove();});		//	delays a success message for 3 seconds then removes it
 	
 /*****	bootstrap-select	*****/	
 	$('.elgg-input-access').selectpicker({					//	read access
     style: 'btn-sm btn-success',
-    size: 'auto',
+  //  size: 'auto',
 	});
 	
 	$('#elgg-river-selector').selectpicker({				//	river selector
