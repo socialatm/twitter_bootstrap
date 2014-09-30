@@ -16,24 +16,32 @@ $footer_menu = elgg_view_menu('footer', array('sort_by' => 'priority', 'class' =
 
 echo <<<HTML
 <div class="row">
-	<div class="col-md-3 panel panel-default">
-		<div class="panel-body">
-			Powered by the <a href="http://elgg.org">Elgg engine</a> and <a href="http://getbootstrap.com/">Twitter Bootstrap</a>.
+	<div class="col-md-3">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				Powered by the <a href="http://elgg.org">Elgg engine</a> and <a href="http://getbootstrap.com/">Twitter Bootstrap</a>.
+			</div>
 		</div>
 	</div>
-	<div class="col-md-2 panel panel-default">
-		<div class="panel-body">
-			add content here
+	<div class="col-md-3">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				add content here
+			</div>
 		</div>
 	</div>
-	<div class="col-md-2 panel panel-default">
-		<div class="panel-body">
-			add content here
+	<div class="col-md-3">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				add content here
+			</div>
 		</div>
 	</div>
-	<div class="col-md-3 panel panel-default">
-		<div class="panel-body">
-			{$footer_menu}
+	<div class="col-md-3">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				{$footer_menu}
+			</div>
 		</div>
 	</div>
 </div>

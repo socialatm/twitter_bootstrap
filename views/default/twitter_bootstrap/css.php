@@ -1,8 +1,6 @@
-/**
-	Custom styles / required Elgg styles where I don't want to include the whole Elgg file
-**/
-
-/** SOME CORE OVERRIDES **/
+/*******************
+SOME CORE OVERRIDES 
+*******************/
 
 .hidden {
 	display:none;
@@ -70,20 +68,6 @@ li {
 	top:35px;
 	z-index:100;
  }
-
-/** Footer **/
-
-.elgg-page-footer {
-	border-top:1px solid #DDDDDD;
-}
-
-.elgg-page-footer li  {
-	padding:0 0 0 10px;
-}
-
-.elgg-page-footer {
-	padding-bottom:20px;
-}
 
 /* Aside */
 .elgg-module-aside .elgg-head {
@@ -292,14 +276,4 @@ li {
 /*****	the page header	*****/
 #tbs-header {
 	margin-top: 40px;
-}
-
-/***** styling the footer	*****/
-
-#tbs-footer .row {
-	margin: 10px 0;
-}
-
-#tbs-footer .panel {
-	margin-right: 15px;
 }
