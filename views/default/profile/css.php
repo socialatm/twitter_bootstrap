@@ -9,38 +9,13 @@
 	Profile
 *************************************** */
 
-.profile {
-	margin: 0;
-	padding:0;
-}
-#profile-details {
-	padding: 15px 0 15px 0;
-}
 /*** ownerblock ***/
 #profile-owner-block {
 	padding: 15px;
 	margin:0;
 	width:100%;
 }
-#profile-owner-block .large {
-	margin-bottom: 10px;
-}
-#profile-owner-block a.elgg-button-action {
-	margin-bottom: 4px;
-	display: table;
-}
-.profile-content-menu a {
-	display: block;
-	border-radius: 8px;
-	background-color: white;
-	margin: 3px 0 5px 0;
-	padding: 2px 4px 2px 8px;
-}
-.profile-content-menu a:hover {
-	background: #0054A7;
-	color: white;
-	text-decoration: none;
-}
+
 .profile-admin-menu {
 	display: none;
 }
@@ -58,9 +33,6 @@ ul.profile-action-menu {
 	padding:0;
 }
 
-ul.profile-admin-menu-wrapper {
-	margin:0;
-}
 .profile-admin-menu-wrapper a {
 	display: block;
 	border-radius: 8px;
@@ -80,7 +52,11 @@ ul.profile-admin-menu-wrapper {
 .profile-admin-menu-wrapper a:hover {
 	color: black;
 }
-/*** profile details ***/
+
+/***********************************************
+ profile details 
+************************************************/
+
 #profile-details .odd {
 	background-color: #f4f4f4;
 	border-radius: 4px;
@@ -106,18 +82,4 @@ ul.profile-admin-menu-wrapper {
 	border: 2px solid red;
 	padding: 4px 8px;
 	border-radius: 6px;
-}
-
-#widgets-row {
-	margin-top: 20px;
-}
-
-/**
- * Without this rule widget columns has a min-height
- * creating a gap on mobile layout
- */
-@media (max-width: 767px) {
-	.elgg-widgets {
-		min-height: 0 !important;
-	}
 }
