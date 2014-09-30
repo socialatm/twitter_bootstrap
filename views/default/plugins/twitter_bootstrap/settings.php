@@ -8,6 +8,10 @@ if (!isset($vars['entity']->display_header)) {
 	$vars['entity']->display_header = 'no';
 }
 
+if (!isset($vars['entity']->display_footer)) {
+	$vars['entity']->display_footer = 'no';
+}
+
 echo '<div class="elgg-fieldset">';
 echo elgg_echo('twitter_bootstrap:displayheaderlogo');
 echo ' ';
@@ -18,6 +22,19 @@ echo elgg_view('input/select', array(
 		'yes' => elgg_echo('option:yes')
 	),
 	'value' => $vars['entity']->display_header_logo,
+));
+echo '</div>';
+
+echo '<div class="elgg-fieldset">';
+echo elgg_echo('twitter_bootstrap:displayfooter');
+echo ' ';
+echo elgg_view('input/select', array(
+	'name' => 'params[display_footer]',
+	'options_values' => array(
+		'no' => elgg_echo('option:no'),
+		'yes' => elgg_echo('option:yes')
+	),
+	'value' => $vars['entity']->display_footer,
 ));
 echo '</div>';
 

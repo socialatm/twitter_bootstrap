@@ -10,6 +10,8 @@
 
 //bootstrapped
 
+if (elgg_get_plugin_setting('display_footer', 'twitter_bootstrap') == 'yes') {
+
 $footer_menu = elgg_view_menu('footer', array('sort_by' => 'priority', 'class' => ''));
 
 echo <<<HTML
@@ -36,3 +38,4 @@ echo <<<HTML
 	</div>
 </div>
 HTML;
+}
