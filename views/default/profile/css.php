@@ -31,27 +31,6 @@ ul.profile-action-menu {
  profile details 
 ************************************************/
 
-#profile-details .odd {
-	background-color: #f4f4f4;
-	border-radius: 4px;
-	margin: 0 0 7px;
-	padding: 2px 4px;
-}
-#profile-details .even {
-	background-color:#f4f4f4;
-	border-radius: 4px;
-	margin: 0 0 7px;
-	padding: 2px 4px;
-}
-.profile-aboutme-title {
-	background-color:#f4f4f4;
-	border-radius: 4px;
-	margin: 0;
-	padding: 2px 4px;
-}
-.profile-aboutme-contents {
-	padding: 2px 0 0 3px;
-}
 .profile-banned-user {
 	border: 2px solid red;
 	padding: 4px 8px;
