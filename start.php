@@ -6,7 +6,7 @@ elgg_register_event_handler('init', 'system', 'twitter_bootstrap_init');
 function twitter_bootstrap_init() {
 
 	// don't need it twice
-	elgg_unregister_menu_item('footer', 'powered');
+	new TbsMenu;
 
 	//include twitter bootstrap css
 	elgg_extend_view('css/elgg', 'twitter_bootstrap/css');
@@ -253,6 +253,16 @@ function tbs_profile_page_handler($page) {
 		// use the core profile edit page
 		require elgg_get_config('pluginspath')."twitter_bootstrap/pages/profile/edit.php";
 		return true;
+	}
+	
+	if(elgg_get_plugin_setting('profile2', 'twitter_bootstrap') != 'yes') {
+	
+		$content = elgg_view('profile/layout', array('entity' => $user));
+	$body = elgg_view_layout('one_column', array(
+		'content' => $content
+	));
+	echo elgg_view_page($user->name, $body);
+	return true;
 	}
 
 	include $base_dir.'pages/profile/index.php'; 

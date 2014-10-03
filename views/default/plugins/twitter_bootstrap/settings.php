@@ -39,6 +39,19 @@ echo elgg_view('input/select', array(
 echo '</div>';
 
 echo '<div class="elgg-fieldset">';
+echo elgg_echo('twitter_bootstrap:profile2');
+echo ' ';
+echo elgg_view('input/select', array(
+	'name' => 'params[profile2]',
+	'options_values' => array(
+		'no' => elgg_echo('option:no'),
+		'yes' => elgg_echo('option:yes')
+	),
+	'value' => $vars['entity']->profile2,
+));
+echo '</div>';
+
+echo '<div class="elgg-fieldset">';
 echo elgg_echo('tbs:require:email');
 echo ' ';
 echo elgg_view('input/select', array(
