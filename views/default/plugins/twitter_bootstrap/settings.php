@@ -49,7 +49,7 @@ echo elgg_view('input/select', array(
 	),
 	'value' => $vars['entity']->profile2,
 ));
-echo '</div>';
+echo '<a href="https://github.com/twentyfiveautumn/profile2"> get profile2</a></div>';
 
 echo '<div class="elgg-fieldset">';
 echo elgg_echo('tbs:require:email');
@@ -62,5 +62,5 @@ echo elgg_view('input/select', array(
 	),
 	'value' => $vars['entity']->require_email_login,
 ));
-echo elgg_echo('tbs:zend:required');
+echo '<a href="http://www.zend.com/company/community/framework/downloads"> Zend framework required</a>';
 echo '</div>';
