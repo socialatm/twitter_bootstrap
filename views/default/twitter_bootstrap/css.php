@@ -1,11 +1,6 @@
 /*******************
 SOME CORE OVERRIDES 
 *******************/
-
-.hidden {
-	display:none;
-}
-
 .elgg-page .elgg-page-header {
 	position: relative;
 	padding-top:15px;
