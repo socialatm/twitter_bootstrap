@@ -18,7 +18,7 @@ $(function () {
     $('#fileupload').fileupload({
         // Uncomment the following to send cross-domain cookies:
         //xhrFields: {withCredentials: true},
-        url: 'server/php/'
+        url: elgg.config.wwwroot + 'mod/twitter_bootstrap/views/default/js/jquery-file-upload/server/php/'
     });
 
     // Enable iframe cross-domain access via redirect option:
@@ -63,8 +63,8 @@ $(function () {
             //xhrFields: {withCredentials: true},
             url: $('#fileupload').fileupload('option', 'url'),
             dataType: 'json',
-            context: $('#fileupload')[0]
-        }).always(function () {
+            context: $('#fileupload')[0],
+		}).always(function () {
             $(this).removeClass('fileupload-processing');
         }).done(function (result) {
             $(this).fileupload('option', 'done')
