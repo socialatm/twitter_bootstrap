@@ -4,7 +4,7 @@
  * @package ElggFile
  * @elgg-release: 1.9.1
  */
-
+ 
 elgg_load_library('elgg:file');
 $owner = elgg_get_page_owner_entity();
 
@@ -23,9 +23,8 @@ if (elgg_instanceof($owner, 'user')) {
 elgg_push_breadcrumb($title);
 
 // create form
-//$form_vars = array('enctype' => 'multipart/form-data');
-//$body_vars = file_prepare_form_vars();
-// $content = elgg_view_form('file/upload', $form_vars, $body_vars);
+$action = elgg_get_config('url').'action/file/upload';
+$security = elgg_view('input/securitytoken');
 
 elgg_load_css('jquery_fileupload_css');
 elgg_load_css('jquery_fileupload_ui_css');
@@ -36,7 +35,8 @@ $content = <<<HTML
 
 <div class="container">
     <!-- The file upload form used as target for the file upload widget -->
-    <form id="fileupload" action="//jquery-file-upload.appspot.com/" method="post" enctype="multipart/form-data">
+	<form id="fileupload" action="{$action}" method="post" enctype="multipart/form-data">
+	{$security}
         <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
         <div class="row fileupload-buttonbar">
             <div class="col-lg-7">
@@ -152,7 +152,6 @@ $content = <<<HTML
     </tr>
 {% } %}
 </script>
-
 HTML;
 
 $body = elgg_view_layout('one_column', array(
