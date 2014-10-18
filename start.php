@@ -41,11 +41,10 @@ function twitter_bootstrap_init() {
 	elgg_register_css('jquery_fileupload_css', $tbs_upload_css.'jquery.fileupload.css');
 	elgg_register_css('jquery_fileupload_ui_css', $tbs_upload_css.'jquery.fileupload-ui.css');
 	
-	// main js file for the uploader
-//	elgg_define_js('jquery', array('src' => 'http://localhost/elgg-1.9.1/vendors/jquery/jquery-1.11.0.min.js'));
+	// main js files for the uploader
 	elgg_define_js('main',
 		array(
-			'src' => 'http://localhost/elgg-1.9.1/mod/twitter_bootstrap/views/default/js/jquery-file-upload/js/main.js',
+			'src' => 'mod/twitter_bootstrap/views/default/js/jquery-file-upload/js/main.js',
 			'deps' => array(
 				'jquery.fileupload-ui',
 				'tmpl',
