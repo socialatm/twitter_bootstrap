@@ -35,9 +35,6 @@ elgg_require_js('main');
 $content = <<<HTML
 
 <div class="container">
-    <h1>jQuery File Upload Demo</h1>
-    <h2 class="lead">Basic Plus UI version</h2>
-    <br>
     <!-- The file upload form used as target for the file upload widget -->
     <form id="fileupload" action="//jquery-file-upload.appspot.com/" method="post" enctype="multipart/form-data">
         <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
@@ -156,22 +153,9 @@ $content = <<<HTML
 {% } %}
 </script>
 
-
-
-
-
-
-
-
-
 HTML;
 
-
-
-
-
-
-$body = elgg_view_layout('content', array(
+$body = elgg_view_layout('one_column', array(
 	'content' => $content,
 	'title' => $title,
 	'filter' => '',
