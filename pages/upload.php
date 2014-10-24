@@ -23,8 +23,10 @@ if (elgg_instanceof($owner, 'user')) {
 elgg_push_breadcrumb($title);
 
 // create form
-$action = elgg_get_config('url').'action/file/upload';
+$action = elgg_get_config('url').'action/twitter_bootstrap/upload';
 $security = elgg_view('input/securitytoken');
+$access =  elgg_view('input/access', array('name' => 'access[]'));
+$tags = elgg_view('input/tags', array('name' => 'tags[]'));
 
 elgg_load_css('jquery_fileupload_css');
 elgg_load_css('jquery_fileupload_ui_css');
@@ -33,7 +35,7 @@ elgg_require_js('main');
 
 $content = <<<HTML
 
-<div class="container">
+<div class="row">
     <!-- The file upload form used as target for the file upload widget -->
 	<form id="fileupload" action="{$action}" method="post" enctype="multipart/form-data">
 	{$security}
@@ -75,24 +77,29 @@ $content = <<<HTML
         <!-- The table listing the files available for upload/download -->
         <table role="presentation" class="table table-striped"><tbody class="files"></tbody></table>
     </form>
-</div>
+<!-- </div>	-->
 <!-- The template to display files available for upload -->
 <script id="template-upload" type="text/x-tmpl">
 {% for (var i=0, file; file=o.files[i]; i++) { %}
     <tr class="template-upload fade">
-        <td>
+        <td class="col-md-3">
             <span class="preview"></span>
         </td>
-        <td>
+        <td class="col-md-5">
             <p class="name">{%=file.name%}</p>
             <strong class="error text-danger"></strong>
+			<label>Title: </label>
+			<p><input name="title[]" required></p>
+			<label>description: <input name="description[]" required></label>
+			{$tags}
         </td>
-        <td>
+        <td class="col-md-2">
             <p class="size">Processing...</p>
             <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-bar progress-bar-success" style="width:0%;"></div></div>
+			{$access}
         </td>
 
-        <td>
+        <td class="col-md-2">
             {% if (!i && !o.options.autoUpload) { %}
                 <button class="btn btn-primary start" disabled>
                     <i class="glyphicon glyphicon-upload"></i>
@@ -152,6 +159,9 @@ $content = <<<HTML
     </tr>
 {% } %}
 </script>
+
+</div>
+
 HTML;
 
 $body = elgg_view_layout('one_column', array(

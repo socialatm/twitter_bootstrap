@@ -18,7 +18,9 @@ $(function () {
     $('#fileupload').fileupload({
         // Uncomment the following to send cross-domain cookies:
         //xhrFields: {withCredentials: true},
-        url: elgg.config.wwwroot + 'mod/twitter_bootstrap/views/default/js/jquery-file-upload/server/php/'
+    //    url: elgg.config.wwwroot + 'mod/twitter_bootstrap/views/default/js/jquery-file-upload/server/php/'
+	//	url: elgg.action('twitter_bootstrap/upload'),
+		url: elgg.config.wwwroot + 'mod/twitter_bootstrap/actions/twitter_bootstrap/upload.php'
     });
 
     // Enable iframe cross-domain access via redirect option:
@@ -30,6 +32,19 @@ $(function () {
             '/cors/result.html?%s'
         )
     );
+	
+	$('#fileupload').bind('fileuploadsubmit', function (e, data) {
+    var inputs = data.context.find(':input');
+    if (inputs.filter(function () {
+            return !this.value && $(this).prop('required');
+        }).first().focus().length) {
+        data.context.find('button').prop('disabled', false);
+        return false;
+    }
+    data.formData = inputs.serializeArray();
+});
+	
+	
 
     if (window.location.hostname === 'blueimp.github.io') {
         // Demo settings:

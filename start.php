@@ -226,13 +226,17 @@ function twitter_bootstrap_init() {
 	elgg_register_page_handler('profile', 'tbs_profile_page_handler');
 	
 	// Register actions
+	$action_path = elgg_get_plugins_path() . 'twitter_bootstrap/actions';
+		
 	if(elgg_get_plugin_setting('require_email_login', 'twitter_bootstrap') === 'yes') {
-		$action_path = elgg_get_plugins_path() . 'twitter_bootstrap/actions';
+		
 		elgg_register_action('login', $action_path.'/login.php', 'public');
 		elgg_register_action('register', $action_path.'/register.php', 'public');
 		elgg_register_action('logout', $action_path.'/logout.php', '');
 		elgg_register_action('comment/save', $action_path.'/comment/save.php', '');
 	}	
+	
+	elgg_register_action('twitter_bootstrap/upload', $action_path.'/twitter_bootstrap/upload.php', '');
 	
 	// set site menu default activity to friends
 	if(elgg_is_logged_in()){

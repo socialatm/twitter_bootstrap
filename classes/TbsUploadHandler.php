@@ -10,8 +10,7 @@
  * http://www.opensource.org/licenses/MIT
  */
 
-class UploadHandler
-{
+class TbsUploadHandler {
 
  //   protected $options;
 
@@ -43,10 +42,12 @@ class UploadHandler
     function __construct($options = null, $initialize = true, $error_messages = null) {
         $this->response = array();
         $this->options = array(
-            'script_url' => $this->get_full_url().'/',
-            'upload_dir' => dirname($this->get_server_var('SCRIPT_FILENAME')).'/files/',
-            'upload_url' => $this->get_full_url().'/files/',
-            'user_dirs' => false,
+      //      'script_url' => elgg_get_config('url').'mod/twitter_bootstrap/views/default/js/jquery-file-upload/js/',
+			'script_url' => $this->get_full_url().'/mod/twitter_bootstrap/classes/',
+			
+            'upload_dir' => elgg_get_config('path').'mod/twitter_bootstrap/views/default/js/jquery-file-upload/server/php/files/',
+            'upload_url' => elgg_get_config('url').'mod/twitter_bootstrap/views/default/js/jquery-file-upload/server/php/files/',
+			'user_dirs' => false,
             'mkdir_mode' => 0755,
             'param_name' => 'files',
             // Set the following option to 'POST', if your server does not support
@@ -79,7 +80,7 @@ class UploadHandler
             // is enabled, set to 0 to disable chunked reading of files:
             'readfile_chunk_size' => 10 * 1024 * 1024, // 10 MiB
             // Defines which files can be displayed inline when downloaded:
-            'inline_file_types' => '/\.(gif|jpe?g|png|mp4)$/i',
+            'inline_file_types' => '/\.(gif|jpe?g|png)$/i',
             // Defines which files (based on their names) are accepted for upload:
             'accept_file_types' => '/.+$/i',
             // The php.ini settings upload_max_filesize and post_max_size
@@ -157,9 +158,6 @@ class UploadHandler
         if ($error_messages) {
             $this->error_messages = $error_messages + $this->error_messages;
         }
-		
-//		var_dump($options); die();
-		
         if ($initialize) {
             $this->initialize();
         }
