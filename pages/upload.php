@@ -138,7 +138,10 @@ $content = <<<HTML
             {% if (file.error) { %}
                 <div><span class="label label-danger">Error</span> {%=file.error%}</div>
             {% } %}
-        </td>
+			{% if (file.success) { %}
+                <div><span class="label label-success">Success</span> {%=file.success%}</div>
+            {% } %}
+		</td>
         <td>
             <span class="size">{%=o.formatFileSize(file.size)%}</span>
         </td>
@@ -159,9 +162,7 @@ $content = <<<HTML
     </tr>
 {% } %}
 </script>
-
 </div>
-
 HTML;
 
 $body = elgg_view_layout('one_column', array(
