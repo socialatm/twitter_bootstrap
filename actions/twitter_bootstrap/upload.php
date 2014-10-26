@@ -83,6 +83,7 @@ if (isset($_FILES['files']['name'][0]) && !empty($_FILES['files']['name'][0])) {
 		$mime_type = "application/vnd.ms-powerpoint";
 	}
 
+	$file->size = $_FILES['files']['size'][0];
 	$file->setMimeType($mime_type);
 	$file->simpletype = file_get_simple_type($mime_type);
 	
@@ -166,25 +167,20 @@ if (isset($_FILES['files']['name'][0]) && !empty($_FILES['files']['name'][0])) {
 		$error = elgg_echo("file:uploadfailed");
 		register_error($error);
 	}
-
 	$container = get_entity($container_guid);
 	if (elgg_instanceof($container, 'group')) {
 		forward("file/group/$container->guid/all");
 	} else {
-		forward("file/owner/$container->username");
+		$return = new stdClass();
+		$return_file = new stdClass();
+		$return_file->name = $file->get('title');
+		$return_file->size = $file->__get('size');
+		$return_file->url = $file->getURL();
+		$return_file->thumbnailUrl = $file->getIconURL('small');
+		$return_file->deleteUrl = elgg_add_action_tokens_to_url(elgg_get_config('url').'mod/file/actions/file/delete.php?guid='.$file->getGUID());
+		$return_file->deleteType = "DELETE";
+		$return_file->success = elgg_echo("file:saved");
+		$return->files = array($return_file);
+		echo json_encode($return);
+		die();
 	}
-
-die();
-
-var_dump($guid);
-
-die();	
-
-/**********************************************************************************************************************************************************************************************/
-
-$upload_handler = new TbsUploadHandler();
-
-
-// var_dump($upload_handler->options);
-
-//die();
