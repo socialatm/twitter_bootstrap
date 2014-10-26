@@ -19,7 +19,6 @@ $(function () {
         // Uncomment the following to send cross-domain cookies:
         //xhrFields: {withCredentials: true},
     //    url: elgg.config.wwwroot + 'mod/twitter_bootstrap/views/default/js/jquery-file-upload/server/php/'
-	//	url: elgg.action('twitter_bootstrap/upload'),
 		url: elgg.config.wwwroot + 'mod/twitter_bootstrap/actions/twitter_bootstrap/upload.php'
     });
 
@@ -82,9 +81,9 @@ $(function () {
 		}).always(function () {
             $(this).removeClass('fileupload-processing');
         }).done(function (result) {
-            $(this).fileupload('option', 'done')
-                .call(this, $.Event('done'), {result: result});
-        });
+			$(this).fileupload('option', 'done')
+				.call(this, $.Event('done'), {result: result});
+		});
     }
 
 });
