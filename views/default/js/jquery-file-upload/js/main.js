@@ -9,7 +9,7 @@
  * http://www.opensource.org/licenses/MIT
  */
 
-/* global $, window */
+/*global $, window */
 
 $(function () {
     'use strict';

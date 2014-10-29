@@ -177,7 +177,7 @@ if (isset($_FILES['files']['name'][0]) && !empty($_FILES['files']['name'][0])) {
 		$return_file->size = $file->__get('size');
 		$return_file->url = $file->getURL();
 		$return_file->thumbnailUrl = $file->getIconURL('small');
-		$return_file->deleteUrl = elgg_add_action_tokens_to_url(elgg_get_config('url').'mod/file/actions/file/delete.php?guid='.$file->getGUID());
+		$return_file->deleteUrl = elgg_add_action_tokens_to_url(elgg_get_config('url').'mod/twitter_bootstrap/actions/twitter_bootstrap/delete.php?guid='.$file->getGUID());
 		$return_file->deleteType = "DELETE";
 		$return_file->success = elgg_echo("file:saved");
 		$return->files = array($return_file);
