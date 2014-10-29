@@ -1,7 +1,7 @@
 <?php
 /*****
  * Twitter bootstrap theme for Elgg	start page	
- * @elgg-release: 1.9.1
+ * @elgg-release: 1.9.4
  *****/
 
 elgg_register_event_handler('init', 'system', 'twitter_bootstrap_init');
@@ -74,8 +74,6 @@ function twitter_bootstrap_init() {
 		)
 	);
 	
-//	elgg_define_js('tmpl.min', array('src' => 'mod/twitter_bootstrap/views/default/js/javascript-templates/js/tmpl.min.js'));
-
 	elgg_define_js('tmpl', array('src' => 'mod/twitter_bootstrap/views/default/js/javascript-templates/js/tmpl.js'));
 	elgg_define_js('load-image.all.min', array('src' => 'mod/twitter_bootstrap/views/default/js/javascript-load-image/js/load-image.all.min.js'));
 	
@@ -135,8 +133,6 @@ function twitter_bootstrap_init() {
 		)
 	);
 	
-//	elgg_define_js('canvas-to-blob.min', array('src' => 'mod/twitter_bootstrap/views/default/js/javascript-canvas-to-blob/js/canvas-to-blob.min.js'));
-
 	elgg_define_js('canvas-to-blob', array('src' => 'mod/twitter_bootstrap/views/default/js/javascript-canvas-to-blob/js/canvas-to-blob.js'));
 	elgg_define_js('jquery.fileupload-ui',
 		array(
@@ -196,8 +192,9 @@ function twitter_bootstrap_init() {
 	
 	function tbs_file_upload_handler ($hook, $type, $result) {
 		if($result['segments'][0] === 'add'){
+			$vars['container_guid'] = $result['segments'][1];
 			require_once('mod/twitter_bootstrap/pages/upload.php');
-			 die();
+			die();
 		}
 	}
 	

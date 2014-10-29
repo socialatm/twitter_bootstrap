@@ -28,7 +28,10 @@ $htmlawed_config = array(
 $title = (string)htmLawed($_POST["title"][0], $htmlawed_config);
 $desc = (string)htmLawed($_POST["description"][0], $htmlawed_config);
 $access_id = (int)htmLawed($_POST["access"][0], $htmlawed_config);
-$container_guid = elgg_get_logged_in_user_guid();
+$container_guid = (int) $_POST['container_guid'];
+if (!$container_guid) {
+	$container_guid = elgg_get_logged_in_user_guid();
+}
 $tags = (string)htmLawed($_POST["tags"][0], $htmlawed_config);
 
 // check if upload attempted and failed

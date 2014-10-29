@@ -27,6 +27,8 @@ $action = elgg_get_config('url').'action/twitter_bootstrap/upload';
 $security = elgg_view('input/securitytoken');
 $access =  elgg_view('input/access', array('name' => 'access[]'));
 $tags = elgg_view('input/tags', array('name' => 'tags[]'));
+$container_guid = (elgg_extract('container_guid', $vars))? elgg_extract('container_guid', $vars): elgg_get_logged_in_user_guid() ;
+$container = elgg_view('input/hidden', array('name' => 'container_guid', 'value' => $container_guid));
 
 elgg_load_css('jquery_fileupload_css');
 elgg_load_css('jquery_fileupload_ui_css');
@@ -76,7 +78,7 @@ $content = <<<HTML
         </div>
         <!-- The table listing the files available for upload/download -->
         <table role="presentation" class="table table-striped"><tbody class="files"></tbody></table>
-    </form>
+	</form>
 <!-- </div>	-->
 <!-- The template to display files available for upload -->
 <script id="template-upload" type="text/x-tmpl">
@@ -112,6 +114,7 @@ $content = <<<HTML
                     <span>Cancel</span>
                 </button>
             {% } %}
+			{$container}
         </td>
     </tr>
 {% } %}
