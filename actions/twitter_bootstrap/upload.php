@@ -167,10 +167,6 @@ if (isset($_FILES['files']['name'][0]) && !empty($_FILES['files']['name'][0])) {
 		$error = elgg_echo("file:uploadfailed");
 		register_error($error);
 	}
-	$container = get_entity($container_guid);
-	if (elgg_instanceof($container, 'group')) {
-		forward("file/group/$container->guid/all");
-	} else {
 		$return = new stdClass();
 		$return_file = new stdClass();
 		$return_file->name = $file->get('title');
@@ -183,4 +179,3 @@ if (isset($_FILES['files']['name'][0]) && !empty($_FILES['files']['name'][0])) {
 		$return->files = array($return_file);
 		echo json_encode($return);
 		die();
-	}
