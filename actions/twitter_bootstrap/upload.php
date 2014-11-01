@@ -155,10 +155,7 @@ if (isset($_FILES['files']['name'][0]) && !empty($_FILES['files']['name'][0])) {
 	// not saving a file but still need to save the entity to push attributes to database
 	$file->save();
 }
-
 	if ($guid) {
-		$message = elgg_echo("file:saved");
-		system_message($message);
 		elgg_create_river_item(array(
 			'view' => 'river/object/file/create',
 			'action_type' => 'create',
