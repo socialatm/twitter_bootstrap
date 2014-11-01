@@ -2,7 +2,7 @@
 /**
  * Elgg global system message list
  * Lists all system messages
- *
+ * @elgg-release: 1.9.4
  * @package Elgg
  * @subpackage Core
  *
