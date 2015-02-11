@@ -27,10 +27,11 @@ $action = elgg_get_config('url').'action/twitter_bootstrap/upload';
 $security = elgg_view('input/securitytoken');
 
 $access =  '<label>'.elgg_echo('access').': </label><br />'.elgg_view('input/access', array('name' => 'access[]'));
-
-
-
 $tags = '<label>'.elgg_echo('tags').': </label>'.elgg_view('input/tags', array('name' => 'tags[]', 'placeholder' => elgg_echo('tags')));
+
+$file_title = '<label>'.elgg_echo('title').': </label>'.elgg_view('input/text', array('name' => "title[]", 'value' => '{%=file.name%}'));
+
+$description = '<label>'.elgg_echo('description').': </label><br />'.elgg_view('input/plaintext', array('name' => "description[]", 'rows' => 3));
 
 
 
@@ -93,13 +94,16 @@ $content = <<<HTML
         <td class="col-md-3">
             <span class="preview"></span>
         </td>
+		
         <td class="col-md-5">
-            <p class="name">{%=file.name%}</p>
+            <p class="hidden">{%=file.name%}</p>
             <strong class="error text-danger"></strong>
-			<label>Title: </label>
-			<p><input name="title[]" required></p>
-			<label>description: <input name="description[]" required></label>
+			{$file_title}
+			<p>
+			{$description}
+			</p>
 		</td>
+				
  		<td class="col-md-4">
 			<table class="table table-striped">
 				<tr>
