@@ -17,9 +17,10 @@ $title = elgg_extract('title', $vars, '');
 
 $buttons = elgg_view_menu('title', array(
 	'sort_by' => 'priority',
-	'link_class' => 'btn btn-default',
+	'item_class' => 'btn btn-default',
+	'class' => "btn-group",
 ));
 
 if ($title || $buttons) {
-	echo '<div class="row"><div class="col-md-9">'.elgg_view_title($vars['title'], array('class' => 'elgg-heading-main')).'</div><div class="col-md-3">'.$buttons.'</div></div>';
+	echo '<div class="row"><div class="col-md-7">'.elgg_view_title($vars['title'], array('class' => 'elgg-heading-main')).'</div><div class="col-md-5">'.$buttons.'</div></div>';
 }
