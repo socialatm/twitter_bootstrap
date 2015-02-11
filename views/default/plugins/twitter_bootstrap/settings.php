@@ -62,5 +62,4 @@ echo elgg_view('input/select', array(
 	),
 	'value' => $vars['entity']->require_email_login,
 ));
-echo '<a href="http://www.zend.com/company/community/framework/downloads"> Zend framework required</a>';
 echo '</div>';
