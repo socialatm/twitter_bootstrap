@@ -27,4 +27,9 @@ return array(
 	'register:name' => 'Name',
 	'tbs:register:thanks' => 'Thank you for Registering. Please Login to continue.',
 	'tbs:comment:placeholder' => 'add a comment',
+	/***** invite friends	*****/
+	'invitefriends:introduction' => 'To invite friends enter their email address and a message they will receive with your invitation',
+	'invitefriends:emails' => 'Email address',
+	'invitefriends:emails:placeholder' => 'enter one email address per line',
+	'invite:friends' => 'Invite Friends'
 );
