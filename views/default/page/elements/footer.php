@@ -9,6 +9,7 @@
  */
 
 //bootstrapped
+$users = "<p class='mtl elgg-text-help'>" . elgg_echo('members:total', array(get_number_users())) . "</p>";
 
 if (elgg_get_plugin_setting('display_footer', 'twitter_bootstrap') == 'yes') {
 
@@ -26,7 +27,7 @@ echo <<<HTML
 	<div class="col-md-3">
 		<div class="panel panel-default">
 			<div class="panel-body">
-				add content here
+				{$users}
 			</div>
 		</div>
 	</div>
