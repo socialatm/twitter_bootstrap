@@ -31,5 +31,21 @@ return array(
 	'invitefriends:introduction' => 'To invite friends enter their email address and a message they will receive with your invitation',
 	'invitefriends:emails' => 'Email address',
 	'invitefriends:emails:placeholder' => 'enter one email address per line',
-	'invite:friends' => 'Invite Friends'
+	'invite:friends' => 'Invite Friends',
+	/***** login page message	*****/
+	'login:page:message' => '<h3 class="title">Login to %s </h3>
+        <h4 >We will add some very helpful information here for you.</h4>
+        <p>Nullam in est urna. In vitae adipiscing enim. Curabitur rhoncus condimentum lorem, non convallis dolor faucibus eget. In vitae adipiscing enim. Curabitur rhoncus condimentum lorem, non convallis dolor faucibus eget. In ut nulla est. 
+		</p>
+        <h5>Maecenas hendrerit neque id</h5>
+        <ul>
+			<li>Etiam adipiscing posuere justo, nec iaculis justo dictum non</li>
+            <li>Cras tincidunt mi non arcu hendrerit eleifend</li>
+            <li>Aenean ullamcorper justo tincidunt justo aliquet et lobortis diam faucibus</li>
+            <li>Maecenas hendrerit neque id ante dictum mattis</li>
+            <li>Vivamus non neque lacus, et cursus tortor</li>
+		</ul>
+        <p>Nullam in est urna. In vitae adipiscing enim. In ut nulla est. Nullam in est urna. In vitae adipiscing enim. Curabitur rhoncus condimentum lorem, non convallis dolor faucibus eget. In ut nulla est. 
+		</p>'
+	
 );

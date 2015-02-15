@@ -12,8 +12,6 @@ if (elgg_is_logged_in()) {
 	forward('');
 }
 
-$ts = time();
-$token = generate_action_token($ts);
 $site = elgg_get_site_entity();
 $site_name = $site->name;
 
@@ -24,25 +22,14 @@ if (elgg_get_config('https_login')) {
 
 $lost = elgg_echo('user:password:lost');
 $title = elgg_echo('login');
+$form .= elgg_view_form('login', array('action' => "{$login_url}action/login"));
+$message = elgg_echo('login:page:message', array($site_name));
+
 $content = <<<HTML
 <!-- Page content starts -->
 <div class="row">
 	<div class="col-md-6">
-	<!-- Some content -->
-		<h3 class="title">Login to $site_name</h3>
-        <h4 >We will add some very helpful information here for you.</h4>
-        <p>Nullam in est urna. In vitae adipiscing enim. Curabitur rhoncus condimentum lorem, non convallis dolor faucibus eget. In vitae adipiscing enim. Curabitur rhoncus condimentum lorem, non convallis dolor faucibus eget. In ut nulla est. 
-		</p>
-        <h5>Maecenas hendrerit neque id</h5>
-        <ul>
-			<li>Etiam adipiscing posuere justo, nec iaculis justo dictum non</li>
-            <li>Cras tincidunt mi non arcu hendrerit eleifend</li>
-            <li>Aenean ullamcorper justo tincidunt justo aliquet et lobortis diam faucibus</li>
-            <li>Maecenas hendrerit neque id ante dictum mattis</li>
-            <li>Vivamus non neque lacus, et cursus tortor</li>
-		</ul>
-        <p>Nullam in est urna. In vitae adipiscing enim. In ut nulla est. Nullam in est urna. In vitae adipiscing enim. Curabitur rhoncus condimentum lorem, non convallis dolor faucibus eget. In ut nulla est. 
-		</p>
+		{$message}
  	</div>
 	<div class="col-md-6">
 		<div class="well">
@@ -51,37 +38,7 @@ $content = <<<HTML
 			<p>&nbsp;</p>
             <div class="form">
             <!-- Login form -->
-				<form class="form-horizontal" role="form" action="{$login_url}action/login" method="post">
-					<input type="hidden" name="__elgg_token" value={$token}>
-					<input type="hidden" name="__elgg_ts" value={$ts}>
-					<div class="form-group">
-						<label for="username" class="col-lg-2 control-label">Email</label>
-                        <div class="col-lg-8">
-							<input type="email" class="form-control" id="username" name="username" placeholder="Email">
-						</div>
-					</div>
-                    <div class="form-group">
-						<label for="password" class="col-lg-2 control-label">Password</label>
-                        <div class="col-lg-8">
-							<input type="password" class="form-control" id="password" name="password" placeholder="Password">
-						</div>
-					</div>                     
-					<div class="form-group">
-						<div class="col-lg-offset-2 col-lg-8">
-							<div class="checkbox">
-								<label>
-									<input type="checkbox" name="persistent"> Remember me
-								</label>
-							</div>
-						</div>
-					</div>
-					<div class="form-group">
-						<div class="col-lg-offset-2 col-lg-10">
-							<button type="submit" class="btn btn-success">Sign in</button>
-							<button type="reset" class="btn btn-default">Reset</button>
-						</div>
-					</div>
-				</form>
+				{$form}
 				<h5></h5>
                 <!-- Forgot Password link -->
                 Don't remember your Password? <a href="{$login_url}forgotpassword">{$lost}</a>

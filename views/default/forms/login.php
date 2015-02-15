@@ -7,54 +7,30 @@
  */
 ?>
 
-<div class="form-group text-right">
-	<label class="col-sm-3 control-label"><?php echo elgg_echo('loginusername'); ?></label>
-	<div class="col-sm-9">
-		<?php echo elgg_view('input/text', array(
-			'name' => 'username',
-			'class' => 'elgg-autofocus',
-			));
-		?>
+	<div class="form-group">
+		<label for="username" class="col-lg-2 control-label"><?php echo elgg_echo('notification:method:email'); ?></label>
+        <div class="col-lg-8">
+			<input type="email" class="form-control" id="username" name="username" placeholder="<?php echo elgg_echo('notification:method:email'); ?>">
+		</div>
 	</div>
-</div>
-
-<div class="form-group text-right">
-	<label class="col-sm-4 control-label"><?php echo elgg_echo('password'); ?></label>
-	<div class="col-sm-8">
-		<?php echo elgg_view('input/password', array('name' => 'password', 'class' => '')); ?>
+    <div class="form-group">
+		<label for="password" class="col-lg-2 control-label"><?php echo elgg_echo('password'); ?></label>
+        <div class="col-lg-8">
+			<input type="password" class="form-control" id="password" name="password" placeholder="<?php echo elgg_echo('password'); ?>">
+		</div>
+	</div>                     
+	<div class="form-group">
+		<div class="col-lg-offset-2 col-lg-8">
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" name="persistent"><?php echo elgg_echo('user:persistent'); ?>
+				</label>
+			</div>
+		</div>
 	</div>
-</div>
-
-<div>
-<?php echo elgg_view('login/extend', $vars); ?>
-</div>
-<div class="form-group">
-	<div class="col-sm-12">
-		<label class="control-label"><?php echo elgg_echo('user:persistent'); ?></label>
-		<input type="checkbox" name="persistent" value="true" />
-	</div>	
-</div>
-
-<div class="form-group">
-	<div class="col-sm-12">
-		<?php echo elgg_view('input/submit', array('value' => elgg_echo('login'), 'class' => 'btn btn-success',)); ?>
-		<?php 
-			if (isset($vars['returntoreferer'])) {
-			echo elgg_view('input/hidden', array('name' => 'returntoreferer', 'value' => 'true'));
-			}
-		?>
+	<div class="form-group">
+		<div class="col-lg-offset-2 col-lg-10">
+			<button type="submit" class="btn btn-success"><?php echo elgg_echo('login'); ?></button>
+			<button type="reset" class="btn btn-default"><?php echo elgg_echo('reset'); ?></button>
+		</div>
 	</div>
-</div>
-
-<div>
-	<ul class="nav nav-pills">
-		<?php
-			if (elgg_get_config('allow_registration')) {
-				echo '<li><a href="' . elgg_get_site_url() . 'register">' . elgg_echo('register') . '</a></li>';
-			}
-		?>
-		<li>
-			<a href="<?php echo elgg_get_site_url(); ?>forgotpassword"><?php echo elgg_echo('user:password:lost'); ?></a>
-		</li>
-	</ul>
-</div>
