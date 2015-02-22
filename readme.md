@@ -4,7 +4,7 @@
 *	Excellent documentation for Twitter Bootstrap is available here: http://getbootstrap.com/
 
 ## Disclaimers ##
-*	This theme is written for Elgg 1.9 It will not work on any other version of Elgg.
+*	This theme is written for Elgg 1.9 It will not work on any lower version of Elgg.
 *	For Elgg 1.8 with Bootstrap 3 use [This](https://github.com/twentyfiveautumn/twitter_bootstrap/tree/twitter_bootstrap-1.8)
 *	For Elgg 1.8 with Bootstrap 2 use [This](https://github.com/twentyfiveautumn/twitter_bootstrap/tree/twitter_bootstrap_2)
 

@@ -46,6 +46,9 @@ return array(
             <li>Vivamus non neque lacus, et cursus tortor</li>
 		</ul>
         <p>Nullam in est urna. In vitae adipiscing enim. In ut nulla est. Nullam in est urna. In vitae adipiscing enim. Curabitur rhoncus condimentum lorem, non convallis dolor faucibus eget. In ut nulla est. 
-		</p>'
+		</p>',
+	/*****	select a theme	*****/
+	'selected:theme' => 'Selected Theme:',
+	'select:theme:blub' => 'Clck on a Theme to select it. Scroll down and click Save to use it.'
 	
 );

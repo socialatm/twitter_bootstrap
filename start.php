@@ -198,6 +198,22 @@ function twitter_bootstrap_init() {
 		}
 	}
 	
+	$bootstrap_style = elgg_get_plugin_user_setting('bootstrap_style', 0, 'twitter_bootstrap'); 		
+	if(empty($bootstrap_style)){ $bootstrap_style = 'default';}
+	
+	if($bootstrap_style != 'default'){
+		// Register bootswatch css
+		$bootstrap_css = 'mod/twitter_bootstrap/vendors/css/'.$bootstrap_style.'.min.css';
+		elgg_register_css('twitter_bootstrap_css', $bootstrap_css);
+
+		//unload default bootstrap css and load new one
+		elgg_unregister_css('bootstrap_css');
+		elgg_unregister_css('bootstrap_css_theme');
+		if(elgg_get_context() != 'admin') {
+			elgg_load_css('twitter_bootstrap_css');
+		}
+	}
+		
 	$get_context = elgg_get_context();
 	//we don't want bootstrap loading when in the admin area.
 	if($get_context != 'admin'){
