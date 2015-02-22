@@ -4,7 +4,7 @@
 *	Excellent documentation for Twitter Bootstrap is available here: http://getbootstrap.com/
 
 ## New in this Release... ##
-*	adds 16 user selectable themes - special thanks to: (https://github.com/devleaks/twitter_bootswatch)
+*	adds 16 user selectable themes - special thanks to: https://github.com/devleaks/twitter_bootswatch
 *	adds user count to the footer
 *	login page now uses elgg_view_form and is translatable
 *	new invite friends form
