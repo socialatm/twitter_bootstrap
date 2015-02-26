@@ -21,9 +21,9 @@ $vars['class'] = "col-md-12";
 
 $defaults = array(
 	'value' => '',
-	'rows' => '10',
+	'rows' => '3',
 	'cols' => '50',
-	'id' => 'elgg-input-' . rand(), //@todo make this more robust
+	'id' => 'elgg-input-'.rand() //@todo make this more robust
 );
 
 $vars = array_merge($defaults, $vars);
