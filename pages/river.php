@@ -59,9 +59,9 @@ if (!$activity) {
 $content = elgg_view('core/river/filter', array('selector' => $selector));
 
 $content = '<div class="row">
-  <div class="col-md-8"></div>
-  <div class="col-md-4">'.$content.'</div>
-</div>';
+				<div class="col-md-8"></div>
+				<div class="col-md-4">'.$content.'</div>
+			</div>';
 
 if (elgg_get_context() == 'activity'){
     elgg_extend_view('page/elements/sidebar', 'page/elements/comments_block', '501');  
