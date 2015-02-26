@@ -49,6 +49,8 @@ return array(
 		</p>',
 	/*****	select a theme	*****/
 	'selected:theme' => 'Selected Theme:',
-	'select:theme:blub' => 'Clck on a Theme to select it. Scroll down and click Save to use it.'
+	'select:theme:blub' => 'Clck on a Theme to select it. Scroll down and click Save to use it.',
+	/*****	embed media	*****/
+	'embed:media' => '<span class="glyphicon glyphicon-camera"></span>',
 	
 );
