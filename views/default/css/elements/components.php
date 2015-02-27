@@ -176,10 +176,6 @@
 	border-radius: 5px 5px 0 0;
 }
 
-/*
-	@todo components.php
-*/
-
 .elgg-river-comments {
 	padding: 0;
 	margin: 0;
