@@ -5,32 +5,12 @@
  * shouldn't touch or override unless you're sure you know what you're doing.
  * 
  * Provides classes that implement cross-browser support for the following features:
- *   * clearfix
  *   * fluid-width content area that doesn't wrap around floats
  *   * menu's with separators
  *   * inline-block
  *   * horizontal menus
  *   * fluid gallery without using tables
  */
-
-/* Clearfix */
-.clearfix:after,
-.elgg-grid:after,
-.elgg-layout:after,
-.elgg-inner:after,
-.elgg-page-header:after,
-.elgg-page-footer:after,
-.elgg-head:after,
-.elgg-foot:after,
-.elgg-col:after,
-.elgg-col-alt:after,
-.elgg-image-block:after {
-	content: ".";
-	display: block;
-	height: 0;
-	clear: both;
-	visibility: hidden;	
-}
 
 /* ***************************************
  * MENUS
