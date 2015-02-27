@@ -215,10 +215,6 @@
 	font-size: 85%;
 }
 
-/*
-	@todo location-dependent styles
-*/	
-
 .elgg-river-item form {
 	background-color: #FAFAFA;
 	background-repeat: repeat-x;
