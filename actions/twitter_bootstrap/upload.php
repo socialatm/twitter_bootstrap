@@ -64,28 +64,6 @@ if (isset($_FILES['files']['name'][0]) && !empty($_FILES['files']['name'][0])) {
 	$file->originalfilename = $_FILES['files']['name'][0];
 	$mime_type = $_FILES['files']['type'][0];
 
-	// hack for Microsoft zipped formats
-	$info = pathinfo($_FILES['files']['name'][0]);
-	$office_formats = array('docx', 'xlsx', 'pptx');
-	if ($mime_type == "application/zip" && in_array($info['extension'], $office_formats)) {
-		switch ($info['extension']) {
-			case 'docx':
-				$mime_type = "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
-				break;
-			case 'xlsx':
-				$mime_type = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
-				break;
-			case 'pptx':
-				$mime_type = "application/vnd.openxmlformats-officedocument.presentationml.presentation";
-				break;
-		}
-	}
-
-	// check for bad ppt detection
-	if ($mime_type == "application/vnd.ms-office" && $info['extension'] == "ppt") {
-		$mime_type = "application/vnd.ms-powerpoint";
-	}
-
 	$file->size = $_FILES['files']['size'][0];
 	$file->setMimeType($mime_type);
 	$file->simpletype = file_get_simple_type($mime_type);
