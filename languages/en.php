@@ -53,7 +53,51 @@ return array(
 	/*****	embed media	*****/
 	'embed:media' => '<span class="glyphicon glyphicon-camera"></span>',
 	'activity:filter' => 'Activity Filter',
-	'river:public' => 'Public Activity'
+	'river:public' => 'Public Activity',
 	
-	
+	/** status edit form	**/
+	'my:status:edit' => 'Edit my status',
+	'river:comment:object:comment' => 'TESTING',
+	'embed:media' => '<span class="glyphicon glyphicon-camera"></span>',
+
+	/**	Menu items and titles	**/
+	'my:status:go' => 'Post',
+	'my:status:readmore' => 'Read More', // used in sidebar??
+	'rivertalk:readmorelink' => ' please read more.',
+	'rivertalk:add' => "Add a new Status",	// have to keep this for now. used by elgg_register_title_button()
+	'rivertalk:this:group' => "Rivertalk in %s",
+	'rivertalk:inbox' => "Rivertalk inbox",
+	'my:status:more' => "More",
+	'rivertalk:with' => "Share with",
+	'my:status::address' => "address of the Status",
+	'my:status:none' => 'No status updates',
+	'my:status:status' => 'Status',
+	'rtk:comment:placeholder' => 'add a comment',
+	'rtk:status:placeholder' => 'What\'s your Status?',
+	'rtk:everyone' => "Everyone's Status",
+	'rtk:add' => "Add a new Status",
+	'rtk:owner' => "%s's Status",
+	'my:status:access' => 'Who can see this:',
+	'my:status:notification' => '%s added a new Status: %s - %s %s View and comment on the new Status: %s',
+
+	/*****	General	*****/
+	'my:status:numbertodisplay' => 'Number of Statuses to display',
+	'rivertalk:shared' => "Rivertalk shared",
+	'rivertalk:visit' => "Visit resource",
+	'rivertalk:recent' => "Recent Rivertalks",
+	'item:object:status' => 'Status',
+	'rivertalk:no_title' => 'No title',
+
+	/*****	River	*****/
+	'river:create:object:status' => '%s ',
+	'river:comment:object:status' => '%s commented on the Status %s',
+	'rivertalk:river:item' => 'an item',
+
+	/***** Plugin Settings *****/
+	'my:status:num_entries' 	=> 'How many entries do you want to show on the river per page?',
+	'my:status:river:post' => 'Allow users to post status updates from the river?',
+
+	/*****	Error messages	*****/
+	'my:status:save:failed' => "Your Rivertalk could not be saved. Make sure you've entered a title and address and then try again.",
+	'my:status:blank' => "Sorry, you need to write something in the box!"
 );
