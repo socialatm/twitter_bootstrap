@@ -13,7 +13,7 @@ if (!isset($vars['entity']->display_footer)) {
 }
 
 echo '<div class="elgg-fieldset">';
-echo elgg_echo('twitter_bootstrap:displayheaderlogo');
+echo '<h3>'.elgg_echo('twitter_bootstrap:displayheaderlogo').'</h3>';
 echo ' ';
 echo elgg_view('input/select', array(
 	'name' => 'params[display_header_logo]',
@@ -26,7 +26,7 @@ echo elgg_view('input/select', array(
 echo '</div>';
 
 echo '<div class="elgg-fieldset">';
-echo elgg_echo('twitter_bootstrap:displayfooter');
+echo '<h3>'.elgg_echo('twitter_bootstrap:displayfooter').'</h3>';
 echo ' ';
 echo elgg_view('input/select', array(
 	'name' => 'params[display_footer]',
@@ -39,7 +39,7 @@ echo elgg_view('input/select', array(
 echo '</div>';
 
 echo '<div class="elgg-fieldset">';
-echo elgg_echo('twitter_bootstrap:profile2');
+echo '<h3>'.elgg_echo('twitter_bootstrap:profile2').'</h3>';
 echo ' ';
 echo elgg_view('input/select', array(
 	'name' => 'params[profile2]',
@@ -52,7 +52,7 @@ echo elgg_view('input/select', array(
 echo '<a href="https://github.com/twentyfiveautumn/profile2"> get profile2</a></div>';
 
 echo '<div class="elgg-fieldset">';
-echo elgg_echo('tbs:require:email');
+echo '<h3>'.elgg_echo('tbs:require:email').'</h3>';
 echo ' ';
 echo elgg_view('input/select', array(
 	'name' => 'params[require_email_login]',
