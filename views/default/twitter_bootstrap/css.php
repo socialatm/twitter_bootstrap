@@ -275,10 +275,6 @@ li {
 
 /*****	my status	*****/
 
-.elgg-latest-comments {
-	padding: 0;
-}
-
 .elgg-riverbox > textarea {
 	border: 2px solid #ddd;
 	width:100%;
