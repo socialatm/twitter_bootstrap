@@ -39,10 +39,6 @@
 /* Allow inline image blocks in horizontal menus */
 .elgg-menu-hz .elgg-body:after { content: '.'; }
 
-/*
-	@todo This isn't going to work as-is.  Needs testing
-*/
-
 /* Inline block */
 .elgg-gallery > li,
 .elgg-button,
@@ -53,6 +49,5 @@
 .elgg-menu-hz > li > span {
 	/* Google says do this, but why? */
 	position: relative;
-
 	display: inline-block;
 }
