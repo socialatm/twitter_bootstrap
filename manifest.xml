@@ -6,7 +6,7 @@
 	<version>1.9</version>
 	<description>Twitter Bootstrap theme for Elgg 1.9</description>
 	<website>http://twentyfiveautumn.com</website>
-	<copyright>See COPYRIGHT.txt</copyright>
+	<copyright>(c)ray peaslee 2015</copyright>
 	<license>GNU General Public License version 2</license>
 	<requires>
 		<type>elgg_release</type>
