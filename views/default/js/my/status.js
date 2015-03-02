@@ -14,8 +14,7 @@ define(function (require) {
             $form.hide();
         } else {
             $(".elgg-list-river").before(responseText);                                     //     adds the new activity to the top of the river
-            $(".elgg-menu-item-comment").remove();                                          //     removes the comment bubble from the new activity
-            $(".elgg-river").css("border-top", 0);                                          //     fixes the top border issue
+			$(".elgg-river").css("border-top", 0);                                          //     fixes the top border issue
             $(".elgg-river").first().css("border-top", "1px solid #ddd");
             $form.resetForm();
             $("[id*='status-edit']").hide();
@@ -34,7 +33,6 @@ define(function (require) {
         }
     }
 
-$(".elgg-menu-item-comment").remove();                         //     removes the comment bubble from the river menu
 var options = {
     success:     riverjax.showResponse,                         //     post-submit callback
     delegation: true
