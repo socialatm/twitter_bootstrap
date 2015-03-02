@@ -6,6 +6,18 @@
 gatekeeper();
 $options = array();
 
+if(elgg_get_plugin_setting('river_post', 'twitter_bootstrap') === 'yes') {
+	if (elgg_is_logged_in()) {
+		// prepare the form
+		$content = elgg_view_form('my_status/save', array('name' => 'riverjax', 'id' => 'riverjax'), $vars);
+	}
+}
+
+$num_entries = elgg_get_plugin_setting('num_entries', 'twitter_bootstrap');
+$options = array(
+	'limit' => (int) max(get_input('limit', $num_entries), 0),
+);
+
 $page_type = preg_replace('[\W]', '', get_input('page_type', 'all'));
 $type = preg_replace('[\W]', '', get_input('type', 'all'));
 $subtype = preg_replace('[\W]', '', get_input('subtype', ''));
@@ -55,13 +67,6 @@ $activity = elgg_list_river($options);
 if (!$activity) {
 	$activity = elgg_echo('river:none');
 }
-
-$content = // post from the river textarea will go here
-
-$content = '<div class="row">
-				<div class="col-md-8"></div>
-				<div class="col-md-4">'.$content.'</div>
-			</div>';
 
 if (elgg_get_context() == 'activity'){
     elgg_extend_view('page/elements/sidebar', 'page/elements/comments_block', '501');  
