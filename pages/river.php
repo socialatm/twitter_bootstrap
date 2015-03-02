@@ -75,5 +75,5 @@ $params = array(
 );
 
 $body = elgg_view_layout('content', $params);
-
+elgg_require_js("my/status");
 echo elgg_view_page($title, $body);
