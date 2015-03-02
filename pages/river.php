@@ -73,7 +73,7 @@ if (elgg_get_context() == 'activity'){
 }
 
 $params = array(
-	'title' => $title,
+	'title' => '<h3>'.$title.'</h3>',
 	'content' => $content.$activity,
 	'filter_context' => $page_filter,
 	'class' => 'elgg-river-layout',
