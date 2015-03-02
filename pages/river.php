@@ -46,7 +46,7 @@ switch ($page_type) {
 		$options['relationship'] = 'friend';
 		break;
 	default:
-		$title = elgg_echo('river:all');
+		$title = elgg_echo('river:public');
 		$page_filter = 'all';
 		break;
 }
@@ -56,7 +56,7 @@ if (!$activity) {
 	$activity = elgg_echo('river:none');
 }
 
-$content = elgg_view('core/river/filter', array('selector' => $selector));
+$content = // post from the river textarea will go here
 
 $content = '<div class="row">
 				<div class="col-md-8"></div>
@@ -65,12 +65,11 @@ $content = '<div class="row">
 
 if (elgg_get_context() == 'activity'){
     elgg_extend_view('page/elements/sidebar', 'page/elements/comments_block', '501');  
-    elgg_extend_view('page/elements/sidebar', 'page/elements/tagcloud_block', '502');
 }
 
 $params = array(
 	'title' => $title,
-	'content' =>  $content . $activity,
+	'content' => $content.$activity,
 	'filter_context' => $page_filter,
 	'class' => 'elgg-river-layout',
 );

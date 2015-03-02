@@ -52,5 +52,8 @@ return array(
 	'select:theme:blub' => 'Clck on a Theme to select it. Scroll down and click Save to use it.',
 	/*****	embed media	*****/
 	'embed:media' => '<span class="glyphicon glyphicon-camera"></span>',
+	'activity:filter' => 'Activity Filter',
+	'river:public' => 'Public Activity'
+	
 	
 );
