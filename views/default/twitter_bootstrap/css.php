@@ -272,3 +272,39 @@ li {
 #tbs-header {
 	margin-top: 40px;
 }
+
+/*****	my status	*****/
+
+#status_access_id {margin: 0 0 0 5px;}
+
+#status_access_id, #status_access_label {
+float: left;
+}
+
+#status_submit {
+float: right;
+}
+
+.elgg-latest-comments {
+	padding: 0;
+}
+
+.elgg-foot.elgg-riverbox-access {
+	margin-top: 5px;
+}
+
+.elgg-riverbox > textarea {
+	border: 2px solid #ddd;
+	width:100%;
+	margin-bottom: 5px;
+}
+
+.elgg-riverbox > ul {
+	margin-bottom: 0;
+}
+
+#riverjax label:first-child {
+//	display: none;
+}
+
+.elgg-river-responses button:last {display: none;}
