@@ -258,6 +258,37 @@ function twitter_bootstrap_init() {
 	// Register entity type for search
 	elgg_register_entity_type('object', 'status');
 	
+	// Listen to notification events and supply a more useful message
+	elgg_register_plugin_hook_handler('notify:entity:message', 'object', 'my_status_notify_message');
+	
+	/**
+ * Returns the body of a notification message
+ *
+ * @param string $hook
+ * @param string $entity_type
+ * @param string $returnvalue
+ * @param array  $params
+ */
+function my_status_notify_message($hook, $entity_type, $returnvalue, $params) {
+	$entity = $params['entity'];
+	$to_entity = $params['to_entity'];
+	$method = $params['method'];
+	if (($entity instanceof ElggEntity) && ($entity->getSubtype() === 'status')) {
+		$descr = $entity->description;
+		$title = $entity->title;
+		$owner = $entity->getOwnerEntity();
+
+		return elgg_echo('my:status:notification', array(
+			$owner->name,
+			$title,
+			$entity->address,
+			$descr,
+			$entity->getURL()
+		));
+	}
+	return null;
+}
+	
 	// set site menu default activity to friends
 	if(elgg_is_logged_in()){
 		$item = new ElggMenuItem('activity', elgg_echo('activity'), 'activity/friends/'.elgg_get_logged_in_user_entity()->username);
