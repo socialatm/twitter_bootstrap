@@ -31,7 +31,7 @@ if ($full_view) {
 		'entity' => $comment,
 		'handler' => 'comment',
 		'sort_by' => 'priority',
-		'class' => 'elgg-menu-hz float-alt',
+		'class' => 'list-inline',
 	));
 	
 	if (elgg_in_context('activity')) {
@@ -48,20 +48,7 @@ if ($full_view) {
 			'data-role' => 'comment-text',
 		));
 	}
-	$body = <<<HTML
-$anchor
-<div class="mbn">
-	$menu
-	$commenter_link
-	<span class="elgg-subtext">
-		$friendlytime
-	</span>
-	$comment_text
-</div>
-HTML;
 
-//	echo elgg_view_image_block($commenter_icon, $body);
-	
 echo 	<<<RIVER
 			<div class="media">
 				<div class="media-left">
@@ -74,13 +61,6 @@ echo 	<<<RIVER
 				</div>
 			</div>
 RIVER;
-	
-	
-	
-	
-	
-	
-	
 
 } else {
 	// brief view
