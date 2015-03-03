@@ -52,14 +52,14 @@ return array(
 	'select:theme:blub' => 'Clck on a Theme to select it. Scroll down and click Save to use it.',
 	/*****	embed media	*****/
 	'embed:media' => '<span class="glyphicon glyphicon-camera"></span>',
+	
 	'activity:filter' => 'Activity Filter',
 	'river:public' => 'Public Activity',
 	
 	/** status edit form	**/
 	'my:status:edit' => 'Edit my status',
 	'river:comment:object:comment' => 'TESTING',
-	'embed:media' => '<span class="glyphicon glyphicon-camera"></span>',
-
+	
 	/**	Menu items and titles	**/
 	'my:status:go' => 'Post',
 	'my:status:readmore' => 'Read More', // used in sidebar??
