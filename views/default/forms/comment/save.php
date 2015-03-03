@@ -9,7 +9,6 @@
  * @uses bool        $vars['inline']       Show a single line version of the form?
  * @uses bool        $vars['is_edit_page'] Is this form on its own page?
  */
-
 if (!elgg_is_logged_in()) {
 	return;
 }
@@ -43,31 +42,49 @@ if ($comment && $comment->canEdit()) {
 	$comment_text = $comment->description;
 } else {
 	$comment_label  = elgg_echo("generic_comments:add");
-	
-	//	hide the new comment submit button on the river
-	$class = (elgg_get_context() === 'activity')? 'hidden' : '';
-	$submit_input = elgg_view('input/submit', array('value' => elgg_echo('comment'), 'class' => $class));
+	$submit_input = elgg_view('input/submit', array('value' => elgg_echo('comment')));
 }
 
-$cancel_link = '';
+$cancel_button = '';
 if ($comment) {
-	$cancel_link = elgg_format_element('a', array(
-		'class' => 'elgg-cancel mlm',
+	$cancel_button = elgg_view('input/button', array(
+		'value' => elgg_echo('cancel'),
+		'class' => 'elgg-button-cancel mlm',
 		'href' => $entity ? $entity->getURL() : '#',
-	), elgg_echo('cancel'));
+	));
 }
 
 if ($inline) {
-	$user_icon = elgg_view_entity_icon(elgg_get_logged_in_user_entity(), 'tiny');
-	$comment_form = elgg_view('input/text', array(
+	$comment_input = elgg_view('input/text', array(
 		'name' => 'generic_comment',
 		'value' => $comment_text,
-		'class' => 'col-md-11',
-		'placeholder' => elgg_echo('tbs:comment:placeholder'),
 	));
-	$comment_input = elgg_view_image_block($user_icon, $comment_form);
+	
+	$commenter_icon = elgg_view_entity_icon(elgg_get_logged_in_user_entity(), 'tiny');
+	$submit_label = elgg_echo('comment');
+	$placeholder = elgg_echo('tbs:comment:placeholder');
 
-	echo $comment_input . $entity_guid_input . $comment_guid_input . $submit_input;
+echo 	<<<RIVER
+			<div class="media">
+				<div class="media-left">
+					{$commenter_icon}
+				</div>
+				<div class="media-body">
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="{$placeholder}" name="generic_comment" value="$comment_text">
+						<span class="input-group-btn">
+							<button class="btn btn-default" type="submit">{$submit_label}</button>
+						</span>
+						{$entity_guid_input}
+						{$comment_guid_input}
+					</div>
+				</div>
+			</div>
+RIVER;
+	
+	
+	
+	
 } else {
 
 	$comment_input = elgg_view('input/longtext', array(
@@ -89,7 +106,7 @@ if ($inline) {
 	$is_edit_page_input
 	$comment_guid_input
 	$entity_guid_input
-	$submit_input $cancel_link
-<div>
+	$submit_input $cancel_button
+</div>
 FORM;
 }
