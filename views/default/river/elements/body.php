@@ -21,7 +21,7 @@ if ($entity->canEdit()) {
 		'name' => 'edit',
 			'text' => elgg_echo('edit'),
 			'title' => elgg_echo('edit:this'),
-			'href' => "my_status/edit/{$item_guid}",
+			'href' => "status/edit/{$item_guid}",
 			'priority' => 100,
 			'link_class' => 'status-edit',
 	)));
@@ -99,7 +99,7 @@ $message = elgg_extract('message', $vars, false);
 if(elgg_get_context() != 'widgets') {	
 $form_vars = array('id' => "status-edit-{$object->getGUID()}", 'class' => '');
 $body_vars = array('description' => $message, 'inline' => true, 'guid' => $object->getGUID());
-$form = elgg_view_form('my_status/save', $form_vars, $body_vars);
+$form = elgg_view_form('status/save', $form_vars, $body_vars);
 }
 
 echo 	<<<RIVER

@@ -252,14 +252,14 @@ function twitter_bootstrap_init() {
 	elgg_register_action('twitter_bootstrap/upload', $action_path.'/twitter_bootstrap/upload.php', '');
 	
 	//	river status actions
-	elgg_register_action('my_status/save', "$action_path/status/save.php");
+	elgg_register_action('status/save', "$action_path/status/save.php");
 	elgg_register_action('comment/save', "$action_path/status/comment/save.php");
 	
 	// Register entity type for search
 	elgg_register_entity_type('object', 'status');
 	
 	// Listen to notification events and supply a more useful message
-	elgg_register_plugin_hook_handler('notify:entity:message', 'object', 'my_status_notify_message');
+	elgg_register_plugin_hook_handler('notify:entity:message', 'object', 'status_notify_message');
 	
 	/**
  * Returns the body of a notification message
@@ -269,7 +269,7 @@ function twitter_bootstrap_init() {
  * @param string $returnvalue
  * @param array  $params
  */
-function my_status_notify_message($hook, $entity_type, $returnvalue, $params) {
+function status_notify_message($hook, $entity_type, $returnvalue, $params) {
 	$entity = $params['entity'];
 	$to_entity = $params['to_entity'];
 	$method = $params['method'];
