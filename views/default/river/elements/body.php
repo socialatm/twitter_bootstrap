@@ -48,11 +48,9 @@ if(elgg_get_context() != 'widgets') {
 	$menu = elgg_view_menu('river', array(
 		'item' => $item,
 		'sort_by' => 'priority',
-		'class' => 'elgg-menu-hz elgg-menu-entity',
+		'class' => 'list-inline',
 	));
 }
-
-// $image = elgg_view('river/elements/image', $vars);
 
 // river item header
 $timestamp = elgg_view_friendly_time($item->getTimePosted());
@@ -103,17 +101,6 @@ $form_vars = array('id' => "status-edit-{$object->getGUID()}", 'class' => '');
 $body_vars = array('description' => $message, 'inline' => true, 'guid' => $object->getGUID());
 $form = elgg_view_form('my_status/save', $form_vars, $body_vars);
 }
-
-/*****
-echo <<<RIVER
-$menu
-<div class="elgg-river-summary">$summary $group_string <span class="elgg-river-timestamp">$timestamp</span></div>
-<p>$message</p>
-$form
-$attachments
-$responses
-RIVER;
-*****/
 
 echo 	<<<RIVER
 	<div class="media">
