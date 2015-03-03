@@ -86,9 +86,8 @@ return array(
 	
 	/*****	River	*****/
 	'river:create:object:status' => '%s ',
-	'river:comment:object:status' => '%s commented on the Status %s',
-	'rivertalk:river:item' => 'an item',
-
+	'river:comment:object:status' => '%s commented on %s\'s status.',
+	
 	/***** Plugin Settings *****/
 	'my:status:num_entries' 	=> 'How many entries do you want to show on the river per page?',
 	'my:status:river:post' => 'Allow users to post status updates from the river?',
