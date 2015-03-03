@@ -31,7 +31,7 @@ $status_label = elgg_echo('my:status:edit');
 	<?php echo elgg_view('input/longtext', array(
 		'name' => 'description',
 		'value' => $description, 
-		'placeholder' => elgg_echo("rtk:status:placeholder"),
+		'placeholder' => elgg_echo("status:placeholder"),
 		'rows' => '2',
 		'cols' => '50',
 		)); ?>
