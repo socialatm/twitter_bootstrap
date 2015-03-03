@@ -69,7 +69,7 @@ if(!is_null($guid)){
 //add to river only if new
 	if ($new) {
 $river_item = elgg_create_river_item(array(
-			'view' => 'river/object/my_status/create',
+			'view' => 'river/object/status/create',
 			'action_type' => 'create',
 			'subject_guid' => elgg_get_logged_in_user_guid(),
 			'object_guid' => $status->getGUID(),
