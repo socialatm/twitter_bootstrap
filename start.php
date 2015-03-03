@@ -252,8 +252,8 @@ function twitter_bootstrap_init() {
 	elgg_register_action('twitter_bootstrap/upload', $action_path.'/twitter_bootstrap/upload.php', '');
 	
 	//	river status actions
-	elgg_register_action('my_status/save', "$action_path/my_status/save.php");
-	elgg_register_action('comment/save', "$action_path/my_status/comment/save.php");
+	elgg_register_action('my_status/save', "$action_path/status/save.php");
+	elgg_register_action('comment/save', "$action_path/status/comment/save.php");
 	
 	// Register entity type for search
 	elgg_register_entity_type('object', 'status');
