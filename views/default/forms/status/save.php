@@ -3,7 +3,7 @@
  * Add or Edit a Status	
  *****/
 
-$title = elgg_echo('my:status:readmore');
+$title = elgg_echo('item:object:status');
 $description = elgg_extract('description', $vars, '');
 
 //	default to ACCESS_FRIENDS if $vars['access_id'] is not set

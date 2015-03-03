@@ -15,7 +15,7 @@ $htmlawed_config = array(
 		'schemes' => '*:http,https,ftp,news,mailto,rtsp,teamspeak,gopher,mms,callto',
 	);
  
-$title = elgg_echo('my:status:readmore');
+$title = elgg_echo('item:object:status');
 $description = get_input('description', null, false);
 $access_id = get_input('access_id');
 $guid = get_input('guid');

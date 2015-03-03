@@ -62,8 +62,6 @@ return array(
 	
 	/**	Menu items and titles	**/
 	'my:status:go' => 'Post',
-	'my:status:readmore' => 'Read More', // used in sidebar??
-	'rivertalk:readmorelink' => ' please read more.',
 	'rivertalk:add' => "Add a new Status",	// have to keep this for now. used by elgg_register_title_button()
 	'rivertalk:this:group' => "Rivertalk in %s",
 	'rivertalk:inbox' => "Rivertalk inbox",
@@ -84,7 +82,7 @@ return array(
 	'item:object:status' => 'Status',
 	
 	/*****	River	*****/
-	'river:create:object:status' => '%s ',
+	'river:create:object:status' => '%s added a new status',
 	'river:comment:object:status' => '%s commented on %s\'s status.',
 	
 	/***** Plugin Settings *****/
