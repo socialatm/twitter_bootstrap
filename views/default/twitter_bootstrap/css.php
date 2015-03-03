@@ -1,6 +1,5 @@
-/*******************
-SOME CORE OVERRIDES 
-*******************/
+/*****	SOME CORE OVERRIDES	*****/
+
 .elgg-page .elgg-page-header {
 	position: relative;
 	padding-top:15px;
