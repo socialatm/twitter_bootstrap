@@ -52,6 +52,8 @@ if(elgg_get_context() != 'widgets') {
 	));
 }
 
+// $image = elgg_view('river/elements/image', $vars);
+
 // river item header
 $timestamp = elgg_view_friendly_time($item->getTimePosted());
 
@@ -102,6 +104,7 @@ $body_vars = array('description' => $message, 'inline' => true, 'guid' => $objec
 $form = elgg_view_form('my_status/save', $form_vars, $body_vars);
 }
 
+/*****
 echo <<<RIVER
 $menu
 <div class="elgg-river-summary">$summary $group_string <span class="elgg-river-timestamp">$timestamp</span></div>
@@ -109,4 +112,21 @@ $menu
 $form
 $attachments
 $responses
+RIVER;
+*****/
+
+echo 	<<<RIVER
+	<div class="media">
+		<div class="media-left">
+			{$image}
+		</div>
+		<div class="media-body">
+			<h5 class="media-heading">{$summary}{$group_string}<span class="elgg-river-timestamp"> {$timestamp}</span></h5>
+				<p>{$message}</p>
+				{$menu}
+				{$form}
+				{$attachments}
+				{$responses}
+		</div>
+    </div>
 RIVER;
