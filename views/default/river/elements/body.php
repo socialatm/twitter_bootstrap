@@ -55,16 +55,7 @@ if(elgg_get_context() != 'widgets') {
 // river item header
 $timestamp = elgg_view_friendly_time($item->getTimePosted());
 
-$summary = elgg_extract('summary', $vars, elgg_view('river/elements/summary', array('item' => $vars['item'])));
-if ($summary === false) {
-	$subject = $item->getSubjectEntity();
-	$summary = elgg_view('output/url', array(
-		'href' => $subject->getURL(),
-		'text' => $subject->name,
-		'class' => 'elgg-river-subject',
-		'is_trusted' => true,
-	));
-}
+$summary = elgg_view('river/elements/summary', array('item' => $vars['item']));
 
 $message = elgg_extract('message', $vars, false);
 if ($message !== false) {
