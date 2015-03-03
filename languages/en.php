@@ -58,7 +58,7 @@ return array(
 	
 	/** status edit form	**/
 	'my:status:edit' => 'Edit my status',
-	'river:comment:object:comment' => 'TESTING',
+	'river:comment:object:comment' => '%s commented on %s\'s status', // user commented of other users status
 	
 	/**	Menu items and titles	**/
 	'my:status:go' => 'Post',
