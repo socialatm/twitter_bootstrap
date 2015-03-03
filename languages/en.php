@@ -82,12 +82,8 @@ return array(
 
 	/*****	General	*****/
 	'my:status:numbertodisplay' => 'Number of Statuses to display',
-	'rivertalk:shared' => "Rivertalk shared",
-	'rivertalk:visit' => "Visit resource",
-	'rivertalk:recent' => "Recent Rivertalks",
 	'item:object:status' => 'Status',
-	'rivertalk:no_title' => 'No title',
-
+	
 	/*****	River	*****/
 	'river:create:object:status' => '%s ',
 	'river:comment:object:status' => '%s commented on the Status %s',
