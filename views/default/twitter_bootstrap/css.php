@@ -32,10 +32,6 @@ SOME CORE OVERRIDES
 	padding:0 10px 0 10px;
 }
 
-ul.elgg-menu-river-default, ul.elgg-menu-annotation-default {
-	float:right;
-}
-
 ul.elgg-tags {
 	margin:0;
 }
@@ -89,32 +85,6 @@ li {
 .elgg-access:hover {
   color: #ffffff;
   text-decoration: none;
-}
-
-/* ***************************************
-	ENTITY AND ANNOTATION
-*************************************** */
-
-.elgg-menu-entity, elgg-menu-annotation {
-	float: right;
-	margin-left: 15px;
-	font-size: 90%;
-	color: #aaa;
-	line-height: 16px;
-	height: 16px;
-}
-.elgg-menu-entity > li, .elgg-menu-annotation > li {
-	margin-left: 15px;
-}
-.elgg-menu-entity > li > a, .elgg-menu-annotation > li > a {
-	color: #aaa;
-}
-
-.elgg-menu-entity > li > a, .elgg-menu-annotation > li > a {
-	display: block;
-}
-.elgg-menu-entity > li > span, .elgg-menu-annotation > li > span {
-	vertical-align: baseline;
 }
 
 /* ***************************************
