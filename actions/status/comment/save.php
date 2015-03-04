@@ -49,6 +49,8 @@ if ($comment_guid) {
 	$user = elgg_get_logged_in_user_entity();
 
 	$comment = new ElggComment();
+	$comment->title = $user->username;
+	$comment->name = $user->username;
 	$comment->description = $comment_text;
 	$comment->owner_guid = $user->getGUID();
 	$comment->container_guid = $entity->getGUID();
