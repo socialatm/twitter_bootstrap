@@ -14,8 +14,9 @@ $htmlawed_config = array(
 		'hook_tag' => 'htmlawed_tag_post_processor',
 		'schemes' => '*:http,https,ftp,news,mailto,rtsp,teamspeak,gopher,mms,callto',
 	);
- 
-$title = elgg_echo('item:object:status');
+
+$owner = elgg_get_logged_in_user_entity();
+$title = $owner->username;	
 $description = get_input('description', null, false);
 $access_id = get_input('access_id');
 $guid = get_input('guid');
