@@ -50,7 +50,7 @@ if ($full_view) {
 	}
 
 echo 	<<<RIVER
-			<div class="media">
+			<div class="media elgg-body">
 				<div class="media-left">
 					{$commenter_icon}
 				</div>
