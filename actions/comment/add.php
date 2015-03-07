@@ -82,12 +82,12 @@ if ($comment_guid) {
 	}
 
 	$comments = elgg_get_entities(array(
-	'type' => 'object',
-	'subtype' => 'comment',
-	'container_guid' => $entity_guid,
-	'limit' => 1,
-	'order_by' => 'e.time_created desc'
-));
+		'type' => 'object',
+		'subtype' => 'comment',
+		'container_guid' => $entity_guid,
+		'limit' => 1,
+		'order_by' => 'e.time_created desc'
+	));
 
 if ($comments) {
 	// why is this reversing it? because we're asking for the 3 latest
