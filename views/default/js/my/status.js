@@ -58,8 +58,6 @@ if (!elgg.is_logged_in()) {
     $('.elgg-river-comments li:last-child').css('border-bottom', '1px solid #D4D4D4');
 }
 
-// $("[id*='status-edit']").hide();
-
 // edit a status
 $("[id*='status-edit']").ajaxForm(options).submit(function () {
     'use strict';
