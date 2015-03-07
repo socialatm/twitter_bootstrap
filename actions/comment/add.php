@@ -90,28 +90,12 @@ if ($comment_guid) {
 	));
 
 if ($comments) {
-	
 	echo elgg_view_entity_list($comments, array('list_class' => 'elgg-river-comments'));
-
-	if ($comment_count > count($comments)) {
-		$num_more_comments = $comment_count - count($comments);
-		$url = $object->getURL();
-		$params = array(
-			'href' => $url,
-			'text' => elgg_echo('river:comments:more', array($num_more_comments)),
-			'is_trusted' => true,
-		);
-		$link = elgg_view('output/url', $params);
-		echo "<div class=\"elgg-river-more\">$link</div>";
-	}
 }
-
 	die();
-	
 }
 
 if ($is_edit_page) {
 	forward($comment->getURL());
 }
-
 forward(REFERER);
