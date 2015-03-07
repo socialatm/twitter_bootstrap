@@ -1,6 +1,6 @@
 <?php
 /**
- * Action for adding and editing comments
+ * Action for adding a new comment on the river
  *
  * @package Elgg.Core
  * @subpackage Comments
@@ -31,10 +31,8 @@ if ($comment_guid) {
 
 	$comment->description = $comment_text;
 	if ($comment->save()) {
-	
 		echo $comment->description;
 		die();
-	//	system_message(elgg_echo('generic_comment:updated'));
 	} else {
 		register_error(elgg_echo('generic_comment:failure'));
 	}
@@ -83,18 +81,6 @@ if ($comment_guid) {
 		);
 	}
 
-	// Add to river
-	elgg_create_river_item(array(
-		'view' => 'river/object/comment/create',
-		'action_type' => 'comment',
-		'subject_guid' => $user->guid,
-		'object_guid' => $guid,
-		'target_guid' => $entity_guid,
-	));
-
-	// system_message(elgg_echo('generic_comment:posted'));
-	
-	
 	$comments = elgg_get_entities(array(
 	'type' => 'object',
 	'subtype' => 'comment',
