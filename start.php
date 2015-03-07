@@ -1,7 +1,7 @@
 <?php
 /*****
  * Twitter bootstrap theme for Elgg	start page	
- * @elgg-release: 1.9.4
+ * @elgg-release: 1.10.2
  *****/
 
 elgg_register_event_handler('init', 'system', 'twitter_bootstrap_init');
@@ -9,7 +9,7 @@ elgg_register_event_handler('init', 'system', 'twitter_bootstrap_init');
 function twitter_bootstrap_init() {
 
 	// don't need it twice
-	new TbsMenu;
+	elgg_unregister_menu_item('footer', 'powered');
 
 	//include twitter bootstrap css
 	elgg_extend_view('css/elgg', 'twitter_bootstrap/css');
