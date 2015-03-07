@@ -104,7 +104,7 @@ if ($container instanceof ElggGroup && $container->guid != elgg_get_page_owner_g
 $message = elgg_extract('message', $vars, false);
 
 if(elgg_get_context() != 'widgets') {	
-$form_vars = array('id' => "status-edit-{$object->getGUID()}", 'class' => '');
+$form_vars = array('id' => "status-edit-{$object->getGUID()}", 'class' => 'hidden');
 $body_vars = array('description' => $message, 'inline' => true, 'guid' => $object->getGUID());
 $form = elgg_view_form('status/save', $form_vars, $body_vars);
 }

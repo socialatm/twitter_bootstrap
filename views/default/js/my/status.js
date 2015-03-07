@@ -10,7 +10,7 @@ define(function (require) {
 // post-submit callback status form 
     riverjax.showResponse = function (responseText, statusText, xhr, $form) {
         if ($form.attr("id").substring(0, 11) === 'status-edit') {
-            $form.parent(".elgg-body").find("p").html(responseText);
+            $form.parent(".media-body").find("p").html(responseText);
             $form.hide();
         } else {
             $(".elgg-list-river").before(responseText);                                     //     adds the new activity to the top of the river
@@ -58,7 +58,7 @@ if (!elgg.is_logged_in()) {
     $('.elgg-river-comments li:last-child').css('border-bottom', '1px solid #D4D4D4');
 }
 
-$("[id*='status-edit']").hide();
+// $("[id*='status-edit']").hide();
 
 // edit a status
 $("[id*='status-edit']").ajaxForm(options).submit(function () {
@@ -67,7 +67,7 @@ $("[id*='status-edit']").ajaxForm(options).submit(function () {
 
 $("div.col-md-9").on("click", "a.status-edit", function (e) {
     'use strict';
-    $(this).closest("ul").siblings("form").slideToggle("slow");
+    $(this).closest("ul").siblings("form").slideToggle("slow").removeClass("hidden");
     e.preventDefault();
 });
 
