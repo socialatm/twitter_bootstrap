@@ -36,7 +36,7 @@ if (elgg_get_config('https_login')) {
 }
 $form_params = array(
 	'action' => $register_url,
-	'class' => 'form',
+	'class' => 'form form-horizontal',
 );
 
 $body_params = array(

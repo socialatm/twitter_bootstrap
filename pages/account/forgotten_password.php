@@ -15,7 +15,7 @@ $site = elgg_get_site_entity();
 $site_name = $site->name;
 
 $form = elgg_view_form('user/requestnewpassword', array(
-		'class' => 'form',
+		'class' => 'form form-horizontal',
 		));
 
 $content = '
