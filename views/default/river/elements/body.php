@@ -14,25 +14,24 @@ $entity = $item->getObjectEntity();
 $item_guid = $entity->guid;
 
 if ($entity->canEdit()) {
-	elgg_unregister_menu_item('river', 'comment');
 	elgg_unregister_menu_item('river', 'delete');
 
 	elgg_register_menu_item('river', ElggMenuItem::factory(array(
 		'name' => 'edit',
-			'text' => elgg_echo('edit'),
-			'title' => elgg_echo('edit:this'),
-			'href' => "status/edit/{$item_guid}",
-			'priority' => 100,
-			'link_class' => 'status-edit',
+		'text' => elgg_echo('edit'),
+		'title' => elgg_echo('edit:this'),
+		'href' => "status/edit/{$item_guid}",
+		'priority' => 100,
+		'link_class' => 'status-edit',
 	)));
 	
 	elgg_register_menu_item('river', ElggMenuItem::factory(array(
 		'name' => 'delete',
-				'href' => elgg_add_action_tokens_to_url("action/river/delete?id=$item->id"),
-				'text' => elgg_view_icon('delete'),
-				'title' => elgg_echo('river:delete'),
-				'confirm' => elgg_echo('deleteconfirm'),
-				'priority' => 200,
+		'href' => elgg_add_action_tokens_to_url("action/river/delete?id=$item->id"),
+		'text' => elgg_view_icon('delete'),
+		'title' => elgg_echo('river:delete'),
+		'confirm' => elgg_echo('deleteconfirm'),
+		'priority' => 200,
 	)));
 
 }
@@ -43,7 +42,7 @@ if ($entity->canEdit()) {
 		'href' => false,
 		'priority' => 50,
 	)));
-
+	
 if(elgg_get_context() != 'widgets') {	
 	$menu = elgg_view_menu('river', array(
 		'item' => $item,
@@ -51,6 +50,8 @@ if(elgg_get_context() != 'widgets') {
 		'class' => 'list-inline',
 	));
 }
+
+
 
 // river item header
 $timestamp = elgg_view_friendly_time($item->getTimePosted());

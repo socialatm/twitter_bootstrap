@@ -288,7 +288,16 @@ function status_notify_message($hook, $entity_type, $returnvalue, $params) {
 	}
 	return null;
 }
-	
+
+elgg_register_plugin_hook_handler('prepare', 'menu:river', 'tbs_river_menu_setup', 600);
+
+function tbs_river_menu_setup($hook, $type, $return, $params) {
+	foreach ($return['default'] as $key => $item) {
+		if($item->getName() == 'comment'){unset($return['default'][$key]);}
+	}
+	return $return;
+}
+
 	// set site menu default activity to friends
 	if(elgg_is_logged_in()){
 		$item = new ElggMenuItem('activity', elgg_echo('activity'), 'activity/friends/'.elgg_get_logged_in_user_entity()->username);
