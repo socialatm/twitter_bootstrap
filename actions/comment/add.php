@@ -90,11 +90,7 @@ if ($comment_guid) {
 	));
 
 if ($comments) {
-	// why is this reversing it? because we're asking for the 3 latest
-	// comments by sorting desc and limiting by 3, but we want to display
-	// these comments with the latest at the bottom.
-//	$comments = array_reverse($comments);
-
+	
 	echo elgg_view_entity_list($comments, array('list_class' => 'elgg-river-comments'));
 
 	if ($comment_count > count($comments)) {
