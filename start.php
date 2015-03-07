@@ -239,21 +239,24 @@ function twitter_bootstrap_init() {
 	elgg_register_page_handler('profile', 'tbs_profile_page_handler');
 	
 	// Register actions
-	$action_path = elgg_get_plugins_path() . 'twitter_bootstrap/actions';
+	$action_path = elgg_get_plugins_path().'twitter_bootstrap/actions';
 		
 	if(elgg_get_plugin_setting('require_email_login', 'twitter_bootstrap') === 'yes') {
 		
 		elgg_register_action('login', $action_path.'/login.php', 'public');
 		elgg_register_action('register', $action_path.'/register.php', 'public');
 		elgg_register_action('logout', $action_path.'/logout.php', '');
-		elgg_register_action('comment/save', $action_path.'/comment/save.php', '');
 	}	
 	
 	elgg_register_action('twitter_bootstrap/upload', $action_path.'/twitter_bootstrap/upload.php', '');
 	
 	//	river status actions
 	elgg_register_action('status/save', "$action_path/status/save.php");
-	elgg_register_action('comment/save', "$action_path/status/comment/save.php");
+	
+	elgg_unregister_action('comment/save');
+	
+	elgg_register_action('comment/save', $action_path.'/comment/save.php', '');
+//	elgg_register_action('comment/save', "$action_path/status/comment/save.php");
 	
 	// Register entity type for search
 	elgg_register_entity_type('object', 'status');
