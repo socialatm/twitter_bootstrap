@@ -5,12 +5,15 @@
  * @package Elgg
  * @subpackage Core
  */
-?>
+ 
+ $type = elgg_get_plugin_setting('require_email_login', 'twitter_bootstrap') === 'yes' ? 'email':'text';
+ $placeholder = elgg_get_plugin_setting('require_email_login', 'twitter_bootstrap') === 'yes' ? elgg_echo('notification:method:email') : elgg_echo('username');
+ ?>
 
 	<div class="form-group">
-		<label for="username" class="col-lg-2 control-label"><?php echo elgg_echo('notification:method:email'); ?></label>
+		<label for="username" class="col-lg-2 control-label"><?php echo $placeholder; ?></label>
         <div class="col-lg-8">
-			<input type="email" class="form-control" id="username" name="username" placeholder="<?php echo elgg_echo('notification:method:email'); ?>">
+			<input type="<?php echo $type ?>" class="form-control" id="username" name="username" placeholder="<?php echo $placeholder; ?>">
 		</div>
 	</div>
     <div class="form-group">
