@@ -254,7 +254,6 @@ function twitter_bootstrap_init() {
 	elgg_register_action('status/save', "$action_path/status/save.php");
 	
 	elgg_unregister_action('comment/save');
-	
 	elgg_register_action('comment/save', $action_path.'/comment/save.php', '');
 	elgg_register_action('comment/add', "$action_path/comment/add.php");
 	
