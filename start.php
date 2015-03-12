@@ -231,10 +231,13 @@ function twitter_bootstrap_init() {
 	
 	// Register plugin hook handlers
 	
-	// Register page handlers
-	elgg_register_page_handler('login', 'tbs_user_account_page_handler');
-	elgg_register_page_handler('register', 'tbs_user_account_page_handler');
-	elgg_register_page_handler('forgotpassword', 'tbs_user_account_page_handler');
+	// Register page handlers and check for walled garden
+	if(elgg_get_config('walled_garden') != TRUE) {
+		elgg_register_page_handler('login', 'tbs_user_account_page_handler');
+		elgg_register_page_handler('register', 'tbs_user_account_page_handler');
+		elgg_register_page_handler('forgotpassword', 'tbs_user_account_page_handler');
+	}
+		
 	elgg_register_page_handler('activity', '_tbs_river_page_handler');
 	elgg_register_page_handler('profile', 'tbs_profile_page_handler');
 	
