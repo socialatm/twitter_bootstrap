@@ -226,17 +226,14 @@ function twitter_bootstrap_init() {
 	}
 	
 	// Register event handlers
-	
 	elgg_register_event_handler('pagesetup', 'system', 'tbs_pagesetup_handler', 1000);
 	
 	// Register plugin hook handlers
 	
-	// Register page handlers and check for walled garden
-	if(elgg_get_config('walled_garden') != TRUE) {
-		elgg_register_page_handler('login', 'tbs_user_account_page_handler');
-		elgg_register_page_handler('register', 'tbs_user_account_page_handler');
-		elgg_register_page_handler('forgotpassword', 'tbs_user_account_page_handler');
-	}
+	// Register page handlers
+	elgg_register_page_handler('login', 'tbs_user_account_page_handler');
+	elgg_register_page_handler('register', 'tbs_user_account_page_handler');
+	elgg_register_page_handler('forgotpassword', 'tbs_user_account_page_handler');
 		
 	elgg_register_page_handler('activity', '_tbs_river_page_handler');
 	elgg_register_page_handler('profile', 'tbs_profile_page_handler');
@@ -245,7 +242,6 @@ function twitter_bootstrap_init() {
 	$action_path = elgg_get_plugins_path().'twitter_bootstrap/actions';
 		
 	if(elgg_get_plugin_setting('require_email_login', 'twitter_bootstrap') === 'yes') {
-		
 		elgg_register_action('login', $action_path.'/login.php', 'public');
 		elgg_register_action('register', $action_path.'/register.php', 'public');
 		elgg_register_action('logout', $action_path.'/logout.php', '');
@@ -401,7 +397,7 @@ function tbs_pagesetup_handler() {
 			));
 		}
 
-	}//end if statement
+	}
 }
 
 /**
@@ -493,9 +489,8 @@ function tbs_profile_page_handler($page) {
 	}
 	
 	if(elgg_get_plugin_setting('profile2', 'twitter_bootstrap') != 'yes') {
-	
 		$content = elgg_view('profile/layout', array('entity' => $user));
-	$body = elgg_view_layout('one_column', array(
+		$body = elgg_view_layout('one_column', array(
 		'content' => $content
 	));
 	echo elgg_view_page($user->name, $body);
