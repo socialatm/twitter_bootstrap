@@ -17,7 +17,7 @@ foreach($available as $style)
 ?>
 <p><?php echo elgg_echo('select:theme:blub'); ?></p>
 <div>
-	<div id="bootswtach_preview"><?php
+	<div id="bootswtach_preview" class="clearfix"><?php
 		$preview_dir = elgg_get_config('url').'mod/twitter_bootstrap/vendors/graphics/';
 		
 		foreach($available as $style) {
