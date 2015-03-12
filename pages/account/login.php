@@ -7,7 +7,6 @@
  * @package Elgg.Core
  * @subpackage Accounts
  */
-
 if (elgg_is_logged_in()) {
 	forward('');
 }
@@ -22,7 +21,7 @@ if (elgg_get_config('https_login')) {
 
 $lost = elgg_echo('user:password:lost');
 $title = elgg_echo('login');
-$form .= elgg_view_form('login', array('action' => "{$login_url}action/login", 'class' => 'form-horizontal'));
+$form = elgg_view_form('login', array('action' => "{$login_url}action/login", 'class' => 'form-horizontal'));
 $message = elgg_echo('login:page:message', array($site_name));
 
 $content = <<<HTML
@@ -55,11 +54,5 @@ $content .= <<<HTML
 <!-- Page content ends -->
 HTML;
 
-if (elgg_get_config('walled_garden')) {
-	elgg_load_css('elgg.walled_garden');
-	$body = elgg_view_layout('walled_garden', array('content' => $content));
-	echo elgg_view_page($title, $body, 'walled_garden');
-} else {
-	$body = elgg_view_layout('one_column', array('content' => $content));
-	echo elgg_view_page($title, $body);
-}
+$body = elgg_view_layout('one_column', array('content' => $content));
+echo elgg_view_page($title, $body);
