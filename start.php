@@ -254,7 +254,7 @@ function twitter_bootstrap_init() {
 	
 	elgg_unregister_action('comment/save');
 	elgg_register_action('comment/save', $action_path.'/comment/save.php', '');
-	elgg_register_action('comment/add', "$action_path/comment/add.php");
+	elgg_register_action('comment/add', $action_path.'/comment/add.php');
 	
 	// Register entity type for search
 	elgg_register_entity_type('object', 'status');
