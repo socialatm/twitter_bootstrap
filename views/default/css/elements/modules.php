@@ -90,19 +90,15 @@
 }
 .elgg-widgets-add-panel {
 	padding: 10px;
-	margin: 0 5px 15px;
-	background: #dedede;
-	border: 2px solid #ccc;
 }
-<?php //@todo location-dependent style: make an extension of elgg-gallery ?>
+
+.elgg-widgets-add-panel ul {
+	padding: 10px;
+	margin: 10px;
+}
+
 .elgg-widgets-add-panel li {
-	float: left;
-	margin: 2px 10px;
-	width: 200px;
-	padding: 4px;
-	background-color: #ccc;
-	border: 2px solid #b0b0b0;
-	font-weight: bold;
+	margin: 2px 0;
 }
 .elgg-widgets-add-panel li a {
 	display: block;

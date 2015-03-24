@@ -22,7 +22,7 @@ foreach ($widgets as $column_widgets) {
 }
 
 ?>
-<div class="elgg-widgets-add-panel clearfix" id="widgets-add-panel">
+<div class="elgg-widgets-add-panel clearfix panel panel-default" id="widgets-add-panel">
 	<p>
 		<?php echo elgg_echo('widgets:add:description'); ?>
 	</p>
@@ -44,7 +44,7 @@ foreach ($widgets as $column_widgets) {
 				$class .= ' elgg-widget-single';
 			}
 
-			echo "<li title=\"$tooltip\" class=\"$class\" data-elgg-widget-type=\"$handler\">$widget_type->name</li>";
+			echo '<li title="'.$tooltip.'" class="'.$class.' btn btn-default btn-block" data-elgg-widget-type="'.$handler.'">'.$widget_type->name.'</li>';
 		}
 ?>
 	</ul>

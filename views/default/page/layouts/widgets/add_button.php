@@ -8,7 +8,7 @@
 	echo elgg_view('output/url', array(
 		'href' => '#widgets-add-panel',
 		'text' => elgg_echo('widgets:add'),
-		'class' => 'btn btn-default btn-sm',
+		'class' => 'btn btn-success btn-sm',
 		'rel' => 'toggle',
 		'is_trusted' => true,
 	));
