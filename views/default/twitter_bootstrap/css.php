@@ -213,12 +213,6 @@ li {
 	padding-right: 5px;
 }
 
-/* dealing with title menu buttons	*/
-
-.elgg-menu-title-default {
-	float: right;
-}
-
 /*****	dealing with widgets	*****/
 .elgg-widgets-add-panel {
 	display: none;
@@ -245,8 +239,6 @@ li {
 .elgg-riverbox > ul {
 	margin-bottom: 0;
 }
-
-.elgg-river-responses button:last {display: none;}
 
 #page-title h2 {
 	margin-top: 0;
