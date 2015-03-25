@@ -62,8 +62,6 @@ $(".elgg-layout-widgets").on( "click", "a.elgg-widget-collapse-button", function
 	$(this).parent().parent().parent().find('.elgg-body').slideToggle('medium');
 });
 
-$(".elgg-menu-extras-default").addClass("panel-heading");
-
 };		//	end elgg.tbs.init
 
 elgg.register_hook_handler('init', 'system', elgg.tbs.init);
