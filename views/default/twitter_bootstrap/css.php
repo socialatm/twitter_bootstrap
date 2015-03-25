@@ -247,3 +247,7 @@ li {
 }
 
 .elgg-river-responses button:last {display: none;}
+
+#page-title h2 {
+	margin-top: 0;
+}
