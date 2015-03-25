@@ -12,7 +12,7 @@ $tools = elgg_get_config("group_tool_options");
 if ($tools) {
 	usort($tools, create_function('$a, $b', 'return strcmp($a->label, $b->label);'));
 ?>
-
+<div class="table-responsive">
 <table class="table table-hover">
 	<tbody>
 
@@ -45,3 +45,4 @@ if ($tools) {
 
 	</tbody>
 </table>
+</div>
