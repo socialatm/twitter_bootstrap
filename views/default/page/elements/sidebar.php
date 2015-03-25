@@ -7,7 +7,7 @@
 
 echo elgg_view_menu('extras', array(
 	'sort_by' => 'priority',
-	'class' => 'elgg-menu-hz panel-heading',
+	'class' => 'panel-heading list-inline'
 ));
 
 $context = elgg_get_context();

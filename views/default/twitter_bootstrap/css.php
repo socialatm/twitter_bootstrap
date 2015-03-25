@@ -16,18 +16,10 @@
 }
 
 .elgg-menu-extras-default {
-	margin:10px 0 10px -10px;
-	min-height: 20px;
-  padding: 19px;
-  margin-bottom: 20px;
-  background-color: #f5f5f5;
-  border: 1px solid #eee;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-          border-radius: 4px;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+	background-color: #eee;
 }
 
-.elgg-menu-longtext-default > li, .elgg-menu-extras-default > li {
+.elgg-menu-longtext-default > li {
 	padding:0 10px 0 10px;
 }
 

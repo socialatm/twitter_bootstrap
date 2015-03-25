@@ -26,7 +26,7 @@ $(this).parent().siblings(".navbar-collapse").toggleClass("in");
 	
 	$('#elgg-river-selector').selectpicker({				//	river selector
     style: 'btn-sm',
-//	style: 'btn-sm btn-success',
+	style: 'btn-sm btn-primary',
     });
 	
 
