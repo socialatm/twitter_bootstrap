@@ -34,6 +34,7 @@ $status_label = elgg_echo('my:status:edit');
 		'placeholder' => elgg_echo("status:placeholder"),
 		'rows' => '2',
 		'cols' => '50',
+		'class' => 'col-md-12'
 		)); ?>
 </div>
 

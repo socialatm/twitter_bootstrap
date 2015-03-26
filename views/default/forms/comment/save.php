@@ -82,14 +82,13 @@ echo 	<<<RIVER
 			</div>
 RIVER;
 	
-	
-	
-	
 } else {
 
 	$comment_input = elgg_view('input/longtext', array(
 		'name' => 'generic_comment',
 		'value' => $comment_text,
+		'class' => 'col-md-12',
+		'rows' => '3'
 	));
 
 	$is_edit_page_input = elgg_view('input/hidden', array(
