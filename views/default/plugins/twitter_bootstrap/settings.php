@@ -49,7 +49,7 @@ echo elgg_view('input/select', array(
 	),
 	'value' => $vars['entity']->profile2,
 ));
-echo '<a href="https://github.com/twentyfiveautumn/profile2"> get profile2</a></div>';
+echo '<a href="https://community.elgg.org/plugins/1896759"> get profile2</a></div>';
 
 echo '<div class="elgg-fieldset">';
 echo '<h3>'.elgg_echo('tbs:require:email').'</h3>';
