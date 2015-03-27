@@ -91,5 +91,8 @@ return array(
 
 	/*****	Error messages	*****/
 	'my:status:save:failed' => "Your Rivertalk could not be saved. Make sure you've entered a title and address and then try again.",
-	'my:status:blank' => "Sorry, you need to write something in the box!"
+	'my:status:blank' => "Sorry, you need to write something in the box!",
+	
+	/***** Maintenance	*****/
+	'offline:maintenance' => 'Offline for scheduled maintenance'
 );
