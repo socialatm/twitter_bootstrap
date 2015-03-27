@@ -10,8 +10,8 @@ $profile_fields = elgg_get_config('group');
 if (is_array($profile_fields) && count($profile_fields) > 0) {
 
 	foreach ($profile_fields as $key => $valtype) {
-		// do not show the name
-		if ($key == 'name') {
+		// do not show the name or brief description on profile page
+		if ($key == 'name' || $key == 'briefdescription') {
 			continue;
 		}
 
