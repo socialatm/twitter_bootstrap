@@ -331,7 +331,7 @@ function tbs_pagesetup_handler() {
 
 	if(elgg_is_logged_in()){
 	
-		if (elgg_is_active_plugin('profile')) {
+		if (elgg_is_active_plugin('profile') || elgg_is_active_plugin('profile2')) {
 			elgg_unregister_menu_item('topbar', 'profile');
 			elgg_register_menu_item('topbar', array(
 				'href' => "/profile/$user->username",
