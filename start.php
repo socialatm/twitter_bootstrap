@@ -488,7 +488,7 @@ function tbs_profile_page_handler($page) {
 		return true;
 	}
 	
-	if(elgg_get_plugin_setting('profile2', 'twitter_bootstrap') != 'yes') {
+	if(!elgg_is_active_plugin('profile2')) {
 		$content = elgg_view('profile/layout', array('entity' => $user));
 		$body = elgg_view_layout('one_column', array(
 		'content' => $content

@@ -12,4 +12,8 @@
 		<type>elgg_release</type>
 		<version>1.9</version>
 	</requires>
+	<suggests>
+		<type>plugin</type>
+		<name>profile2</name>
+	</suggests>
 </plugin_manifest>
