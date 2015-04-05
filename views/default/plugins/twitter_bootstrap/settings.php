@@ -40,16 +40,7 @@ echo '</div>';
 
 echo '<div class="elgg-fieldset">';
 echo '<h3>'.elgg_echo('twitter_bootstrap:profile2').'</h3>';
-echo ' ';
-echo elgg_view('input/select', array(
-	'name' => 'params[profile2]',
-	'options_values' => array(
-		'no' => elgg_echo('option:no'),
-		'yes' => elgg_echo('option:yes')
-	),
-	'value' => $vars['entity']->profile2,
-));
-echo '<a href="https://community.elgg.org/plugins/1896759"> get profile2</a></div>';
+echo '<h2><a href="https://community.elgg.org/plugins/1896759"> get profile2</a></h2></div>';
 
 echo '<div class="elgg-fieldset">';
 echo '<h3>'.elgg_echo('tbs:require:email').'</h3>';
