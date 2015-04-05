@@ -13,7 +13,8 @@ echo elgg_view_menu('extras', array(
 $context = elgg_get_context();
 
 switch ($context) {
-    case 'profile':
+    case 'profile2':
+	case 'profile':
 		$params = array(
 			'num_columns' => 1,
 		);
