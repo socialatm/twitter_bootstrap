@@ -471,7 +471,7 @@ function _tbs_river_page_handler($page) {
 
 function tbs_profile_page_handler($page) {
 
-	$base_dir = elgg_get_config('pluginspath')."/profile/";
+	$base_dir = elgg_get_config('pluginspath')."/profile2/";
 
 	if (isset($page[0])) {
 		$username = $page[0];
