@@ -22,7 +22,7 @@ if (elgg_get_config('https_login')) {
 $lost = elgg_echo('user:password:lost');
 $title = elgg_echo('login');
 $form = elgg_view_form('login', array('action' => "{$login_url}action/login", 'class' => 'form-horizontal'));
-$message = elgg_echo('login:page:message', array($site_name));
+$message = elgg_get_plugin_setting('tbs_login', 'twitter_bootstrap');
 
 $content = <<<HTML
 <!-- Page content starts -->

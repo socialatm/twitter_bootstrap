@@ -12,6 +12,13 @@ if (!isset($vars['entity']->display_footer)) {
 	$vars['entity']->display_footer = 'no';
 }
 
+$type = get_input('type', 'tbs_settings');
+
+echo elgg_view('plugins/twitter_bootstrap/menu', array('type' => $type));
+echo '<p></p>';
+
+if($type == 'tbs_settings'){
+
 echo '<div class="elgg-fieldset">';
 echo '<h3>'.elgg_echo('twitter_bootstrap:displayheaderlogo').'</h3>';
 echo ' ';
@@ -100,5 +107,6 @@ License: <a href="http://www.gnu.org/licenses/gpl-2.0.html">GNU General Public L
 </p>';
 echo '</div>';
 
-
-
+}else{
+	echo elgg_view('plugins/twitter_bootstrap/frontpage', array('type' => $type));
+}

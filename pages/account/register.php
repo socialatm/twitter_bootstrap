@@ -43,25 +43,14 @@ $body_params = array(
 	'friend_guid' => $friend_guid,
 	'invitecode' => $invitecode
 );
-$content .= elgg_view_form('register', $form_params, $body_params);
+
+$message = elgg_get_plugin_setting('tbs_register', 'twitter_bootstrap');
 $form = elgg_view_form('register', $form_params, $body_params);
 
 $content = '
 <div class="row">
 	<div class="col-md-6">
-		<!-- Some content -->
-		<h3 class="title">Register at '.$site_name.'</h3>
-        <h4 >Fill out this one quick form and you\'re ready to go</h4>
-        <h5>Here is what it all means:</h5>
-        <ul>
-			<li><b>Name:</b> What people will see on the website.</li>
-            <li><b>Email:</b> In case you forget your password or want to receive notifications from other website members. We do not share, EVER!!</li>
-            <li><b>Username:</b> Internal use only. Does not appear on the website and can not be changed.</li>
-            <li><b>Password:</b> So nobody can get into your stuff.</li>
-            <li><b>Password:</b> Again, just to be sure you spelled it right.</li>
-		</ul>
-        <p>Thank you and welcome to '.$site_name.'. See, I told you it was quick. 
-		</p>		
+		'.$message.'
 	</div>
 	<div class="col-md-6 well">
 		<!-- Title -->

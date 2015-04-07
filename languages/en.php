@@ -1,7 +1,6 @@
 <?php
 /*****	Bootstrap theme English language file	*****/
 
-
 return array(
 	'access:help' => 'This is the current access level for this item. The access level determines who can see it.',
 	'twitter_bootstrap:displayheaderlogo' => 'Do you want to display the page header logo? ',
@@ -32,21 +31,7 @@ return array(
 	'invitefriends:emails' => 'Email address',
 	'invitefriends:emails:placeholder' => 'enter one email address per line',
 	'invite:friends' => 'Invite Friends',
-	/***** login page message	*****/
-	'login:page:message' => '<h3 class="title">Login to %s </h3>
-        <h4 >We will add some very helpful information here for you.</h4>
-        <p>Nullam in est urna. In vitae adipiscing enim. Curabitur rhoncus condimentum lorem, non convallis dolor faucibus eget. In vitae adipiscing enim. Curabitur rhoncus condimentum lorem, non convallis dolor faucibus eget. In ut nulla est. 
-		</p>
-        <h5>Maecenas hendrerit neque id</h5>
-        <ul>
-			<li>Etiam adipiscing posuere justo, nec iaculis justo dictum non</li>
-            <li>Cras tincidunt mi non arcu hendrerit eleifend</li>
-            <li>Aenean ullamcorper justo tincidunt justo aliquet et lobortis diam faucibus</li>
-            <li>Maecenas hendrerit neque id ante dictum mattis</li>
-            <li>Vivamus non neque lacus, et cursus tortor</li>
-		</ul>
-        <p>Nullam in est urna. In vitae adipiscing enim. In ut nulla est. Nullam in est urna. In vitae adipiscing enim. Curabitur rhoncus condimentum lorem, non convallis dolor faucibus eget. In ut nulla est. 
-		</p>',
+	
 	/*****	select a theme	*****/
 	'selected:theme' => 'Selected Theme:',
 	'select:theme:blub' => 'Clck on a Theme to select it. Scroll down and click Save to use it.',
@@ -94,5 +79,15 @@ return array(
 	'my:status:blank' => "Sorry, you need to write something in the box!",
 	
 	/***** Maintenance	*****/
-	'offline:maintenance' => 'Offline for scheduled maintenance'
+	'offline:maintenance' => 'Offline for scheduled maintenance',
+	
+	/***** File upload button	*****/
+	'file:add' => '<i class="glyphicon glyphicon-upload"></i><span>Upload a file</span>',
+	
+	/*****	admin settings	*****/
+	'startpages:tbs_settings' => 'Settings',
+	'startpages:tbs_login' => 'Login Page',
+	'startpages:tbs_register' => 'Register Page',
+	'startpages:tbs_lost_password' => 'Lost Password Page'
+	
 );

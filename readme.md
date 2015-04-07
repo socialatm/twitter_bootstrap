@@ -15,6 +15,9 @@
 *	Does not post separate User commented on Object to the River.
 *	and more...
 
+###Edit the Login, Register and Lost Password pages from the Admin settings panel:###
+![](https://github.com/twentyfiveautumn/twitter_bootstrap/blob/master/graphics/plugin_settings.png)
+
 ## Disclaimers ##
 *	This theme is written for Elgg 1.10 It will work with 1.9 but not work on any lower version of Elgg.
 *	For Elgg 1.8 with Bootstrap 3 use [This](https://github.com/twentyfiveautumn/twitter_bootstrap/tree/twitter_bootstrap-1.8)

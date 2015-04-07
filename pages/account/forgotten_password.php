@@ -18,27 +18,16 @@ $form = elgg_view_form('user/requestnewpassword', array(
 		'class' => 'form form-horizontal',
 		));
 
+$message = elgg_get_plugin_setting('tbs_lost_password', 'twitter_bootstrap');
+
 $content = '
 <div class="row">
 	<div class="col-md-6">
-		<!-- Some content -->
-		<h3 class="title">Lost your '.$site_name.' password?</h3>
-		<h4 >No worries, you\'ll be logged back in before you know it.</h4>
-        <h5>Put more interesting content here:</h5>
-        <ul>
-			<li>Line item 1.</li>
-            <li>Line item 2.</li>
-            <li>Line item 3.</li>
-            <li>Line item 4.</li>
-            <li>Line item 5.</li>
-		</ul>
-        <p>Thank you. At '.$site_name.'. we\'ve got you covered. 
-		</p>		
+		'.$message.'
 	</div>
 	<div class="col-md-6 well">
 		<!-- Title -->
 		<h4 class="title">'.$title.'</h4>
-	<!--	<p>&nbsp;</p>	-->
 			'.$form.'
 		<h5>'.elgg_echo('user:password:text').'</h5>
 	</div>
