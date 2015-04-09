@@ -341,16 +341,6 @@ function tbs_pagesetup_handler() {
 			));
 		}
 		
-		if (elgg_is_active_plugin('profile2')) {
-			elgg_unregister_menu_item('topbar', 'profile');
-			elgg_register_menu_item('topbar', array(
-				'href' => "/profile2/$user->username",
-				'name' => 'profile',
-				'text' => elgg_echo('profile'),
-				'priority' => 3,
-			));
-		}
-		
 		elgg_unregister_menu_item('topbar', 'friends');
 		elgg_register_menu_item('topbar', array(
 			'href' => "/friends/$user->username",
@@ -471,7 +461,7 @@ function _tbs_river_page_handler($page) {
 
 function tbs_profile_page_handler($page) {
 
-	$base_dir = elgg_get_config('pluginspath')."/profile2/";
+	$base_dir = elgg_get_config('pluginspath')."/profile/";
 
 	if (isset($page[0])) {
 		$username = $page[0];
@@ -498,7 +488,8 @@ function tbs_profile_page_handler($page) {
 		return true;
 	}
 	
-	if(!elgg_is_active_plugin('profile2')) {
+	$profile2 = file_exists($base_dir.'pages/profile/index.php');
+	if(!$profile2) {
 		$content = elgg_view('profile/layout', array('entity' => $user));
 		$body = elgg_view_layout('one_column', array(
 		'content' => $content
