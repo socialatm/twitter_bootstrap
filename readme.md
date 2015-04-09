@@ -17,6 +17,7 @@
 
 ###Edit the Login, Register and Lost Password pages from the Admin settings panel:###
 ![](https://github.com/twentyfiveautumn/twitter_bootstrap/blob/master/graphics/plugin_settings.png)
+*	Now you can edit the News in the header from the plugin settings page as well.
 
 ## Disclaimers ##
 *	This theme is written for Elgg 1.10 It will work with 1.9 but not work on any lower version of Elgg.

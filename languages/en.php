@@ -88,6 +88,7 @@ return array(
 	'startpages:tbs_settings' => 'Settings',
 	'startpages:tbs_login' => 'Login Page',
 	'startpages:tbs_register' => 'Register Page',
-	'startpages:tbs_lost_password' => 'Lost Password Page'
+	'startpages:tbs_lost_password' => 'Lost Password Page',
+	'startpages:tbs_header_news' => 'Header News'
 	
 );

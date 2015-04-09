@@ -8,6 +8,7 @@ $site_name = $site->name;
 $site_description = $site->description;
 $site_url = elgg_get_site_url();
 $logo = '<img src="'.$site_url.'mod/twitter_bootstrap/responsive.png" alt="'.$site_name.'" class="img-responsive" id="tbs_logo" />';
+$message = elgg_get_plugin_setting('tbs_header_news', 'twitter_bootstrap');
 ?>
 <div class="row">
   <div class="col-md-3">
@@ -16,7 +17,6 @@ $logo = '<img src="'.$site_url.'mod/twitter_bootstrap/responsive.png" alt="'.$si
 	</a>
   </div>
   <div class="col-md-9">
-	<h4>Current News at <?php echo $site_name; ?></h4>
-	<p>We're working hard to make <?php echo $site_name; ?> your favorite website.</p>
+		<?php echo $message; ?>
   </div>
 </div>

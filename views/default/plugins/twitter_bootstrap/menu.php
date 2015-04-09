@@ -6,7 +6,7 @@
  */
 
 $type = $vars['type'];
-$pages = array('tbs_settings', 'tbs_login', 'tbs_register', 'tbs_lost_password');
+$pages = array('tbs_settings', 'tbs_login', 'tbs_register', 'tbs_lost_password', 'tbs_header_news');
 $tabs = array();
 foreach ($pages as $page) {
 	$tabs[] = array(
