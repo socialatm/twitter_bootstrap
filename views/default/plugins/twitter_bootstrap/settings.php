@@ -46,8 +46,8 @@ echo elgg_view('input/select', array(
 echo '</div>';
 
 echo '<div class="elgg-fieldset">';
-echo '<h3>'.elgg_echo('twitter_bootstrap:profile2').'</h3>';
-echo '<h2><a href="https://community.elgg.org/plugins/1896759"> get profile2</a></h2></div>';
+echo '<h3>Placeholder for selecting the default theme</h3>';
+echo '</div>';
 
 echo '<div class="elgg-fieldset">';
 echo '<h3>'.elgg_echo('tbs:require:email').'</h3>';
@@ -99,13 +99,10 @@ echo elgg_view('input/dropdown', array(
 ));
 echo '</div>';
 
-echo '<div class="elgg-module-main">';
-echo '<h3>Twitter Bootstrap Theme v1.10</h3>
-Programmers: Ray Peaslee<br />
-<a href="http://twentyfiveautumn.com/">twentyfiveautumn.com</a><br />
-License: <a href="http://www.gnu.org/licenses/gpl-2.0.html">GNU General Public License v2</a>
-</p>';
-echo '</div>';
+echo '<div class="elgg-fieldset">';
+echo '<h3>'.elgg_echo('twitter_bootstrap:profile2').'</h3>';
+echo '<h2><a href="https://community.elgg.org/plugins/1896759">Profile 2</a></h2>';
+echo '<h2><a href="https://community.elgg.org/plugins/2043782">SuperCharged Files</a></h2></div>';
 
 }else{
 	echo elgg_view('plugins/twitter_bootstrap/frontpage', array('type' => $type));
