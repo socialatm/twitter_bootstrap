@@ -35,6 +35,8 @@ return array(
 	/*****	select a theme	*****/
 	'selected:theme' => 'Selected Theme:',
 	'select:theme:blub' => 'Clck on a Theme to select it. Scroll down and click Save to use it.',
+	'select:default:theme' => 'Select the Default Theme:',
+	
 	/*****	embed media	*****/
 	'embed:media' => '<span class="glyphicon glyphicon-camera"></span>',
 	

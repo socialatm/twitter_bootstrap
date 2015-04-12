@@ -46,7 +46,8 @@ echo elgg_view('input/select', array(
 echo '</div>';
 
 echo '<div class="elgg-fieldset">';
-echo '<h3>Placeholder for selecting the default theme</h3>';
+echo '<h3>'.elgg_echo('select:default:theme').'</h3>';
+echo elgg_view('plugins/twitter_bootstrap/usersettings');
 echo '</div>';
 
 echo '<div class="elgg-fieldset">';

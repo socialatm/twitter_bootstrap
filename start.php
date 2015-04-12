@@ -7,6 +7,8 @@
 elgg_register_event_handler('init', 'system', 'twitter_bootstrap_init');
 
 function twitter_bootstrap_init() {
+	//	extend the admin css
+	elgg_extend_view('css/admin', 'css/admin/css');
 
 	// don't need it twice
 	elgg_unregister_menu_item('footer', 'powered');
@@ -198,11 +200,13 @@ function twitter_bootstrap_init() {
 		}
 	}
 	
-	$bootstrap_style = elgg_get_plugin_user_setting('bootstrap_style', 0, 'twitter_bootstrap'); 		
-	if(empty($bootstrap_style)){ $bootstrap_style = 'default';}
-	
+	$default_style = elgg_get_plugin_setting('bootstrap_style', 'twitter_bootstrap', 'default');	
+	$bootstrap_style = elgg_get_plugin_user_setting('bootstrap_style', 0, 'twitter_bootstrap', $default_style); 
+	//	and if no user is logged in
+	if(empty($bootstrap_style)){ $bootstrap_style = $default_style;}
+
 	if($bootstrap_style != 'default'){
-		// Register bootswatch css
+		// Register bootstrap css
 		$bootstrap_css = 'mod/twitter_bootstrap/vendors/css/'.$bootstrap_style.'.min.css';
 		elgg_register_css('twitter_bootstrap_css', $bootstrap_css);
 

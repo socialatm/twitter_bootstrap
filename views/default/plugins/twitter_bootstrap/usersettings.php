@@ -2,15 +2,21 @@
 /**
  * twitter bootstrap plugin user settings.
  *
- * @version	elgg 1.9.4
+ * @version	elgg 1.10.2
  */
 
+//	get the default theme 
+$default = elgg_get_plugin_setting('bootstrap_style', 'twitter_bootstrap', 'default');
 $current_style = elgg_get_plugin_user_setting('bootstrap_style', 0, 'twitter_bootstrap');
+$styles = elgg_get_file_list('mod/twitter_bootstrap/vendors/graphics/');
+$available = array();
 
-if (!$current_style) {$current_style = 'default'; }
-$available = array(
-	'cerulean',	'cosmo', 'cyborg', 'darkly', 'default', 'flatly',	'journal', 'lumen', 'paper', 'readable', 'sandstone', 'simplex',
-	'slate', 'spacelab', 'superhero', 'united', 'yeti' );
+foreach($styles as $style) {
+	$path_parts = pathinfo($style);
+	$available[] = $path_parts['filename'];
+}
+
+if (!$current_style) {$current_style = $default; }
 $optvalues = array();
 foreach($available as $style)
 	$optvalues[$style] = ucwords($style);
@@ -19,7 +25,6 @@ foreach($available as $style)
 <div>
 	<div id="bootswtach_preview" class="clearfix"><?php
 		$preview_dir = elgg_get_config('url').'mod/twitter_bootstrap/vendors/graphics/';
-		
 		foreach($available as $style) {
 			?>
 			<div class="col-xs-6 col-md-3">
