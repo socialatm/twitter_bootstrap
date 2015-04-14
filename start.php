@@ -33,7 +33,7 @@ function twitter_bootstrap_init() {
 	// register twitter bootstrap JavaScript
 	$tbs_js = elgg_get_simplecache_url('js', 'twitter_bootstrap/tbs');
 	elgg_register_simplecache_view('js/twitter_bootstrap/tbs');
-	elgg_register_js('elgg.tbs', $tbs_js, 'footer');
+	elgg_register_js('twitter_bootstrap/tbs', $tbs_js, 'footer');
 	
 	// register the css for the new uploader
 	$tbs_upload_css = 'mod/twitter_bootstrap/views/default/css/upload/';
@@ -222,7 +222,7 @@ function twitter_bootstrap_init() {
 		elgg_load_css('bootstrap_css_theme');
 		elgg_load_css('fuelux_css');
 		elgg_load_js('bootstrap');
-		elgg_load_js('elgg.tbs');
+		elgg_require_js('twitter_bootstrap/tbs');
 	}
 	
 	// Register event handlers
