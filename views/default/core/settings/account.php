@@ -5,7 +5,7 @@
  * @package Elgg
  * @subpackage Core
  */
-
+ 
 $action_url = elgg_get_site_url();
 if (elgg_get_config('https_login')) {
 	$action_url = str_replace("http:", "https:", $action_url);
