@@ -30,11 +30,6 @@ function twitter_bootstrap_init() {
 	$fuelux_css = 'mod/twitter_bootstrap/vendors/fuelux/css/fuelux.css';
 	elgg_register_css('fuelux_css', $fuelux_css );
 	
-	// register twitter bootstrap JavaScript
-	$tbs_js = elgg_get_simplecache_url('js', 'twitter_bootstrap/tbs');
-	elgg_register_simplecache_view('js/twitter_bootstrap/tbs');
-	elgg_register_js('twitter_bootstrap/tbs', $tbs_js, 'footer');
-	
 	// register the css for the new uploader
 	$tbs_upload_css = 'mod/twitter_bootstrap/views/default/css/upload/';
 	elgg_register_css('jquery_fileupload_css', $tbs_upload_css.'jquery.fileupload.css');
