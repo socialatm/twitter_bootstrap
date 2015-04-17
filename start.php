@@ -479,7 +479,7 @@ function tbs_profile_page_handler($page) {
 
 	if ($action == 'edit') {
 		// use the core profile edit page
-		require elgg_get_config('pluginspath')."twitter_bootstrap/pages/profile/edit.php";
+		require elgg_get_config('pluginspath')."profile/pages/profile/edit.php";
 		return true;
 	}
 	
