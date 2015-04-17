@@ -22,7 +22,7 @@ elgg_push_context('profile_edit');
 
 $title = elgg_echo('profile:edit');
 
-$content = '<div class="well">'.elgg_view_form('profile/edit', array('class' => 'form-horizontal',), array('entity' => $user)).'</div>';
+$content = '<div class="panel panel-default"><div class="panel-body">'.elgg_view_form('profile/edit', array('class' => 'form-horizontal',), array('entity' => $user)).'</div></div>';
 
 $params = array(
 	'content' => $content,
