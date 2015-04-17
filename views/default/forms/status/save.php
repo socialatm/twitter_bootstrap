@@ -70,4 +70,3 @@ $status_label = elgg_echo('my:status:edit');
 <?php
 	echo elgg_view('input/hidden', array('name' => 'container_guid', 'value' => $container_guid));
 	if ($guid){ echo elgg_view('input/hidden', array('name' => 'guid', 'value' => $guid));}
-?>

@@ -1,7 +1,7 @@
 <?php
 /*****
  * Save a Status Update
- * @elgg-release: 1.9.1
+ * @elgg-release: 1.10.2
  *****/
  
 $htmlawed_config = array(
