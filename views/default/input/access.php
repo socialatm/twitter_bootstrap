@@ -10,12 +10,6 @@
  * @uses $vars['class']          Additional CSS class
  */
 
-if (isset($vars['class'])) {
-	$vars['class'] = "dropdown-menu {$vars['class']}";
-} else {
-	$vars['class'] = "dropdown-menu";
-}
-
 $defaults = array(
 	'disabled' => false,
 	'value' => get_default_access(),
