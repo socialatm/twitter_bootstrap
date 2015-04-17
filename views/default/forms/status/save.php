@@ -24,7 +24,7 @@ $textbox = elgg_extract('textbox', $vars);
 
 /***** set the access	*****/
 $access_label = elgg_echo('my:status:access');
-$value = elgg_view('input/access', array(
+$value = elgg_view('input/accesslist', array(
 	'name' => 'access_id',
 	'id' => 'access_id',
 	'value' => $vars['access_id'],
