@@ -243,3 +243,11 @@ li {
 #page-title h2 {
 	margin-top: 0;
 }
+
+.elgg-riverbox {
+	margin-top: 10px;
+}
+
+.elgg-riverbox, #elgg-river-selector-wrapper {
+	margin-bottom: 10px;
+}
