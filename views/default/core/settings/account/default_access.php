@@ -16,15 +16,15 @@ if (elgg_get_config('allow_user_default_access')) {
 
 		$user_guid = $user->guid;
 		$label = elgg_echo('default_access:label') . ': ';
-		$value = elgg_view("input/access", array(
-		'name' => 'default_access_ul',
-		'value' => $default_access,
-		'class' => 'dropdown-menu',
-		'id' => 'default_access_ul',
-		'role' => 'menu'
-	));
+		$value = elgg_view("input/accesslist", array(
+			'name' => 'default_access_ul',
+			'value' => $default_access,
+			'class' => 'dropdown-menu',
+			'id' => 'default_access_ul',
+			'role' => 'menu'
+		));
 	
-	$access_label = get_write_access_array()["$default_access"];
+		$access_label = get_write_access_array()["$default_access"];
 
 echo <<<EOT
 	<div class="form-group">
