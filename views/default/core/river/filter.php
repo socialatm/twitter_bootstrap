@@ -33,9 +33,8 @@ $selector = $vars['selector'];
 if ($selector) {
 	$params['value'] = $selector;
 }
-// echo elgg_view('input/selectlist', $params);
-$value = elgg_view('input/selectlist', $params);
 
+$value = elgg_view('input/selectlist', $params);
 $button_label = $options[$params['value']];
 
 echo <<<EOT
