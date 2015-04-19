@@ -29,169 +29,7 @@ function twitter_bootstrap_init() {
 	//	let's add the fuelux css
 	$fuelux_css = 'mod/twitter_bootstrap/vendors/fuelux/css/fuelux.css';
 	elgg_register_css('fuelux_css', $fuelux_css );
-	
-	// register the css for the new uploader
-	$tbs_upload_css = 'mod/twitter_bootstrap/views/default/css/upload/';
-	elgg_register_css('jquery_fileupload_css', $tbs_upload_css.'jquery.fileupload.css');
-	elgg_register_css('jquery_fileupload_ui_css', $tbs_upload_css.'jquery.fileupload-ui.css');
-	
-	// main js files for the uploader
-	elgg_define_js('main',
-		array(
-			'src' => 'mod/twitter_bootstrap/views/default/js/jquery-file-upload/js/main.js',
-			'deps' => array(
-				'jquery.fileupload-ui',
-				'tmpl',
-				'load-image',
-				'canvas-to-blob',
-				'jquery.iframe-transport'
-				)
-			)
-		);
-					
-	elgg_define_js('jquery.fileupload',
-		array(
-			'src' => 'mod/twitter_bootstrap/views/default/js/jquery-file-upload/js/jquery.fileupload.js',
-			'deps' => array(
-				'jquery',
-				'jquery.ui.widget'
-			)
-		)
-	);
-	
-	elgg_define_js('jquery.ui.widget',
-		array(
-			'src' => 'mod/twitter_bootstrap/views/default/js/jquery-file-upload/js/vendor/jquery.ui.widget.js',
-			'deps' => array(
-				'jquery',
-			)
-		)
-	);
-	
-	elgg_define_js('tmpl', array('src' => 'mod/twitter_bootstrap/views/default/js/javascript-templates/js/tmpl.js'));
-	elgg_define_js('load-image.all.min', array('src' => 'mod/twitter_bootstrap/views/default/js/javascript-load-image/js/load-image.all.min.js'));
-	
-	elgg_define_js('jquery.fileupload-image',
-		array(
-			'src' => 'mod/twitter_bootstrap/views/default/js/jquery-file-upload/js/jquery.fileupload-image.js',
-			'deps' => array(
-				'jquery',
-				'load-image',
-				'load-image-meta',
-				'load-image-exif',
-				'load-image-ios',
-				'canvas-to-blob',
-				'jquery.fileupload-process'
-			)
-		)								
-	);
-		
-	elgg_define_js('jquery.iframe-transport',
-		array(
-			'src' => 'mod/twitter_bootstrap/views/default/js/jquery-file-upload/js/jquery.iframe-transport.js',
-			'deps' => array(
-				'jquery',
-			)
-		)
-	);
-	
-	elgg_define_js('jquery.fileupload-validate',
-		array(
-			'src' => 'mod/twitter_bootstrap/views/default/js/jquery-file-upload/js/jquery.fileupload-validate.js',
-			'deps' => array(
-				'jquery',
-				'jquery.fileupload-process'
-			)
-		)
-	);
-	
-	elgg_define_js('jquery.fileupload-audio',
-		array(
-			'src' => 'mod/twitter_bootstrap/views/default/js/jquery-file-upload/js/jquery.fileupload-audio.js',
-			'deps' => array(
-				'jquery',
-				'load-image',
-				'jquery.fileupload-process'
-			)
-		)
-	);
-	
-	elgg_define_js('jquery.fileupload-video',
-		array(
-			'src' => 'mod/twitter_bootstrap/views/default/js/jquery-file-upload/js/jquery.fileupload-video.js',
-			'deps' => array(
-				'jquery',
-				'load-image',
-				'jquery.fileupload-process'
-			)
-		)
-	);
-	
-	elgg_define_js('canvas-to-blob', array('src' => 'mod/twitter_bootstrap/views/default/js/javascript-canvas-to-blob/js/canvas-to-blob.js'));
-	elgg_define_js('jquery.fileupload-ui',
-		array(
-			'src' => 'mod/twitter_bootstrap/views/default/js/jquery-file-upload/js/jquery.fileupload-ui.js',
-			'deps' => array(
-				'jquery',
-				'tmpl',
-				'jquery.fileupload-image',
-				'jquery.fileupload-audio',
-				'jquery.fileupload-video',
-				'jquery.fileupload-validate'
-			)
-		)
-	);
 
-	elgg_define_js('jquery.fileupload-process',
-		array(
-			'src' => 'mod/twitter_bootstrap/views/default/js/jquery-file-upload/js/jquery.fileupload-process.js',
-			'deps' => array(
-				'jquery',
-				'jquery.fileupload'
-			)
-		)
-	);
-	
-	elgg_define_js('load-image-meta',
-		array(
-			'src' => 'mod/twitter_bootstrap/views/default/js/javascript-load-image/js/load-image-meta.js',
-			'deps' => array(
-				'load-image'
-			)
-		)
-	);
-	
-	elgg_define_js('load-image', array('src' => 'mod/twitter_bootstrap/views/default/js/javascript-load-image/js/load-image.js'));
-	
-	elgg_define_js('load-image-exif',
-		array(
-			'src' => 'mod/twitter_bootstrap/views/default/js/javascript-load-image/js/load-image-exif.js',
-			'deps' => array(
-				'load-image',
-				'load-image-meta'
-			)
-		)
-	);
-	
-	elgg_define_js('load-image-ios',
-		array(
-			'src' => 'mod/twitter_bootstrap/views/default/js/javascript-load-image/js/load-image-ios.js',
-			'deps' => array(
-				'load-image'
-			)
-		)
-	);
-		
-	elgg_register_plugin_hook_handler('route', 'file', 'tbs_file_upload_handler');
-	
-	function tbs_file_upload_handler ($hook, $type, $result) {
-		if($result['segments'][0] === 'add'){
-			$vars['container_guid'] = $result['segments'][1];
-			require_once('mod/twitter_bootstrap/pages/upload.php');
-			die();
-		}
-	}
-	
 	$default_style = elgg_get_plugin_setting('bootstrap_style', 'twitter_bootstrap', 'default');	
 	$bootstrap_style = elgg_get_plugin_user_setting('bootstrap_style', 0, 'twitter_bootstrap', $default_style); 
 	//	and if no user is logged in
@@ -229,7 +67,6 @@ function twitter_bootstrap_init() {
 	elgg_register_page_handler('login', 'tbs_user_account_page_handler');
 	elgg_register_page_handler('register', 'tbs_user_account_page_handler');
 	elgg_register_page_handler('forgotpassword', 'tbs_user_account_page_handler');
-		
 	elgg_register_page_handler('activity', '_tbs_river_page_handler');
 	elgg_register_page_handler('profile', 'tbs_profile_page_handler');
 	
@@ -241,8 +78,6 @@ function twitter_bootstrap_init() {
 		elgg_register_action('register', $action_path.'/register.php', 'public');
 		elgg_register_action('logout', $action_path.'/logout.php', '');
 	}	
-	
-	elgg_register_action('twitter_bootstrap/upload', $action_path.'/twitter_bootstrap/upload.php', '');
 	
 	//	river status actions
 	elgg_register_action('status/save', "$action_path/status/save.php");
