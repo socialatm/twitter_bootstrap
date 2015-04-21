@@ -17,9 +17,9 @@ if ($owner instanceof ElggGroup || $owner instanceof ElggUser) {
 	$size = elgg_extract('size', $vars, 'tiny');
 	$icon = elgg_view_entity_icon($owner, $size, $vars);
 	$rel = '';
-	if (elgg_get_logged_in_user_guid() == $owner->guid) {
+	if (elgg_get_logged_in_user_guid() == $entity->guid) {
 		$rel = 'rel="me"';
-	} elseif (check_entity_relationship(elgg_get_logged_in_user_guid(), 'friend', $owner->guid)) {
+	} elseif (check_entity_relationship(elgg_get_logged_in_user_guid(), 'friend', $entity->guid)) {
 		$rel = 'rel="friend"';
 	}
 	$title = "<a href=\"" . $owner->getUrl() . "\" $rel>" . $owner->name . "</a>";

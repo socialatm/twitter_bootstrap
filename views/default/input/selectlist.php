@@ -56,15 +56,10 @@ if ($vars['multiple'] && !empty($vars['name']) && is_string($vars['name'])) {
 }
 
 //	sorts the options in alphabetical order and then puts the selected option at the top
-if($options_values) {
-	asort($options_values);
-	$options_values = array($value[0] => $options_values["$value[0]"]) + $options_values;
-}
-
-if($options) {
-	asort($options);
-	$options = array($value[0] => $options["$value[0]"]) + $options;
-}
+asort($options_values);
+$options_values = array($value[0] => $options_values["$value[0]"]) + $options_values;
+asort($options);
+$options = array($value[0] => $options["$value[0]"]) + $options;
 ?>
 <ul <?php echo elgg_format_attributes($vars); ?>>
 <?php
