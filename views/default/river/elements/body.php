@@ -12,6 +12,13 @@
 $item = $vars['item'];
 $entity = $item->getObjectEntity();
 $item_guid = $entity->guid;
+$subject = $item->getSubjectEntity();
+
+if (elgg_in_context('widgets')) {
+	$image = elgg_view_entity_icon($subject, 'tiny');
+} else {
+	$image = elgg_view_entity_icon($subject, 'small');
+}
 
 if ($entity->canEdit()) {
 	elgg_unregister_menu_item('river', 'delete');
@@ -50,8 +57,6 @@ if(elgg_get_context() != 'widgets') {
 		'class' => 'list-inline',
 	));
 }
-
-
 
 // river item header
 $timestamp = elgg_view_friendly_time($item->getTimePosted());
@@ -110,7 +115,7 @@ $form = elgg_view_form('status/save', $form_vars, $body_vars);
 }
 
 echo 	<<<RIVER
-	<div class="media">
+	<div class="media elgg-river-item">
 		<div class="media-left">
 			{$image}
 		</div>
