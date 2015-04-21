@@ -20,7 +20,7 @@ $site_url = $site->url;
 /*****	Right Side Menu	*****/
 
 if(elgg_is_logged_in()){
-	$icon = elgg_view('output/img', array('src' => $user->getIconURL('topbar'),));
+	$icon = elgg_view('output/img', array('src' => $user->getIconURL('topbar'), 'alt' => $user->username));
 	$username = '<a href="#" class="dropdown-toggle" data-toggle="dropdown">'.$icon.'  '.$username.' <b class="caret"></b></a>';
 	$username .= '<ul class="dropdown-menu">';
 		foreach ($alt_items as $menu_item) {

@@ -9,7 +9,7 @@ $options = array();
 if(elgg_get_plugin_setting('river_post', 'twitter_bootstrap') === 'yes') {
 	if (elgg_is_logged_in()) {
 		// prepare the form
-		$content = elgg_view_form('status/save', array('name' => 'riverjax', 'id' => 'riverjax'), $vars);
+		$content = elgg_view_form('status/save', array('name' => 'riverjax', 'id' => 'riverjax'));
 	}
 }
 
