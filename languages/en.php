@@ -91,6 +91,10 @@ return array(
 	'startpages:tbs_login' => 'Login Page',
 	'startpages:tbs_register' => 'Register Page',
 	'startpages:tbs_lost_password' => 'Lost Password Page',
-	'startpages:tbs_header_news' => 'Header News'
+	'startpages:tbs_header_news' => 'Header News',
+	
+	/*****	groups edit page	*****/
+	'groups:icon' => 'Group icon',
+	'groups:icon:help' => 'leave blank to leave unchanged',
 	
 );
