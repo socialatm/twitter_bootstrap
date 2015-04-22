@@ -32,7 +32,7 @@ if ($tools) {
 				<input type="radio" name="<?php echo $group_option_toggle_name?>" id="<?php echo $group_option_toggle_name?>" value="yes" <?php echo $checked; ?>><?php echo elgg_echo("option:yes") ?>
 				</label>
 				<label class="radio-inline">
-				<?php unset($checked); if ($value == "no"){$checked = 'checked="checked"';} ?>
+				<?php $checked = ($value == "no") ? 'checked="checked"' : ''; ?>
 				<input type="radio" name="<?php echo $group_option_toggle_name?>" id="<?php echo $group_option_toggle_name?>" value="no" <?php echo $checked; ?>><?php echo elgg_echo("option:no") ?>
 				</label>
 				</h4>
