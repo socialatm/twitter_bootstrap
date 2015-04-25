@@ -12,7 +12,7 @@
  */
  
 $vars['class'] = (array) elgg_extract('class', $vars, []);
-$vars['class'][] = 'form-control expanding';
+$vars['class'][] = 'form-control';
 
 $defaults = array(
 	'value' => '',
